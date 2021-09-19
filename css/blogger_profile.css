@@ -1,0 +1,54 @@
+body{
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    background-color: #DAE1E7;
+    color: #142850;
+}
+
+.nav_bg{
+    background-color: #142850;
+}
+
+.blog_banner img{
+    width: 100%;
+    height: 27vw;
+}
+
+h1,h5{
+    color: #04009A;
+}
+
+h3,h4{
+    color: #00909E;
+}
+
+h2{
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+.author{
+    text-align: center;
+}
+
+.author img{
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+}
+
+.author_pp{
+    margin: 30px;
+    height: 175px;
+    width: 175px;
+}
+
+hr{
+    width: 5%;
+    border: 5px dotted gray;
+    border-top: 0cm;
+}
+
+.blog_footer{
+    color: #DAE1E7;
+    background-color: #142850;
+}
