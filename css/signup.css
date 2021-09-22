@@ -123,15 +123,16 @@ transform: translate(-50%,-50%);
         padding: 0;}
        
             
-        }
+
         @media screen and (max-width:1000px){
             .form-area{
                 background-size: 100%;
                 padding: 100px 40px;
             }
-           
+        }
             @media screen and (max-width:600px){
                 
                 .form-area{
                  padding:60px;
                 }
+            }

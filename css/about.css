@@ -13,7 +13,7 @@ body{
 
 }
 .about-section{
-    background:url(../media/ig11.jpg) no-repeat left;
+    background:url(../image/ig11.jpg) no-repeat left;
     background-size:75%;
     background-color:rgb(255, 255, 255);
     overflow: hidden;
@@ -90,9 +90,9 @@ main{
     color:#9b9b9b;
     line-height: 1.5;
     font-size: 15px;
-    text-transform:
-    font-weight: bold;
-
+    /* //text-transform:[  */
+    font-weight: bold; 
+    
 }
 footer{
     display: -webkit-flex;
