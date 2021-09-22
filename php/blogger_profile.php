@@ -24,6 +24,16 @@ if (isset($_SESSION['Author_ID'])) {
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 
+<script>
+    $(function(){
+      var includes = $('[data-include]');
+      jQuery.each(includes, function(){
+        var file = $(this).data('include') + '.html';
+        $(this).load(file);
+      });
+    });
+</script>
+
 <body>
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark nav_bg">
