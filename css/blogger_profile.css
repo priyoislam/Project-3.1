@@ -5,10 +5,6 @@ body{
     color: #142850;
 }
 
-.nav_bg{
-    background-color: #142850;
-}
-
 .blog_banner img{
     width: 100%;
     height: 27vw;
@@ -46,9 +42,4 @@ hr{
     width: 5%;
     border: 5px dotted gray;
     border-top: 0cm;
-}
-
-.blog_footer{
-    color: #DAE1E7;
-    background-color: #142850;
 }

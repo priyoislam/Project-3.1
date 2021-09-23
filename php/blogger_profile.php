@@ -1,5 +1,5 @@
 <?php
-include_once('database.php');
+include('dbcon.php');
 session_start();
 if (isset($_SESSION['Author_ID'])) {
     $sql = "SELECT * from blog inner join author using(Author_ID) where Author_ID='$_SESSION[Author_ID]'";
@@ -24,47 +24,9 @@ if (isset($_SESSION['Author_ID'])) {
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 
-<script>
-    $(function(){
-      var includes = $('[data-include]');
-      jQuery.each(includes, function(){
-        var file = $(this).data('include') + '.html';
-        $(this).load(file);
-      });
-    });
-</script>
-
 <body>
-    <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark nav_bg">
-            <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sign in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sign up</a>
-                        </li>
-                </div>
-            </div>
-        </nav>
-    </div>
-
+<?php include("navbar.php");?>
     <div class="blog_banner">
         <!-- <img src="../image/blogging.jpg" class="img-fluid banner" alt="Banner image for blog"> -->
     </div>
@@ -119,12 +81,7 @@ if (isset($_SESSION['Author_ID'])) {
         }
         ?>
     </div>
-    <footer class="text-center text-lg-starttext-muted mt-5 blog_footer">
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Research 101</a>
-        </div>
-    </footer>
+    <?php include("footer.php");?>
 
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
