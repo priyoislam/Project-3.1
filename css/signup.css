@@ -105,7 +105,7 @@ transform: translate(-50%,-50%);
         outline: none;
     } 
     input:checked[type=checkbox]{
-        background-color: teal;
+        background-color: black;
         border:none;
     }
     .terms{
@@ -113,26 +113,40 @@ transform: translate(-50%,-50%);
         margin-right:97px;
         font-size: 15px;
     }
-    .form-area input[type=submit]{
-        width: 100%;
+    .form-area button[type=submit]{
+        width: 50%;
         border: none;
-        font-size: 15px;
+        font-weight: bold;
+        margin-left: 95px;
+        font-size: 18px;
         background-color:white;
         color: teal;
         cursor: pointer;
-        padding: 0;}
+        padding: 0;
+    height: 40px;}
        
             
-
+        }
         @media screen and (max-width:1000px){
             .form-area{
                 background-size: 100%;
                 padding: 100px 40px;
             }
-        }
+           
             @media screen and (max-width:600px){
                 
                 .form-area{
                  padding:60px;
                 }
-            }
+                .alrt{
+                    color:white;
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 10px;
+                }
+                .color{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bolder;
+                    margin: 30px;
+                }
