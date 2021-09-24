@@ -70,7 +70,7 @@ if (isset($_SESSION['Author_ID'])) {
                                         </a>
                                     </div>
 
-                                    <a href="../html/article/<?php echo $row['Page_url']; ?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
+                                    <a href="blog.php?article=<?php echo $row['Article_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
                                 </div>
                             </div>
                         </div>
