@@ -29,6 +29,7 @@ if ($connect) {
     }
 } else {
     echo "not added";
+}
 
 ?>
 
