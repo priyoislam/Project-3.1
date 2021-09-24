@@ -1,7 +1,8 @@
 <?php
+include('dbcon.php');
 SESSION_start();
 
-include('dbcon.php');
+
 $msg = "";
 
 if ($connect) {
@@ -43,10 +44,15 @@ if ($connect) {
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    
+<?php include("navbar.php");?>
     <div class="bg">
         <?php if (strcmp($msg, 'This Email is already existed') == 0) { ?>
             <div class="alert alert-danger">
@@ -85,9 +91,15 @@ if ($connect) {
         </div>
     </div>
 
+    <?php include("footer.php");?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/wow.js"></script>
+    <script>
+        new WOW.init();
+    </script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

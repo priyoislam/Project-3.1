@@ -32,7 +32,7 @@ if ($connect) {
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/login.css">
+    
     <link rel="stylesheet" href="../css/fontawesome.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/login.css">
@@ -41,6 +41,7 @@ if ($connect) {
 
 <body>
     <!---start of background image-->
+    <?php include("navbar.php");?>
     <div class="bg">
         <div class="container">
             <div class="row">
@@ -68,7 +69,7 @@ if ($connect) {
         </div>
 
     </div>
-
+    <?php include("footer.php");?>
     <!--end of a background image-->
 
     <script src="js/jquery-3.5.1.js"></script>
