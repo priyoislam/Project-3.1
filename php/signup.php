@@ -29,7 +29,7 @@ if ($connect) {
         }
     }
 } else {
-    echo "not added";
+   // echo "not added";
 }
 
 ?>
@@ -43,7 +43,7 @@ if ($connect) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/signup1.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -52,15 +52,23 @@ if ($connect) {
 </head>
 
 <body>
-<?php include("navbar.php");?>
+
+
+
     <div class="bg">
-        <?php if (strcmp($msg, 'This Email is already existed') == 0) { ?>
+
+    <?php 
+include("navbar.php");
+
+?> 
+        <!-- <?php if (strcmp($msg, 'This Email is already existed') == 0) { ?>
             <div class="alert alert-danger">
                 <strong style="color:white;">Wrong! This Email already exists.</strong>
             </div>
         <?php
         }
-        ?>
+        ?> -->
+        <div class="container">
         <div class="wrapper">
             <div class="header-area">
                 <h2>Sign Up As User</h2>
@@ -89,9 +97,17 @@ if ($connect) {
                 </div>
             </form>
         </div>
+        </div>
+     
+        <?php 
+    include("footer.php");
+    
+    ?>
+        
     </div>
+    
 
-    <?php include("footer.php");?>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

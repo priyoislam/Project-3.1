@@ -1,0 +1,35 @@
+body{
+    
+
+}
+
+
+       
+            
+        
+ @media screen and (max-width:1000px){
+            .form-area{
+                background-size: 100%;
+                padding: 100px 40px;
+            }
+        }
+
+
+ @media screen and (max-width:600px){
+                
+                .form-area{
+                 padding:60px;
+                }
+                .alrt{
+                    color:white;
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 10px;
+                }
+                .color{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bolder;
+                    margin: 30px;
+                }
+ }

@@ -16,12 +16,58 @@
 
 <body>
 
-    <footer class="text-center text-lg-starttext-muted mt-5 blog_footer">
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Research 101</a>
-        </div>
-    </footer>
+
+<!-- <footer class=" text-lg-starttext-muted "> -->
+
+<div class="row main-footer">
+            
+            <div class="f_logo col-md-3">
+                <img src="../image/AI.jpg">
+               
+            </div>
+
+            <div class="col-md-3">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="#">link 1</a></li>
+                    <li><a href="#">link 2</a></li>
+                    <li><a href="#">link 3</a></li>
+                    <li><a href="#">link 4</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Services</a></li>
+                    <li><a href="#"> Dats Management</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h3>Contact</h3>
+                <span><i class="fas fa-map-marker-alt"></i> XYZ, Savar</span><br><br>
+                <span><i class="fas fa-phone"></i> +880xxxxxxxx</span><br><br>
+                <span><i class="fas fa-envelope"></i> aggrofarm@mail.com</span><br>
+                
+            </div>
+           
+        
+        
+    </div>
+
+
+    <div class="text-center p-4 copyright" ">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Research 101</a>
+    </div>
+
+<!-- </footer> -->
+
+
+   
     
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>

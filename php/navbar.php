@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 
+<!-- navbar-expand-lg -->
 <body>
+    
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark nav_bg">
             <div class="container">
