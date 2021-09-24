@@ -206,4 +206,15 @@ text-align: center;
 .chead{
     padding-top: 0px;
 }
+ul.demo {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
+  ul.demo_1{
+      list-style-position: outside;
+      text-align: left;
+  }
   
