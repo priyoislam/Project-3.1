@@ -3,4 +3,10 @@
 }
 .nav_bg{
     background-color: #142850;
+    color: #DAE1E7;
+}
+
+.btn_src:hover{
+    background-color: #142850;
+    color: #DAE1E7;
 }

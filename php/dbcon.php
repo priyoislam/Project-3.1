@@ -9,9 +9,9 @@ $connect=mysqli_connect($server,$user,$password,$db);
 if($connect){
     ?>
     <script>
-        alert("Connection successful");
-        </script>
-        <?php
+        // alert("Connection successful");
+         </script>
+              <?php
 }
 else{
     ?>

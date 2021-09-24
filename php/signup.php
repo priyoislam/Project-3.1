@@ -11,7 +11,6 @@ if ($connect) {
         $U_address = $_POST['address'];
         $U_password = $_POST['password'];
         $U_phone = $_POST['phone'];
-
         $sqlfind = "SELECT * FROM signup where email='$U_mail'";
         $resfind = mysqli_query($connect, $sqlfind);
         if (mysqli_num_rows($resfind) > 0) {
@@ -30,7 +29,7 @@ if ($connect) {
     }
 } else {
     echo "not added";
-}
+
 ?>
 
 <!DOCTYPE html>

@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <footer class="text-center text-lg-starttext-muted mt-5 blog_footer">
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2021 Copyright:
@@ -31,5 +32,4 @@
     </script>
     <script src="../js/main.js"></script>
 </body>
-
 </html>
