@@ -43,7 +43,7 @@ if ($connect) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/signup1.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -54,57 +54,62 @@ if ($connect) {
 <body>
 
 
-
-    <div class="bg">
-
-    <?php 
-include("navbar.php");
-
-?> 
-        <!-- <?php if (strcmp($msg, 'This Email is already existed') == 0) { ?>
-            <div class="alert alert-danger">
-                <strong style="color:white;">Wrong! This Email already exists.</strong>
-            </div>
-        <?php
-        }
-        ?> -->
-        <div class="container">
-        <div class="wrapper">
-            <div class="header-area">
-                <h2>Sign Up As User</h2>
-                <p>Or join with</p>
-            </div>
-            <div class="social-area">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-google"></i>
-                <i class="fa fa-linkedin"></i>
-            </div>
-            <form action="" method="POST" enctype="multipart/form-data">
-                <div class="form-area">
-                    <i class="fa fa-user"></i>
-                    <input type="text" name="name" placeholder="Enter Username" required>
-                    <i class="fa fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Enter Email Address" required>
-                    <i class="fa fa-location-arrow"></i>
-                    <input type="text" name="address" placeholder="Enter Address" required>
-                    <i class="fa fa-key"></i>
-                    <input type="password" name="password" placeholder="Enter Password" required>
-                    <i class="fa fa-phone"></i>
-                    <input type="text" name="phone" placeholder="Enter Phone Number" required>
-                    <input type="checkbox">
-                    <p class="terms">I will accept terms and conditions</p>
-                    <button type="submit" name="submit" value="">Submit</button>
-                </div>
-            </form>
-        </div>
-        </div>
-     
-        <?php 
-    include("footer.php");
     
-    ?>
+
+    <?php include("navbar.php");?> 
         
+        
+
+<div class="container wrap">
+    <div class="row">
+            <div class="col-md-6 leftbox">
+
+                     <div class="header-area">
+                            <h2>Sign Up As User</h2>
+                            <p>Or join with</p>
+                     </div>
+                     <div class="social-area">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-google"></i>
+                            <i class="fa fa-linkedin"></i>
+                     </div>
+
+            </div>
+            <div class="col-md-6">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="form-area">
+                                <i class="fa fa-user"></i>
+                                <input type="text" name="name" placeholder="Enter Username" required>
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" name="email" placeholder="Enter Email Address" required>
+                                <i class="fa fa-location-arrow"></i>
+                                <input type="text" name="address" placeholder="Enter Address" required>
+                                <i class="fa fa-key"></i>
+                                <input type="password" name="password" placeholder="Enter Password" required>
+                                <i class="fa fa-phone"></i>
+                                <input type="text" name="phone" placeholder="Enter Phone Number" required>
+                                <input type="checkbox">
+                                <p class="terms">I will accept terms and conditions</p>
+                                <button type="submit" name="submit" value="">Submit</button>
+                            </div>
+                        </form>
+            </div>
+
     </div>
+  
+            
+            
+
+</div>
+
+
+
+        
+       
+     
+        <?php include("footer.php");  ?>
+        
+    
     
 
     

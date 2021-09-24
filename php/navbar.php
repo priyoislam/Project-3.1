@@ -13,10 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
 </head>
-
-<!-- navbar-expand-lg -->
 <body>
-    
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark nav_bg">
             <div class="container">
@@ -24,7 +21,6 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
@@ -50,7 +46,6 @@
             </div>
         </nav>
     </div>
-
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -60,5 +55,4 @@
     </script>
     <script src="../js/main.js"></script>
 </body>
-
 </html>

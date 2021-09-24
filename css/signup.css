@@ -9,29 +9,34 @@ body{
 }
 
 /* #63B4B8; */
- .wrapper{
+ .wrap{
 background-color: #142850;
 
 width: 800px;
-height: 500px;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
+height: 600px;
+/* position: absolute; */
+/* top: 50%;
+left: 50%; */
+/* transform: translate(-50%,-50%); */
 }
 .wrapper:before{
     content: '';
     width: 350px;
     height: 500px;
     background-color: white;
-    position: absolute;
+    /* position: absolute; */
 
 } 
+.leftbox
+
+{
+    background-color: white;
+}
 .header-area h2{ 
-    position: absolute;
+    /* position: absolute;
     top: 20%;
-    left: 20%;
-    transform: translate(-50%,-50%);
+    left: 20%; */
+    /* transform: translate(-50%,-50%); */
     width: 25%;
     border: 12px inset #fff;
     text-align: center;
@@ -41,18 +46,18 @@ transform: translate(-50%,-50%);
 
 }
 .header-area p{
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    left: 20%;
-    transform: translate(-50%,-50%);
+    left: 20%; */
+    /* transform: translate(-50%,-50%); */
     color:teal;
     font-size: 20px;
 }
 .social-area{
-    position: absolute;
+    /* position: absolute;
     top: 70%;
     left: 20%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
 }
 .social-area i{
     width: 28px;
@@ -73,12 +78,12 @@ transform: translate(-50%,-50%);
     background-color: #bd081c;
 }
 .form-area{
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 70%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     width: 350px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 }
 .form-area input{
@@ -94,7 +99,7 @@ transform: translate(-50%,-50%);
     .form-area i{
         width: 20px;
         margin-top: 15px;
-        position: absolute;
+        /* position: absolute; */
     }
     .form-area input[type=checkbox]{
         margin: 20px 0 0 2px;
