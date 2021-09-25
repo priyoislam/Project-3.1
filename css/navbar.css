@@ -1,7 +1,7 @@
-.header{
+/* .header{
     width: 100%;
-}
-.nav_bg{
+} */
+/* .nav_bg{
     background-color: #142850;
     color: #DAE1E7;
 }
@@ -9,4 +9,65 @@
 .btn_src:hover{
     background-color: #142850;
     color: #DAE1E7;
+} */
+
+
+
+.navbar{
+    width: 100%;
+    background-color:#142850;
+    font-size: 20px;
+    
+}
+.nav{
+    margin-left: 60px;
+    
+    
+}
+.nav li a{
+   
+    color: #86c17a;
+    
+}
+.nav li:hover{
+    color: navy;
+    background: transparent;
+}
+/* Header */
+
+
+
+.nav-item li a{
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    line-height: 1.42857143;
+    color: black;
+
+    
+    font-family: 'open sans', arial, sans-serif;
+    box-sizing: border-box;
+    /*  position: absolute;  */
+    top: 100%;
+    left: 0;
+    /* z-index: 1000; */
+    float: left;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    /* display: block; */
+    border-radius: 0;
+    background-clip: padding-box;
+    margin: 0;
+    border: none;
+    padding: 0;
+    text-transform: none;
+    min-width: 220px;
+
+}
+.searchbar
+{
+    display: flex;
+    justify-content: space-around;
 }
