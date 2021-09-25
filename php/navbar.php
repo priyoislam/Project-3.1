@@ -34,18 +34,19 @@
 
 
     <div class="row">
+
+
         <div class="top-nav d-flex justify-content-center">
 
 
-            
-
-                    <div class="">
+                    <div >
 
                         <img class="logo" src="../image/logo">
 
                     </div>
 
-                    <div class="topright">
+                    <div class="topright d-flex">
+
 
                             <div class="logbtn ">
                                     
@@ -66,6 +67,68 @@
 
                     </div>
 
+     </div>
+    </div>
+
+             <div class="row">
+
+                  <div class="low-nav d-flex justify-content-center">
+
+
+                            <div>
+                                        <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-center ">
+
+
+                                                <ul class="navbar-nav  nav-tabs ">
+                                                    <li class="nav-item ">
+                                                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="../#">About</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="../blog.html">Blog</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="../blog.html">Tributes</a>
+                                                    </li>
+
+                                                </ul>
+
+
+
+                                            </nav>
+
+
+
+                            </div>
+
+
+                            <div class="d-flex  searchbar">
+                                
+
+                                            <div>
+                                                <input class="form-control  form-search" type="search" placeholder="Search" aria-label="Search">
+                                            </div>
+                                            <div>
+                                                <button class="btn btn_src" type="submit">Search</button>
+                                            </div>          
+                                                    
+
+                            </div>
+
+
+                                
+
+                     </div>
+
+       
+
+
+
+                    
+                </div>
+
     </div>
 
    
@@ -74,65 +137,11 @@
                 
 
 
-        </div>
+     
 
 
 
-        <div class="row ">
-
-              
-
-                
-
-            <div class=" col-md-10 ">
-                
-                <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-center ">
-
-
-                    <ul class="navbar-nav  nav-tabs ">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../blog.html">Tributes</a>
-                        </li>
-                      
-                     </ul>
-            
-                     
-                       
-                  </nav>
-
-            </div>
-
-
-
-            <div class=" col-md-2">
-                
-                <div class=" d-flex  searchbar ">
-                    
-                
-                    <div>
-                        <input class="form-control  form-search" type="search" placeholder="Search" aria-label="Search">
-                    </div>
-                    <div>
-                        <button class="btn btn_src" type="submit">Search</button>
-                    </div>
-
-            </div>
-            
-            </div>
-
-
-
-        </div>
-
+       
 
     </div>
 

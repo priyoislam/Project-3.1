@@ -1,8 +1,5 @@
 
-body
-{
-   
-}
+
 
 .navbar{
     /* width: 100%; */
@@ -18,15 +15,11 @@ body
     height: 150px;
     width: 200px;
 }
-.col-md-10
-{
-    padding-right: 0px;
-    background-color:#142850 ;
 
-}
 
 .nav{
-    margin-left: 60px;
+
+    /* margin-left: 60px; */
     
     
 }
@@ -80,10 +73,10 @@ body
     color:#142850 ;
     border-color: white;
     border-radius: 5px;
-    width: 145px;
+    width: 150px;
     margin-right: 5px;
     text-align: center;
-    margin-left: 2px;
+    /* margin-left: 2px; */
 
 }
 
@@ -92,37 +85,44 @@ body
 {
     background-color: white;
     color:#142850 ;
-    margin-left: 2px;
-}
-.col-md-2{
 
-    /* background-color:#142850; */
-    background-color:#142850 ;
-   
-   
-
+    margin-left: 5px;
+    height: 40px;
 }
 
-.form-control
+
+input.form-control.form-search
 {
-    height: calc(1.5em + .75rem + 9px);
+    height: 40px;
 }
 .searchbar
 {
-    padding-top: 15px;
-    padding-right: 15px;
-    height: 30px;
+    /* padding-top: 15px;
+    padding-right: 15px; */
+    /* height: 30px; */
+    position: absolute;
+    top: 25px;
+    right: 75px;
+    font-size: 18px;
 }
 
 .top-nav
 {
     position: relative;
+    background-color: #142850;
+}
+
+.low-nav
+{
+    position: relative;
+    background-color: #142850;
 
 }
+
 .topright {
     position: absolute;
-    top: 8px;
-    right: 16px;
-    font-size: 18px;
-  }
+    top: 50px;
+    right: 70px;
+    font-size: 30px;
+ }
 
