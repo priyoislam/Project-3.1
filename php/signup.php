@@ -29,7 +29,7 @@ if ($connect) {
         }
     }
 } else {
-    echo "not added";
+   // echo "not added";
 }
 
 ?>
@@ -52,46 +52,67 @@ if ($connect) {
 </head>
 
 <body>
-<?php include("navbar.php");?>
-    <div class="bg">
-        <?php if (strcmp($msg, 'This Email is already existed') == 0) { ?>
-            <div class="alert alert-danger">
-                <strong style="color:white;">Wrong! This Email already exists.</strong>
-            </div>
-        <?php
-        }
-        ?>
-        <div class="wrapper">
-            <div class="header-area">
-                <h2>Sign Up As User</h2>
-                <p>Or join with</p>
-            </div>
-            <div class="social-area">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-google"></i>
-                <i class="fa fa-linkedin"></i>
-            </div>
-            <form action="" method="POST" enctype="multipart/form-data">
-                <div class="form-area">
-                    <i class="fa fa-user"></i>
-                    <input type="text" name="name" placeholder="Enter Username" required>
-                    <i class="fa fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Enter Email Address" required>
-                    <i class="fa fa-location-arrow"></i>
-                    <input type="text" name="address" placeholder="Enter Address" required>
-                    <i class="fa fa-key"></i>
-                    <input type="password" name="password" placeholder="Enter Password" required>
-                    <i class="fa fa-phone"></i>
-                    <input type="text" name="phone" placeholder="Enter Phone Number" required>
-                    <input type="checkbox">
-                    <p class="terms">I will accept terms and conditions</p>
-                    <button type="submit" name="submit" value="">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
-    <?php include("footer.php");?>
+
+    
+
+    <?php include("navbar.php");?> 
+        
+        
+
+<div class="container wrap">
+    <div class="row">
+            <div class="col-md-6 leftbox">
+
+                     <div class="header-area">
+                            <h2>Sign Up As User</h2>
+                            <p>Or join with</p>
+                     </div>
+                     <div class="social-area">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-google"></i>
+                            <i class="fa fa-linkedin"></i>
+                     </div>
+
+            </div>
+            <div class="col-md-6">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="form-area">
+                                <i class="fa fa-user"></i>
+                                <input type="text" name="name" placeholder="Enter Username" required>
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" name="email" placeholder="Enter Email Address" required>
+                                <i class="fa fa-location-arrow"></i>
+                                <input type="text" name="address" placeholder="Enter Address" required>
+                                <i class="fa fa-key"></i>
+                                <input type="password" name="password" placeholder="Enter Password" required>
+                                <i class="fa fa-phone"></i>
+                                <input type="text" name="phone" placeholder="Enter Phone Number" required>
+                                <input type="checkbox">
+                                <p class="terms">I will accept terms and conditions</p>
+                                <button type="submit" name="submit" value="">Submit</button>
+                            </div>
+                        </form>
+            </div>
+
+    </div>
+  
+            
+            
+
+</div>
+
+
+
+        
+       
+     
+        <?php include("footer.php");  ?>
+        
+    
+    
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

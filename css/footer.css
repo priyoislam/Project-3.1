@@ -1,6 +1,29 @@
-.blog_footer{
+/* .blog_footer{
     color: #DAE1E7;
     background-color: #142850;
     bottom: 0;
     width: 100%;
+} */
+
+.main-footer
+{
+    background-color: #1a3c81;
+    padding: 15px 0px 30px 100px;
+    margin-top: 10px;
+    color: white;
+    align-items: right;
+    
+}
+.main-footer .f_logo img
+{
+    height: 200px;
+}
+
+
+.copyright
+{
+    background-color: #142850;
+    padding: 10px 0px 0px 0px;
+    color: white;
+
 }

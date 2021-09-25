@@ -34,6 +34,8 @@
 
 <body>
 <?php include("navbar.php");?>
+
+
     <div class="hero-image">
         <div class="hero-text">
             <h1>Our Blog</h1>
@@ -41,7 +43,7 @@
         </div>
     </div>
 
-    <div class="product container mt-5">
+    <div class="product container ">
         <?php
         if ($connect) {
             $art = "SELECT * from blog inner join author using(Author_ID)";
