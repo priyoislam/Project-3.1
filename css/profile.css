@@ -5,7 +5,7 @@
 
 .skill-row {
     width: 45%;
-    margin: 50px auto 90px auto;
+    margin: 40px auto 90px auto;
     text-align: left;
     height: 40%;
  
@@ -17,7 +17,7 @@
     width: 32%;
     float: right;
     margin-left: 30px;
-    margin-top: auto;
+    margin-top: 0px;
     margin-bottom: 40px;
    
   }
@@ -73,7 +73,7 @@
     line-height: 1em;
 }
 .tbl_1{
-    background-color:#CCCCFF;
+    background-color:#659EC7;
 }
 table-hover{
     background-color: #ADD8E6;
@@ -105,12 +105,12 @@ table-hover{
 }
 .dec{
     font-size: 20px;
-    background-color: #D5D6EA;
+    background-color: #A0CFEC;
 
 }
 .decr{
   
-    background-color: #D5D6EA;
+    background-color: #A0CFEC;
 }
 .dec_4{
     width: 40%;
@@ -195,7 +195,7 @@ card-footer,
     background-clip: padding-box
 }
 .crd_1{
-    background-color:#FAF9F6;
+    background-color:#A0CFEC;
     font-size: 18px;
 }
 .headd{
@@ -226,7 +226,7 @@ ul.demo {
   .tbl-1{
       width: 80%;
       margin-left: 130px;
-      background-color: #D5D6EA;
+      background-color: #A0CFEC;
       border: none;
      
   }
@@ -271,14 +271,14 @@ font-size: bolder;
   .biograph{
     width: 90%;
     margin-left: 75px;
-    background-color: #CECECE;
+    background-color: #A0CFEC;
     border: none;
   }
   .city{
       width: 90%;
       margin-left: 75px;
-      background-color: #D5D6EA;
+      background-color: #A0CFEC;
   }
   .carthy{
-      background-color:#CECECE;
+      background-color:#A0CFEC;
   }
