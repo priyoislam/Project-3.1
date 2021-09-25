@@ -10,7 +10,7 @@ if ($connect) {
         $res = mysqli_query($connect, $sql);
         if (mysqli_num_rows($res) > 0) {
             $_SESSION['email'] = $U_mail;
-            header('location:login.php');
+            header('location:user_profile.php');
         } else {
             header('location:signup.php');
         }
