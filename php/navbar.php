@@ -46,9 +46,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Sign up</a>
                         </li>
-                        <li>
-                        <form class="d-flex" style="padding-top:10px;">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-light btn_src" type="submit">Search</button>
                         </form>
 

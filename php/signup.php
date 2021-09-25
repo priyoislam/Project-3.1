@@ -1,8 +1,6 @@
 <?php
 include('dbcon.php');
 SESSION_start();
-
-
 $msg = "";
 
 if ($connect) {
@@ -22,7 +20,7 @@ if ($connect) {
             $res = mysqli_query($connect, $sql);
             if ($res) {
                 $_SESSION['email'] = $U_mail;
-                header('location:signup.php');
+                header('location:user_profile.php');
             } else {
                 echo "not added";
             }
