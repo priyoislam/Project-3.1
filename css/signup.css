@@ -1,23 +1,35 @@
 body{
-    margin:0;
+    /* margin:0;
     padding:0;
     font-family:"Open Sans",sans-serif;
-    /* background-color: #63B4B8; */
-   /* -webkit-background-size:cover; */
-   /* background-size:cover; */
+    background-color: #63B4B8; 
+   -webkit-background-size:cover; 
+    background-size:cover; */
+    background-color: red;
 
+}
+.signuprow
+
+{
+    
 }
 
 /* #63B4B8; */
  .wrap{
 background-color: #142850;
 
-width: 800px;
+ width: 800px;
 height: 600px;
-/* position: absolute; */
+margin: 100px;
+
+border-radius: 5px;
+/* border-width: 10px; */
+border-style: solid;
+border-color:#142850;
+/* position: relative;  */
 /* top: 50%;
 left: 50%; */
-/* transform: translate(-50%,-50%); */
+/* transform: translate(-50%,-50%);  */
 }
 .wrapper:before{
     content: '';
@@ -31,12 +43,14 @@ left: 50%; */
 
 {
     background-color: white;
+    
+
 }
 .header-area h2{ 
     /* position: absolute;
     top: 20%;
-    left: 20%; */
-    /* transform: translate(-50%,-50%); */
+    left: 20%; 
+    transform: translate(-50%,-50%); */
     width: 25%;
     border: 12px inset #fff;
     text-align: center;
@@ -48,8 +62,8 @@ left: 50%; */
 .header-area p{
     /* position: absolute;
     top: 50%;
-    left: 20%; */
-    /* transform: translate(-50%,-50%); */
+    left: 20%; 
+     transform: translate(-50%,-50%); */
     color:teal;
     font-size: 20px;
 }
@@ -83,7 +97,8 @@ left: 50%; */
     left: 70%;
     transform: translate(-50%,-50%); */
     width: 350px;
-    /* overflow: hidden; */
+    color: white;
+    overflow: hidden;
 
 }
 .form-area input{
@@ -93,23 +108,27 @@ left: 50%; */
     border-bottom-color: whitesmoke;
     background: transparent;
     width: 100%;
-    height: 50px;
+    height: 70px;
     margin-bottom: 10px;
+    color: white;
 }
     .form-area i{
         width: 20px;
-        margin-top: 15px;
+        margin-top: 25px;
+        height: 20px;
+        font-size: 20px;
         /* position: absolute; */
     }
     .form-area input[type=checkbox]{
         margin: 20px 0 0 2px;
         padding: 0;
         border:2px solid #262626;
-        width: 15px;
-        height:15px;
+        width: 25px;
+        height:25px;
         -webkit-appearance: none;
         background-color: whitesmoke;
         outline: none;
+        
     } 
     input:checked[type=checkbox]{
         background-color: black;

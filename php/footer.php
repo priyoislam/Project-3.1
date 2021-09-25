@@ -14,14 +14,12 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/fontawesome.min.css">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/footer.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="../css/animate.min.css">
 </head>
 
 <body>
 
-
-<div class="container-fluid">
 
 
 <footer class="footer">
@@ -72,7 +70,6 @@
   </div>
 </footer>
 
-</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

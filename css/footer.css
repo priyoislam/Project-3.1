@@ -1,120 +1,22 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: poppins;
-    box-sizing: border-box;
-}
-body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
 
-}
-.about-section{
-    background:url(../image/ig11.jpg) no-repeat left;
-    background-size:75%;
-    background-color:rgb(255, 255, 255);
-    overflow: hidden;
-padding: 90px 0;
-
-}
-.inner-container{
-width:70%;
-float:right;
-background-color: #c0cac2;
-padding:90px;
-}
-.inner-container h1{
-    margin-bottom: 30px;
-    font-size:30px;
-    font-weight: 900;
-}
-.text{
-    font-size: 17px;
-    color: black;
-    line-height: 1.5;
-    text-align: justify;
-    margin-bottom: 40px;
-}
-.skills{
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700;
-    font-size: 13px;
-}
-@media screen and (max-width:1200px){
-    .inner-container{
-        padding: 80px;
-    }
-    
-}
-
-@media screen and (max-width:1000px){
-    .about-section{
-        background-size: 100%;
-        padding: 100px 40px;
-    }
-    .inner-container{
-        width: 100%;
-    }
-    
-}
-@media screen and (max-width:600px){
-    .about-section{
-       padding: 0;
-    }
-    .inner-container{
-     padding:60px;
-    }
-    
-}
-*,*:before,*:after{
-    box-sizing: border-box;
-}
-body{
-    font-family: poppins;
-    margin: 0;
-    display: grid;
-    font-size: 14px;
-}
-main{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    color:#9b9b9b;
-    line-height: 1.5;
-    font-size: 15px;
-    /* text-transform: */
-    font-weight: bold;
-
-}
 footer{
-    display: -webkit-flex;
+    /* display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
-    display: -o-flex;
+    display: -o-flex; */
     display: flex;
     flex-flow: row wrap;
     padding: 50px;
     color: #fff;
     background-color: #011c39;
-
+    margin: 0px;
+padding-left: 300px;
 
 }
 .footer > *{
     flex:1 100%;
 }
-.footer-left{
-    margin-right: 1.25em;
-    margin-bottom: 2em;
 
-}
 .footer-left img{
     width: 20%;}
     h2{
@@ -190,27 +92,3 @@ footer{
     color: #fff;
     font-size: 15px;
 }
-.cardd2{
-    margin-right: 20px;
-    margin-left: 20px;
-    padding-left:20px;
-    width: 95%;
-}
-
-.cardd1{
-    margin-right:10px;
-   margin-left: 20px;
-  
-    width: 95%;
-}
-.cardclr{
-    color: blue;
-    font-weight: bold;
-}
-.cardclr1{
-    color: black;
-    font-size: 16px;}
-    .faq1{
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
