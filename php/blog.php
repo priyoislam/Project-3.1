@@ -16,6 +16,12 @@
             }
 ?>
 
+<?php
+        if ($connect) {
+            $art = "SELECT * from blog inner join author using(Author_ID)";
+            $res = mysqli_query($connect, $art);
+        ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,13 +48,32 @@
             <p><q>Reading is essential for those who seek to rise above the ordinary.</q></p>
         </div>
     </div>
+    <form class="d-flex col-12 text-center">
+    <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputName">Topic
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputYear">Date
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputYear">Date
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputYear">Date
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </label>
+                    </div>
+                </div>
+    </form>
 
-    <div class="product container ">
-        <?php
-        if ($connect) {
-            $art = "SELECT * from blog inner join author using(Author_ID)";
-            $res = mysqli_query($connect, $art);
-        ?>
+    <div class="product container mt-5">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php
                 while ($row = mysqli_fetch_assoc($res)) :
