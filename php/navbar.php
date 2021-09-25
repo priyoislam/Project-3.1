@@ -5,33 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="../css/animate.css"> -->
-    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+   
+
+<!-- CSS -->
+<link rel="stylesheet" href="../css/all.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/navbar.css">
+
+
+
+<!-- Java Script -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
    
 
 
 
-            <div class="navbar navbar-expand-lg navbar-dark nav_bg">
+<div class="container-fluid">
 
 
-                 <a class="navbar-brand" href="#">Navbar</a>
+    <div class="row">
+        <div class="top-nav d-flex justify-content-center">
 
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            
+
+                    <div class="">
+
+                        <img class="logo" src="../image/logo">
+
+                    </div>
+
+                    <div class="topright">
+
+                            <div class="logbtn ">
+                                    
+                                    <a href="#"><button type="button " class="btn  btn-lg">Login</button></a>
+                                                
+                                            
+                                                
+                            </div>
+
+
+                            <div class="logbtn">
+                                            
+                                    <a href="#"><button type="button " class="btn btn-lg">Sign Up</button></a>
+                                                
+                                            
+                                                
+                            </div>
+
+                    </div>
+
+    </div>
+
+   
                 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                
+
+
+        </div>
+
+
+
+        <div class="row ">
+
+              
+
+                
+
+            <div class=" col-md-10 ">
+                
+                <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-center ">
+
 
                     <ul class="navbar-nav  nav-tabs ">
-                        <li class="nav-item active">
+                        <li class="nav-item ">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -41,29 +100,48 @@
                             <a class="nav-link" href="../blog.html">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sign in</a>
+                            <a class="nav-link" href="../blog.html">Tributes</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sign up</a>
-                        </li>
-                        <form class="d-flex">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-light btn_src" type="submit">Search</button>
-                        </form>
-
-                        </li>
-                    </ul>
-         
+                      
+                     </ul>
+            
+                     
+                       
+                  </nav>
 
             </div>
+
+
+
+            <div class=" col-md-2">
+                
+                <div class=" d-flex  searchbar ">
+                    
+                
+                    <div>
+                        <input class="form-control  form-search" type="search" placeholder="Search" aria-label="Search">
+                    </div>
+                    <div>
+                        <button class="btn btn_src" type="submit">Search</button>
+                    </div>
+
+            </div>
+            
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
    
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/wow.js"></script>
-    <script>
-        new WOW.init();
-    </script>
+
     <script src="../js/main.js"></script>
 </body>
 </html>

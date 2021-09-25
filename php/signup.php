@@ -52,10 +52,7 @@ if ($connect) {
 <body>
 
 
-    
 
-    <?php include("navbar.php");?> 
-        
         
 
 <div class="container wrap">

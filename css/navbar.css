@@ -1,37 +1,40 @@
-/* .header{
-    width: 100%;
-} */
-/* .nav_bg{
-    background-color: #142850;
-    color: #DAE1E7;
+
+body
+{
+   
 }
-
-.btn_src:hover{
-    background-color: #142850;
-    color: #DAE1E7;
-} */
-
-
 
 .navbar{
-    width: 100%;
+    /* width: 100%; */
     background-color:#142850;
-    font-size: 20px;
+    font-size: 30px;
+  
+    
     
 }
+
+.logo
+{
+    height: 150px;
+    width: 200px;
+}
+.col-md-10
+{
+    padding-right: 0px;
+    background-color:#142850 ;
+
+}
+
 .nav{
     margin-left: 60px;
     
     
 }
-.nav li a{
-   
-    color: #86c17a;
-    
-}
+
 .nav li:hover{
-    color: navy;
-    background: transparent;
+    /* color: navy; */
+    /* background: transparent; */
+    
 }
 /* Header */
 
@@ -39,24 +42,21 @@
 
 .nav-item li a{
 
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
     line-height: 1.42857143;
-    color: black;
-
-    
-    font-family: 'open sans', arial, sans-serif;
+    /* color: #3CF6FF; */
     box-sizing: border-box;
-    /*  position: absolute;  */
-    top: 100%;
+     position: absolute;  
+    top: 100%; 
     left: 0;
     /* z-index: 1000; */
     float: left;
-    font-size: 14px;
+    font-size: 20px;
     text-align: left;
     list-style: none;
-    background-color: #fff;
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    /* display: block; */
+    /* background-color: #fff; */
+    /* box-shadow: 0 6px 12px rgba(0,0,0,.175);  */
+    display: block; 
     border-radius: 0;
     background-clip: padding-box;
     margin: 0;
@@ -66,8 +66,63 @@
     min-width: 220px;
 
 }
+
+.btn 
+{
+    background-color: white;
+    color:#142850 ;
+
+}
+
+.logbtn 
+{
+    background-color: white;
+    color:#142850 ;
+    border-color: white;
+    border-radius: 5px;
+    width: 145px;
+    margin-right: 5px;
+    text-align: center;
+    margin-left: 2px;
+
+}
+
+
+.searchbar .btn
+{
+    background-color: white;
+    color:#142850 ;
+    margin-left: 2px;
+}
+.col-md-2{
+
+    /* background-color:#142850; */
+    background-color:#142850 ;
+   
+   
+
+}
+
+.form-control
+{
+    height: calc(1.5em + .75rem + 9px);
+}
 .searchbar
 {
-    display: flex;
-    justify-content: space-around;
+    padding-top: 15px;
+    padding-right: 15px;
+    height: 30px;
 }
+
+.top-nav
+{
+    position: relative;
+
+}
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+  }
+
