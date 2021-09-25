@@ -2,12 +2,16 @@
     margin:0;
     padding:0;
 }
+
 .skill-row {
     width: 45%;
     margin: 50px auto 90px auto;
     text-align: left;
     height: 40%;
-  
+ 
+}
+.first{
+    background-color: #6D6968;
 }
   .chilli-img {
     width: 32%;
@@ -75,7 +79,7 @@ table-hover{
     background-color: #ADD8E6;
 }
 .high{
-    border-width: 10px;
+    border-width: 6px;
 }
 
 .para_3{
@@ -89,8 +93,8 @@ table-hover{
     line-height: 1.5em;
 }
 .tebb{
-    width: 80%;
-   margin-left: 145px;
+    width: 90%;
+   margin-left: 75px;
 }
 .container{
     margin-left: 100px;
@@ -101,12 +105,12 @@ table-hover{
 }
 .dec{
     font-size: 20px;
-    background-color: #7393B3;
+    background-color: #D5D6EA;
 
 }
 .decr{
   
-    background-color: #C6DCF5;
+    background-color: #D5D6EA;
 }
 .dec_4{
     width: 40%;
@@ -128,7 +132,7 @@ table-hover{
     font-weight: 600;
 }
 body {
-    background-color: #f9f9fae7
+    background-color: #f9f9fae7;
 }
 
 .flex {
@@ -219,4 +223,62 @@ ul.demo {
       list-style-position: outside;
       text-align: left;
   }
-  
+  .tbl-1{
+      width: 80%;
+      margin-left: 130px;
+      background-color: #D5D6EA;
+      border: none;
+     
+  }
+  .roww-1{
+    float: right;
+     margin-right: 50px;
+      border: none;
+     
+  }
+  .roww-2{
+      margin-left: 50px;
+     float: left;
+  }
+  .titl{
+     text-align: left;
+      color: #6D6968;
+      font-weight: bold;
+      margin-left: 75px;
+  }
+  .iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom:40%; 
+    height: 0;
+  }
+  .iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .crl-1{
+      width: 70%;
+      height: 50%;
+     margin-left: 220px;
+  }
+  .biog{
+font-size: 25px;
+font-size: bolder;
+  }
+  .biograph{
+    width: 90%;
+    margin-left: 75px;
+    background-color: #CECECE;
+    border: none;
+  }
+  .city{
+      width: 90%;
+      margin-left: 75px;
+      background-color: #D5D6EA;
+  }
+  .carthy{
+      background-color:#CECECE;
+  }
