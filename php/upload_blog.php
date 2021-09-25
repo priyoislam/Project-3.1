@@ -21,7 +21,8 @@ if ($connect) {
                 $result = mysqli_query($connect, $input);
                 if ($result) {
                     move_uploaded_file($_FILES['image']['tmp_name'], $target);
-                    echo "added";
+                    header('location:blog.php');
+                    
                 } else {
                     echo '<script>alert("Please enter your information once again.")</script>';
                 }
