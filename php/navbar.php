@@ -56,6 +56,7 @@
                                            
                                              </div>
                                             
+                                            
                                              <?php } else{ ?>
                          <div class="logbtn">
                                              
@@ -66,13 +67,15 @@
                                            
                                              </div>
                                              <?php } ?>
-                            <div class="logbtn">
+                                             <div class="logbtn">
                                             
-                                    <a href="#"><button type="button " class="btn btn-lg">Sign Up</button></a>
-                                                
+                                            <a href="signup.php"><button type="button " class="btn btn-lg">Log Out</button></a>
+                                                        
+                                                    
+                                                        
+                                    </div>
                                             
-                                                
-                            </div>
+                           
 
                     </div>
 
