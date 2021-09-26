@@ -1,8 +1,8 @@
 <?php
 include('dbcon.php');
 session_start();
-if (isset($_SESSION['Article_ID'])) {
-    $sql = "SELECT * from blog inner join author using(Author_ID) where Article_ID='$_SESSION[Article_ID]'";
+if (isset($_SESSION['Blog_ID'])) {
+    $sql = "SELECT * from blog inner join author using(Author_ID) where Blog_ID='$_SESSION[Blog_ID]'";
     $res = mysqli_query($connect, $sql);
     $row = mysqli_fetch_assoc($res);
 }

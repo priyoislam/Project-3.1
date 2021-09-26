@@ -9,9 +9,9 @@
         header('location:blogger_profile.php');
         }
         if(isset($_GET['article'])){
-            $Article_ID=$_GET['article'];
-            $_SESSION['Article_ID']=$Article_ID;
-            echo $_SESSION['Article_ID'];
+            $Blog_ID=$_GET['article'];
+            $_SESSION['Blog_ID']=$Blog_ID;
+            echo $_SESSION['Blog_ID'];
             header('location:article.php');
             }
 ?>
@@ -91,7 +91,7 @@
                                     </a>
                                     </span>
                                 </div>
-                                <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Article_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
+                                <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
                                 <div class="d-flex align-items-center justify-content-between blog-list">
                                     <div class="author d-flex align-items-center">
                         
@@ -100,7 +100,7 @@
                                         </a>
                                     </div>
                                 
-                                    <a href="blog.php?article=<?php echo $row['Article_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
+                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
                                 </div>
                             </div>
                         </div>
