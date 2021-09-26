@@ -8,17 +8,19 @@ body{
     background-color: red;
 
 }
-.signuprow
 
+<<<<<<< HEAD
 {
  margin-top: 18px; 
 
  
 }
+=======
+>>>>>>> 40fd32e8f25f232388691751a6582cb15599ee36
 
 /* #63B4B8; */
  .wrap{
-background-color: #142850;
+background-color: #c5c5c5;
 
  width: 800px;
 height: 600px;
