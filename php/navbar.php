@@ -102,7 +102,7 @@
                                                         <a class="nav-link" href="blog.php">Blog</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="../html/profile.html">Tributes</a>
+                                                        <a class="nav-link" href="tribute.php">Tributes</a>
                                                  
                                                     </li>
 

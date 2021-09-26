@@ -1,8 +1,8 @@
 <?php
 include('dbcon.php');
 session_start();
-if ($connect) {
-    $sql = "SELECT * from scientist where Scientist_ID='1'";
+if (isset($_SESSION['Sci_ID'])) {
+    $sql = "SELECT * from scientist where Scientist_ID='$_SESSION[Sci_ID]'";
     $res = mysqli_query($connect, $sql);
     $row = mysqli_fetch_assoc($res);
 }
@@ -41,7 +41,7 @@ if ($connect) {
                     <h3 class="john"><?php echo $row['Sci_Name'];?></h3>
                     <?php 
                     if($connect){
-                    $sql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Scientist_ID='1'";
+                    $sql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Scientist_ID= '$_SESSION[Sci_ID]'";
                     $result = mysqli_query($connect, $sql1);
                     }
                     ?>
@@ -73,7 +73,7 @@ if ($connect) {
                     <li><b class="biog">Experience:</b><br>
                         <?php 
                     if($connect){
-                    $sql2 = "SELECT * from scientist inner join experience using(Scientist_ID) where Scientist_ID='1'";
+                    $sql2 = "SELECT * from scientist inner join experience using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
                     $result2 = mysqli_query($connect, $sql2);
                     }
                     ?>
@@ -97,7 +97,7 @@ if ($connect) {
                     <p class="card-text para_3">
                         <?php 
                     if($connect){
-                    $sql3 = "SELECT * from scientist inner join article using(Scientist_ID) where Scientist_ID='1'";
+                    $sql3 = "SELECT * from scientist inner join article using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
                     $result3 = mysqli_query($connect, $sql3);
                     }
                     ?>
@@ -120,7 +120,7 @@ if ($connect) {
                     <p class="card-text para_3">
                         <?php 
                     if($connect){
-                    $sql4 = "SELECT * from (scientist inner join publish using(Scientist_ID)) inner join publication using(Pub_ID) where Scientist_ID='1'";
+                    $sql4 = "SELECT * from (scientist inner join publish using(Scientist_ID)) inner join publication using(Pub_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
                     $result4 = mysqli_query($connect, $sql4);
                     }
                     ?>
@@ -188,7 +188,7 @@ if ($connect) {
         <h2 class="titl">Awards:</h2>
         <?php 
             if($connect){
-            $sql4 = "SELECT * from scientist inner join award using(Scientist_ID) where Scientist_ID='1'";
+            $sql4 = "SELECT * from scientist inner join award using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
             $result4 = mysqli_query($connect, $sql4);
             }
         ?>
@@ -222,7 +222,7 @@ if ($connect) {
             <div class="card-body ">
                         <?php 
                     if($connect){
-                    $sql5 = "SELECT * from scientist inner join videos using(Scientist_ID) where Scientist_ID='1'";
+                    $sql5 = "SELECT * from scientist inner join videos using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
                     $result5 = mysqli_query($connect, $sql5);
                     }
                     ?>
