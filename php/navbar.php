@@ -46,17 +46,26 @@
                     </div>
 
                     <div class="topright d-flex">
-
-
-                            <div class="logbtn ">
-                                    
-                                    <a href="#"><button type="button " class="btn  btn-lg">Login</button></a>
-                                                
+                    <?php if (isset($_SESSION['is_login'])){?>
+                    <div class="logbtn">
+                                             
+                       
+                                             <a href="login.php"><button type="button " class="btn btn-lg"><?php echo $_SESSION['name'];?></button></a>
+                                          
                                             
-                                                
-                            </div>
-
-
+                                           
+                                             </div>
+                                            
+                                             <?php } else{ ?>
+                         <div class="logbtn">
+                                             
+                       
+                                             <a href="login.php"><button type="button " class="btn btn-lg">Log In</button></a>
+                                          
+                                            
+                                           
+                                             </div>
+                                             <?php } ?>
                             <div class="logbtn">
                                             
                                     <a href="#"><button type="button " class="btn btn-lg">Sign Up</button></a>
