@@ -4,15 +4,22 @@ include('dbcon.php');
 
 if ($connect) {
     if (isset($_POST['login'])) {
-        $U_mail = $_POST['email'];
+        $U_name = $_POST['name'];
         $U_password = $_POST['password'];
-        $sql = "SELECT * FROM signup where email='$U_mail' AND password='$U_password'";
+        $sql = "SELECT * FROM signup where name='$U_name' AND password='$U_password'";
         $res = mysqli_query($connect, $sql);
         if (mysqli_num_rows($res) > 0) {
-            $_SESSION['email'] = $U_mail;
-            header('location:user_profile.php');
+            session_start();
+            $_SESSION['is_login']=true;
+            $_SESSION['name'] = $U_name;
+            
+                header('location:blog.php');
         } else {
-            header('location:signup.php');
+            echo "<SCRIPT> //not showing me this
+            alert('Please create an account')
+            window.location.replace('signup.php');
+        </SCRIPT>";
+           
         }
     }
 } else {
@@ -41,7 +48,7 @@ if ($connect) {
 
 <body>
     <!---start of background image-->
-    <?php include("navbar.php");?>
+    <?php require "navbar.php";?>
     <div class="bg">
         <div class="container login2">
             <div class="row ">
@@ -51,13 +58,14 @@ if ($connect) {
 
                         <form method="POST" class="mt-5" action="login.php">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-control ic" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-                                <small id="emailHelp" class="form-text text-muted text">We'll never share your email with anyone else.</small>
+                                <label for="exampleInputEmail1">Username</label>
+                                <input type="text" class="form-control ic" id="exampleInputEmail1" name="name" aria-describedby="nameHelp">
+                                
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
                                 <input type="password" class="form-control ic" name="password" id="exampleInputPassword1">
+                                <small id="emailHelp" class="form-text text-muted text">We'll never share your password with anyone else.</small>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-1 mb-3 mt-2" name="login">LOG IN</button><br>
