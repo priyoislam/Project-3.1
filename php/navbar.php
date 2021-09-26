@@ -13,7 +13,7 @@
 <!-- CSS -->
 <link rel="stylesheet" href="../css/all.min.css">
 <link rel="stylesheet" href="../css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/navbar.css?v=<?php echo time(); ?>">
 
 
 
@@ -110,9 +110,11 @@
 
                                             <div>
                                                 <input class="form-control  form-search" type="search" placeholder="Search" aria-label="Search">
+                                                
                                             </div>
                                             <div>
-                                                <button class="btn btn_src" type="submit">Search</button>
+                                                <!-- <button class="btn btn_src" type="submit">Search</button> -->
+                                                <button class="btn btn_src" type="submit"><i class="fa fa-search"></i></button>
                                             </div>          
                                                     
 

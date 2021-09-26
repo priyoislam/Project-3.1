@@ -87,13 +87,16 @@
     color:#142850 ;
 
     margin-left: 5px;
-    height: 40px;
+    height: 50px;
+    width: 50px;
+    
 }
 
 
 input.form-control.form-search
 {
-    height: 40px;
+    height: 50px;
+    width: 250px;
 }
 .searchbar
 {
@@ -101,9 +104,10 @@ input.form-control.form-search
     padding-right: 15px; */
     /* height: 30px; */
     position: absolute;
-    top: 25px;
+    top: 10px;
     right: 75px;
-    font-size: 18px;
+    font-size: 25px;
+
 }
 
 .top-nav
