@@ -43,10 +43,10 @@ if ($connect) {
     <!---start of background image-->
     <?php include("navbar.php");?>
     <div class="bg">
-        <div class="container">
-            <div class="row">
+        <div class="container login2">
+            <div class="row ">
                 <div class="col-sm-4 col-md-6 col-lg-6">
-                    <div class="jumbotron box">
+                    <div class="jumbotron login1">
                         <h1 class="sign text-center">Log In</h1>
 
                         <form method="POST" class="mt-5" action="login.php">
