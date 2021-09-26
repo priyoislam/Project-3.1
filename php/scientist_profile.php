@@ -25,13 +25,17 @@ if ($connect) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/profile.css">
+    
+    <link rel="stylesheet" href="../css/profile.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/animate.min.css">
     <script src="https://kit.fontawesome.com/5aa077ca5f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
+<?php 
+include("navbar.php");  
+?>
+        
     <tbody class="first">
         <tr>
             <td>
@@ -235,6 +239,9 @@ if ($connect) {
                         </ul>
             </div>
         </div>
+
+        <!-- <?php include("footer.php");  ?> -->
+        
         <hr class="high">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
