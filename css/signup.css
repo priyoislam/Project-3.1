@@ -77,16 +77,16 @@ left: 50%; */
     left: 20%;
     transform: translate(-50%,-50%); 
     */
-    margin-left: 170px;
+    margin-left: 180px;
 }
 .social-area i{
-    width: 8%;
-    height: 26%;
+    width: 7%;
+    height: 100%;
     padding: 4px;
     margin: 0 3px;
     box-shadow: 2px 2px 5px #fff;
        color:#fff;
-    font-size: 27px;
+    font-size: 30px;
 }
 .social-area i:nth-child(1){
     background-color: rgb(0, 153, 255);

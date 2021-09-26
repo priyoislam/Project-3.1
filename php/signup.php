@@ -42,6 +42,7 @@ if ($connect) {
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/signup.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../css/all.min.css?v=<?php echo time(); ?>">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
@@ -56,7 +57,7 @@ if ($connect) {
 
 <div class="container wrap">
     <div class="row signuprow">
-            <div class="col-md-6 leftbox  justify-content-center  flex-wrap ">
+            <div class="col-md-6 leftbox  justify-content-center  ">
 
             <div class="row">
             <div class="header-area">
@@ -66,6 +67,7 @@ if ($connect) {
 
             </div>
             <div class="row">
+                
             <div class="social-area">
                             <i class="fa fa-facebook"></i>
                             <i class="fa fa-google"></i>
