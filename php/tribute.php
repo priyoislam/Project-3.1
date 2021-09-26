@@ -35,7 +35,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/tribute.css">
+    
+    <link rel="stylesheet" href="../css/tribute.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
 </head>
@@ -48,8 +49,14 @@
         <div class="hero-text">
             <!-- <h1>Our Blog</h1> -->
             <p><q>The Best way to predict the future is to invent it.</q> - Alan Kay</p>
-            <p>We pay our Homage to the legends who invented the future</p>
+            
         </div>
+        <div class="sub-text">
+            <!-- <h1>Our Blog</h1> -->
+            <p>We pay our Homage to the legends who invented the future</p>
+            
+        </div>
+        
     </div>
     <form class="d-flex col-12 text-center">
     <div class="form-row">
