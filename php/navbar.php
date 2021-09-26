@@ -80,17 +80,18 @@
 
 
                                                 <ul class="navbar-nav  nav-tabs ">
-                                                    <li class="nav-item ">
+                                                <li class="nav-item ">
                                                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="../#">About</a>
+                                                        <a class="nav-link" href="about.php">About</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="../blog.html">Blog</a>
+                                                        <a class="nav-link" href="blog.php">Blog</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="../blog.html">Tributes</a>
+                                                        <a class="nav-link" href="../html/profile.html">Tributes</a>
+                                                 
                                                     </li>
 
                                                 </ul>
