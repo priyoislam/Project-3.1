@@ -1,22 +1,24 @@
-
 footer{
-    /* display: -webkit-flex;
+    display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
-    display: -o-flex; */
+    display: -o-flex;
     display: flex;
     flex-flow: row wrap;
     padding: 50px;
     color: #fff;
     background-color: #011c39;
-    margin: 0px;
-padding-left: 300px;
+
 
 }
 .footer > *{
     flex:1 100%;
 }
+.footer-left{
+    margin-right: 1.25em;
+    margin-bottom: 2em;
 
+}
 .footer-left img{
     width: 20%;}
     h2{
@@ -87,8 +89,4 @@ padding-left: 300px;
     main{
         font-size: 15px;
     }
-}
-.para{
-    color: #fff;
-    font-size: 15px;
 }

@@ -3,36 +3,46 @@
     padding:0;
 }
 .bg img{
-    width:100%;
+    width:90%;
     
+}
+.login1{
+    margin-top: 90px;
+    margin-left: 280px;
+   width: 100%;
+   border: cadetblue;
 }
 .bg{
     height: 100vh;
     background-position:center;
     background-size:cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image:url("../image/ig4.jpg"); 
+   
+   /* background-image:url("../image/ig4.jpg");*/
+   background-color: #4682B4; 
+}
+.login2{width: 50%;
+    border: #2B547E;
 }
 
 .box{
-    margin-top:40px;
-    background-color:transparent;
-    box-shadow:0 0 20px black;
+    margin-top:10px;
+   
     border-radius: 25px;
 }
 
 .sign{
-    color:white;
+    color:#2B547E;
     font-size: 40px;
+    font-weight: bolder;
   
 }
 label{
-     color:wheat;
+     color:#2B547E;
      font-weight: bold;
 }
 .text{
-    color: wheat !important;;
+    color:blue;;
 }
 .btn-1{
    background-color:white;
@@ -50,14 +60,14 @@ label{
    border:1px solid black;
 }
 .ic{
-    background-color:white;
+    background-color:#4682B4;
     border:2px solid whitesmoke;
 } 
 .account{
     font-weight: bolder;
     float: right;
     font-size:20 px;
-    color:white;
+    color:darkcyan;
 }
 .account:hover{
     color: turquoise;
