@@ -20,7 +20,7 @@
 
 <body>
          
-
+<?php include("navbar.php");?>
 
           <div class="about-section">
               <div class="inner-container">
@@ -51,7 +51,10 @@
                       then he and everyone else will do everything in their power to prove it wrong.
 
                       If, after sometimes hundreds or thousands of tests, the theory stands true, it becomes widly accepted as
-                      reliable.</p>
+                      reliable.
+                   </p>
+
+                   </p>
 
                   </div>
                 </div>
@@ -153,6 +156,8 @@
               </div>
 
           </main>
+
+          <?php include("footer.php");?>
 
 
 
