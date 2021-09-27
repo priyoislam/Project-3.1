@@ -36,7 +36,7 @@
 
 <div class="container-fluid" id="navs">
 
-    <div class="container-fluid">
+    
 
 
         <div class="row">
@@ -158,7 +158,7 @@
 
         </div>
 
-    </div>
+    
 
 
 
