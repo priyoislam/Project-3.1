@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 26, 2021 at 07:14 PM
+-- Generation Time: Sep 26, 2021 at 08:35 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -251,6 +251,7 @@ DROP TABLE IF EXISTS `scientist`;
 CREATE TABLE IF NOT EXISTS `scientist` (
   `Scientist_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Sci_Name` varchar(100) NOT NULL,
+  `Work_place` varchar(255) NOT NULL,
   `Sci_img` varchar(255) NOT NULL,
   `Birth` varchar(100) NOT NULL,
   `Death` varchar(100) NOT NULL,
@@ -260,6 +261,9 @@ CREATE TABLE IF NOT EXISTS `scientist` (
   `Pub_Count` int(100) NOT NULL,
   `Cite_Count` int(100) NOT NULL,
   `Avg_Cite_Count` int(100) NOT NULL,
+  `Youtube` varchar(255) NOT NULL,
+  `research_gate` varchar(255) NOT NULL,
+  `wikipedia` varchar(255) NOT NULL,
   PRIMARY KEY (`Scientist_ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -267,11 +271,11 @@ CREATE TABLE IF NOT EXISTS `scientist` (
 -- Dumping data for table `scientist`
 --
 
-INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Sci_img`, `Birth`, `Death`, `Education`, `Add_Info`, `Pub_Year`, `Pub_Count`, `Cite_Count`, `Avg_Cite_Count`) VALUES
-(1, 'John McCarthy', 'john_mccarthy.jpg', '4 September 1927, Boston, Massachusetts', '24 October 2011, Stanford, California', 'BS mathematics, California Institute of Technology (1948); PhD mathematics, Princeton University (1951)', 'His father, John Patrick McCarthy, was an Irish Catholic who became a labor organizer and later the Business Manager of the Daily Worker, a national newspaper owned by the Communist Party USA. His mother, Ida Glatt, was a Lithuanian Jewish immigrant who worked for a wire service, then for the Daily Worker and finally as a social worker.McCarthy considered himself an atheist.McCarthy showed an early aptitude for mathematics; during his teens he taught himself college mathematics by studying the textbooks used at the nearby California Institute of Technology (Caltech). As a result, he was able to skip the first two years of mathematics at Caltech.[8] McCarthy was suspended from Caltech for failure to attend physical education courses.From 1978 to 1986, McCarthy developed the circumscription method of non-monotonic reasoning.McCarthy was a serious book reader, an optimist, and a staunch supporter of free speech. His best Usenet interaction is visible in rec.arts.books archives.', '1962-2002', 11, 336, 31),
-(2, 'ML Minsky', '', '', '', '', '', '', 0, 0, 0),
-(3, 'N Rochester', '', '', '', '', '', '', 0, 0, 0),
-(4, 'CE Shannon', '', '', '', '', '', '', 0, 0, 0);
+INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `Birth`, `Death`, `Education`, `Add_Info`, `Pub_Year`, `Pub_Count`, `Cite_Count`, `Avg_Cite_Count`, `Youtube`, `research_gate`, `wikipedia`) VALUES
+(1, 'John McCarthy', 'Stanford University', 'john_mccarthy.jpg', '4 September 1927, Boston, Massachusetts', '24 October 2011, Stanford, California', 'BS mathematics, California Institute of Technology (1948); PhD mathematics, Princeton University (1951)', 'His father, John Patrick McCarthy, was an Irish Catholic who became a labor organizer and later the Business Manager of the Daily Worker, a national newspaper owned by the Communist Party USA. His mother, Ida Glatt, was a Lithuanian Jewish immigrant who worked for a wire service, then for the Daily Worker and finally as a social worker.McCarthy considered himself an atheist.McCarthy showed an early aptitude for mathematics; during his teens he taught himself college mathematics by studying the textbooks used at the nearby California Institute of Technology (Caltech). As a result, he was able to skip the first two years of mathematics at Caltech.[8] McCarthy was suspended from Caltech for failure to attend physical education courses.From 1978 to 1986, McCarthy developed the circumscription method of non-monotonic reasoning.McCarthy was a serious book reader, an optimist, and a staunch supporter of free speech. His best Usenet interaction is visible in rec.arts.books archives.', '1962-2002', 11, 336, 31, 'https://www.youtube.com/results?search_query=john+mccarthy+artificial+intelligence', 'https://www.researchgate.net/scientific-contributions/John-McCarthy-2029411824', 'https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)'),
+(2, 'ML Minsky', '', '', '', '', '', '', '', 0, 0, 0, '', '', ''),
+(3, 'N Rochester', '', '', '', '', '', '', '', 0, 0, 0, '', '', ''),
+(4, 'CE Shannon', '', '', '', '', '', '', '', 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
