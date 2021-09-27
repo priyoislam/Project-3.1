@@ -1,3 +1,19 @@
+<?php
+    include('dbcon.php');
+    session_start();
+    if(isset($_GET['profile'])){
+            $Sci_ID=$_GET['profile'];
+            $_SESSION['Sci_ID']=$Sci_ID;
+            header('location:scientist_profile.php');
+    }
+?>
+<?php
+if($connect){
+    $art = "SELECT * from scientist where Pub_Count!='0'";
+    $res = mysqli_query($connect, $art);
+    $valuetosearch="";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,6 +91,7 @@
 
             <?php include("searchbytopic.php");?>
             <?php include("searchbyauthor.php");?>
+            <?php include("pioneer.php");?>
 
    
     <div class="container text-center description mt-3 pioneers">
