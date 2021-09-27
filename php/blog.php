@@ -17,11 +17,21 @@
 ?>
 
 <?php
-        if ($connect) {
-            $art = "SELECT * from blog inner join author using(Author_ID)";
-            $res = mysqli_query($connect, $art);
-        ?>
-
+if(isset($_POST['search'])){
+    $valuetosearch1=$_POST['valueTosearch1'];
+    $valuetosearch2=$_POST['valueTosearch2'];
+    $valuetosearch3=$_POST['valueTosearch3'];
+    $query="SELECT * FROM blog inner join author using(Author_ID) where (Topic LIKE '%$valuetosearch1%' and  Title LIKE '%$valuetosearch2%' and Author_Name LIKE '%$valuetosearch3%')";
+    $res=mysqli_query($connect,$query);
+}
+else{
+        $art = "SELECT * from blog inner join author using(Author_ID)";
+        $res = mysqli_query($connect, $art);
+        $valuetosearch1="";
+        $valuetosearch2="";
+        $valuetosearch3="";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,16 +40,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/blog.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-<?php include("navbar.php");?>
+    <?php include("navbar.php");?>
 
 
     <div class="hero-image">
@@ -48,34 +60,35 @@
             <p><q>Reading is essential for those who seek to rise above the ordinary.</q></p>
         </div>
     </div>
-    <form class="d-flex col-12 text-center">
-    <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputName">Topic
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputYear">Date
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputYear">Date
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputYear">Date
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </label>
-                    </div>
-                </div>
+    <div class="container">
+        <h4 class="text-center m-5"><em><q>Try searching specific research papers by specific authors or even research subject!</q></em></h4>
+    </div>
+    <div class="container">
+    <form action="" method="POST" class="text-center text-info font-weight-bold">
+        <div class="form-row">
+            <label for="inputName" class="col-sm-1 col-form-label">Topic</label>
+            <div class="form-group col-md-3">
+                <input class="form-control" type="text" name="valueTosearch1" placeholder="Search by topic"
+                    value="<?php echo $valuetosearch1;?>">
+            </div>
+            <label for="inputName" class="col-sm-1 col-form-label">Title</label>
+            <div class="form-group col-md-3">
+                <input class="form-control" type="text" name="valueTosearch2" placeholder="Search by title"
+                    value="<?php echo $valuetosearch2;?>">
+            </div>
+            <label for="inputName" class="col-sm-1 col-form-label">Author</label>
+            <div class="form-group col-md-3">
+                <input class="form-control" type="text" name="valueTosearch3" placeholder="Search by author"
+                    value="<?php echo $valuetosearch3;?>">
+            </div>
+        </div>
+        <input class="form-group col-md-1 btn btn-info text-center" type="submit" name="search" value="Search"><br><br>
     </form>
 
-    <div class="product container mt-5">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php
+    </div>
+    <div class="product container mt-5 mb-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php
                 while ($row = mysqli_fetch_assoc($res)) :
                 ?>
                     <div class="col">
@@ -103,25 +116,34 @@
                                     <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
                                 </div>
                             </div>
+
+                            <a href="blog.php?article=<?php echo $row['Blog_ID'];?>"
+                                class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button"
+                                aria-disabled="true">Read full blog</a>
                         </div>
                     </div>
-                <?php endwhile; ?>
+                </div>
             </div>
-        <?php
-        }
-        ?>
+            <?php endwhile; ?>
+        </div>
     </div>
 
 
     <?php include("footer.php");?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/wow.js"></script>
     <script>
-        new WOW.init();
+    new WOW.init();
     </script>
     <script src="../js/main.js"></script>
 </body>
