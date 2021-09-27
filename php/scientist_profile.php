@@ -32,43 +32,50 @@ if (isset($_SESSION['Sci_ID'])) {
 </head>
 
 <body>
+
 <?php 
-//include("navbar.php");  
+// include("navbar.php");
 ?>
-        
-    <tbody class="first">
-        <tr>
-            <td>
-                <div class="skill-row">
-                    <img class="chilli-img" src="../image/<?php echo $row['Sci_img'];?>" alt="chillies-img">
+           <br>
+                    <table id="first">
+                            
+                    
+                            <tr>
+                                <td>
+                                    <div class="skill-row">
+                                        <img class="chilli-img" src="../image/<?php echo $row['Sci_img'];?>" alt="chillies-img">
 
-                    <h3 class="john"><?php echo $row['Sci_Name'];?></h3>
-                    <?php 
-                    if($connect){
-                    $sql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Scientist_ID= '$_SESSION[Sci_ID]'";
-                    $result = mysqli_query($connect, $sql1);
-                    }
-                    ?>
-                    <p class="mcr">
-                        <?php 
-                            while ($row1 = mysqli_fetch_assoc($result)) :
-                        ?>
-                        <span><?php echo $row1['Sub_Name'];?>, </span>
-                        <?php endwhile; ?>
-                    </p>
+                                        <h3 class="john"><?php echo $row['Sci_Name'];?></h3>
+                                        <?php 
+                                        if($connect){
+                                        $sql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Scientist_ID= '$_SESSION[Sci_ID]'";
+                                        $result = mysqli_query($connect, $sql1);
+                                        }
+                                        ?>
+                                        <p class="mcr">
+                                            <?php 
+                                                while ($row1 = mysqli_fetch_assoc($result)) :
+                                            ?>
+                                            <span><?php echo $row1['Sub_Name'];?>, </span>
+                                            <?php endwhile; ?>
+                                        </p>
 
-                </div>
-            </td>
+                                    </div>
+                                </td>
 
-        </tr>
+                            </tr>
+                            
 
-        </table>
+                    </table>
+
+     
         <hr class="high">
-        <div class="card biograph">
+        <h2 class="titl">Biography:</h2>
+        <div class="card biograph cardcss">
 
             <div class="card-body ">
                 <h2 class="card-title biog"><b>Biography</b></h2>
-                <p class="card-text para_1">
+                
                 <ul class="demo">
                     <li><b>Birth: </b><?php echo $row['Birth'];?></li>
                     <li><b>Death: </b><?php echo $row['Death'];?></li>
@@ -89,16 +96,19 @@ if (isset($_SESSION['Sci_ID'])) {
                             <?php endwhile; ?>
                         </ul>
                 </ul>
-                </p>
-
+               
             </div>
         </div>
+
+        <hr class="high">
+        <h2 class="titl">Publications:</h2>
+
         <div class="card-group city">
             <div class="card carthy">
 
                 <div class="card-body">
                     <h5 class="card-title"><b class="biog">Articles</b></h5>
-                    <p class="card-text para_3">
+                
                         <?php 
                     if($connect){
                     $sql3 = "SELECT * from scientist inner join article using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
@@ -113,14 +123,14 @@ if (isset($_SESSION['Sci_ID'])) {
 
                         <?php endwhile; ?>
                     </ul>
-                    </p>
+                  
 
                 </div>
             </div>
             <div class="card carthy">
 
                 <div class="card-body">
-                    <h5 class="card-title"><b class="biog">Publications</b></h5>
+                    <h5 class="card-title"><b class="biog">Research Papers</b></h5>
                     <p class="card-text para_3">
                         <?php 
                     if($connect){
@@ -160,7 +170,7 @@ if (isset($_SESSION['Sci_ID'])) {
         <h2 class="titl">Bibliometrics:</h2>
         <table class="table tebb">
 
-            <tbody class="decr">
+            
                 <tr class="syntax">
 
                     <td class="roww-2"><b>Publication Years</b></td>
@@ -187,10 +197,13 @@ if (isset($_SESSION['Sci_ID'])) {
                 </tr>
 
 
-            </tbody>
+            
         </table>
+
+
         <hr class="high">
         <h2 class="titl">Awards:</h2>
+
         <?php 
             if($connect){
             $sql4 = "SELECT * from scientist inner join award using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
@@ -222,6 +235,7 @@ if (isset($_SESSION['Sci_ID'])) {
             </tbody>
         </table>
         </div>
+
         <h2 class="titl">Related videos:</h2>
         <div class="card biograph">
             <div class="card-body ">
@@ -241,7 +255,9 @@ if (isset($_SESSION['Sci_ID'])) {
             </div>
         </div>
 
-        <!-- <?php include("footer.php");  ?> -->
+        <?php
+        //  include("footer.php"); 
+         ?> 
         
         <hr class="high">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

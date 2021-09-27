@@ -48,18 +48,18 @@ if($connect){
 
 
 
-<h5 class="text-center p-5 idea"><em><q>Popular Blogs !</q></em></h5>
+<h2 class="text-center p-5 home-titles"><em><q>Popular Blogs !</q></em></h2>
 <?php include("home-blog.php");?>
     
    
-    <h5 class="text-center p-5 idea"><em><q>Try searching  specific research papers by specific authors or
-            even research subject!</q></em></h5>
+    <h2 class="text-center p-5 home-titles"><em><q>Try searching  specific research papers by specific authors or
+            even research subject!</q></em></h2>
 
             <?php include("searchbytopic.php");?>
             <?php include("searchbyauthor.php");?>
             <?php include("pioneer.php");?>
 
-
+            <h2 class="text-center p-5 home-titles"><em><q>Pioneers of Computer Science!</q></em></h2>
             <?php include("home-tribute.php");?>
 
    

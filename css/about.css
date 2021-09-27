@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: poppins;
+    /* font-family: poppins; */
     box-sizing: border-box;
 }
 body{
@@ -38,7 +38,7 @@ padding:90px;
     color: #142850;
 }
 .text{
-    font-size: 17px;
+    /* font-size: 17px; */
     color: #142850;
     line-height: 1.5;
     text-align: justify;
@@ -83,7 +83,7 @@ body{
     font-family: poppins;
     margin: 0;
     display: grid;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 main{
     display: -webkit-flex;

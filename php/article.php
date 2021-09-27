@@ -30,7 +30,7 @@ if (isset($_SESSION['Blog_ID'])) {
         <img src="../image/<?php echo $row['Image']; ?>" class="img-fluid banner" alt="Banner image for blog">
     </div>
 
-    <div class="container">
+    <div class="container" id="artc">
         <div class="content">
             <h1 class="text-center m-4"><?php echo $row['Title']; ?></h1>
             <h3 class="text-center"><?php echo $row['Author_Name']; ?></h3>

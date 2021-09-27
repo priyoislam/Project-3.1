@@ -1,9 +1,9 @@
-body{
+/* body{
     font-family: 'Merriweather', serif;
     margin: 0;
-    background-color: white; /* For browsers that do not support gradients */
+    background-color: white; 
     background-size: cover;
-}
+} */
 
 .blog_post{
     background-color: #DAE1E7;
