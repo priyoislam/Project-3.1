@@ -34,7 +34,7 @@ if (isset($_SESSION['Sci_ID'])) {
 <body>
 
 <?php 
-// include("navbar.php");
+include("navbar.php");
 ?>
            <br>
                     <table id="first">
@@ -71,106 +71,118 @@ if (isset($_SESSION['Sci_ID'])) {
      
         <hr class="high">
         <h2 class="titl">Biography:</h2>
-        <div class="card biograph cardcss">
+        <div id="cardcss">
+        <div class="biograph card">
 
-            <div class="card-body ">
-                <h2 class="card-title biog"><b>Biography</b></h2>
-                
-                <ul class="demo">
-                    <li><b>Birth: </b><?php echo $row['Birth'];?></li>
-                    <li><b>Death: </b><?php echo $row['Death'];?></li>
-                    <li><b>Education: </b><?php echo $row['Education'];?></li>
-                    <li><b>Additional Info: </b><?php echo $row['Add_Info'];?></li>
-                    <li><b class="biog">Experience:</b><br>
-                        <?php 
-                    if($connect){
-                    $sql2 = "SELECT * from scientist inner join experience using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
-                    $result2 = mysqli_query($connect, $sql2);
-                    }
-                    ?>
-                        <ul>
+                <div class="card-body ">
+                    <h2 class="card-title biog"><b>Biography</b></h2>
+                    
+                    <ul class="demo">
+                        <li><b>Birth: </b><?php echo $row['Birth'];?></li>
+                        <li><b>Death: </b><?php echo $row['Death'];?></li>
+                        <li><b>Education: </b><?php echo $row['Education'];?></li>
+                        <li><b>Additional Info: </b><?php echo $row['Add_Info'];?></li>
+                        <li><b class="biog">Experience:</b><br>
                             <?php 
-                            while ($row2 = mysqli_fetch_assoc($result2)) :
+                        if($connect){
+                        $sql2 = "SELECT * from scientist inner join experience using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
+                        $result2 = mysqli_query($connect, $sql2);
+                        }
                         ?>
-                            <li><?php echo $row2['experience'];?></li>
-                            <?php endwhile; ?>
-                        </ul>
-                </ul>
-               
-            </div>
-        </div>
+                            <ul>
+                                <?php 
+                                while ($row2 = mysqli_fetch_assoc($result2)) :
+                            ?>
+                                <li><?php echo $row2['experience'];?></li>
+                                <?php endwhile; ?>
+                            </ul>
+                    </ul>
+   
+</div>
+</div>
 
+
+        </div>
+       
         <hr class="high">
         <h2 class="titl">Publications:</h2>
 
         <div class="card-group city">
-            <div class="card carthy">
+            
+                    <div class="card carthy">
 
-                <div class="card-body">
-                    <h5 class="card-title"><b class="biog">Articles</b></h5>
-                
-                        <?php 
-                    if($connect){
-                    $sql3 = "SELECT * from scientist inner join article using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
-                    $result3 = mysqli_query($connect, $sql3);
-                    }
-                    ?>
-                    <ul class="demo" style="list-style-type:circle">
-                        <?php 
-                            while ($row3 = mysqli_fetch_assoc($result3)) :
-                        ?>
-                        <a href="<?php echo $row3['Article_Link'];?>"><?php echo $row3['Article_Name'];?></a></li><br><br>
+                        <div class="card-body">
+                            <h5 class="card-title"><b class="biog">Articles</b></h5>
 
-                        <?php endwhile; ?>
-                    </ul>
-                  
-
-                </div>
-            </div>
-            <div class="card carthy">
-
-                <div class="card-body">
-                    <h5 class="card-title"><b class="biog">Research Papers</b></h5>
-                    <p class="card-text para_3">
-                        <?php 
-                    if($connect){
-                    $sql4 = "SELECT * from (scientist inner join publish using(Scientist_ID)) inner join publication using(Pub_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
-                    $result4 = mysqli_query($connect, $sql4);
-                    }
-                    ?>
-                    <ul class="demo">
-                        <?php 
-                            while ($row4 = mysqli_fetch_assoc($result4)) :
-                        ?>
-                        <a href="<?php echo $row4['Pub_Link'];?>"><?php echo $row4['Pub_Name'];?></a><br>
-                        <span class="fs-.5">Cited by: <?php echo $row4['Citation_Count'];?></span><br>
-                        <span class="text-muted">
-                            <?php 
-                                if($connect){
-                                    $pubid=$row4['Pub_ID'];
-                                $sql5 = "SELECT * from (scientist inner join publish using(Scientist_ID)) inner join publication using(Pub_ID) where Pub_ID=$pubid";
-                                $result5 = mysqli_query($connect, $sql5);
-                                }
-                                while ($row5 = mysqli_fetch_assoc($result5)) :     
+                                <?php 
+                            if($connect){
+                            $sql3 = "SELECT * from scientist inner join article using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
+                            $result3 = mysqli_query($connect, $sql3);
+                            }
                             ?>
-                            <?php echo $row5['Sci_Name'];?>.
-                            <?php endwhile; ?>
-                        </span><br>
-                        <?php endwhile; ?>
-                    </ul>
-                    </ul>
-                    </p>
+                            <ul class="demo" style="list-style-type:circle">
+                                <?php 
+                                    while ($row3 = mysqli_fetch_assoc($result3)) :
+                                ?>
+                                <a href="<?php echo $row3['Article_Link'];?>"><?php echo $row3['Article_Name'];?></a></li><br><br>
 
-                </div>
+                                <?php endwhile; ?>
+                            </ul>
+                        
+
+                        </div>
+                    </div>
+
+           
+            
+                <div class="card carthy ">
+
+                        <div class="card-body">
+                            <h5 class="card-title"><b class="biog">Research Papers</b></h5>
+                            <p class="card-text para_3">
+                                <?php 
+                            if($connect){
+                            $sql4 = "SELECT * from (scientist inner join publish using(Scientist_ID)) inner join publication using(Pub_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
+                            $result4 = mysqli_query($connect, $sql4);
+                            }
+                            ?>
+                            <ul class="demo">
+                                <?php 
+                                    while ($row4 = mysqli_fetch_assoc($result4)) :
+                                ?>
+                                <a href="<?php echo $row4['Pub_Link'];?>"><?php echo $row4['Pub_Name'];?></a><br>
+                                <span class="fs-.5">Cited by: <?php echo $row4['Citation_Count'];?></span><br>
+                                <span class="text-muted">
+                                    <?php 
+                                        if($connect){
+                                            $pubid=$row4['Pub_ID'];
+                                        $sql5 = "SELECT * from (scientist inner join publish using(Scientist_ID)) inner join publication using(Pub_ID) where Pub_ID=$pubid";
+                                        $result5 = mysqli_query($connect, $sql5);
+                                        }
+                                        while ($row5 = mysqli_fetch_assoc($result5)) :     
+                                    ?>
+                                    <?php echo $row5['Sci_Name'];?>.
+                                    <?php endwhile; ?>
+                                </span><br>
+                                <?php endwhile; ?>
+                            </ul>
+                            </ul>
+                            </p>
+
+                        </div>
+               
+
             </div>
+            
         </div>
 
 
         <hr class="high">
         <h2 class="titl">Bibliometrics:</h2>
-        <table class="table tebb">
+        <div class="tebb">
+        <table class="table ">
 
-            
+                                
                 <tr class="syntax">
 
                     <td class="roww-2"><b>Publication Years</b></td>
@@ -196,9 +208,16 @@ if (isset($_SESSION['Sci_ID'])) {
                     <td class="roww-1"><?php echo $row['Avg_Cite_Count'];?></td>
                 </tr>
 
+                </table>
 
-            
-        </table>
+
+        </div>
+        
+        
+
+       
+     
+       
 
 
         <hr class="high">
@@ -210,8 +229,8 @@ if (isset($_SESSION['Sci_ID'])) {
             $result4 = mysqli_query($connect, $sql4);
             }
         ?>
-
-        <table class="table tebb">
+        <div class="tebb">
+        <table class="table">
             <thead>
                 <tr class="dec">
                     <th scope="col"></th>
@@ -221,7 +240,7 @@ if (isset($_SESSION['Sci_ID'])) {
 
                 </tr>
             </thead>
-            <tbody class="decr">
+            <tbody>
                 <?php 
                             while ($row4 = mysqli_fetch_assoc($result4)) :
                         ?>
@@ -234,10 +253,16 @@ if (isset($_SESSION['Sci_ID'])) {
                 <?php endwhile; ?>
             </tbody>
         </table>
+
         </div>
 
+        
+        </div>
+        <hr class="high">
+
         <h2 class="titl">Related videos:</h2>
-        <div class="card biograph">
+        <div id="cardcss2">
+        <div class="card biograph ">
             <div class="card-body ">
                         <?php 
                     if($connect){
@@ -255,8 +280,11 @@ if (isset($_SESSION['Sci_ID'])) {
             </div>
         </div>
 
+        </div>
+        
+
         <?php
-        //  include("footer.php"); 
+         include("footer.php"); 
          ?> 
         
         <hr class="high">

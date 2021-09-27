@@ -23,21 +23,41 @@
   color: #DAE1E7;
 }
 
-.blog-list{
-    color: #27496D;
+.blog-list2{
+    color: #142850;
     font-size: small;
+    margin-top: auto;
+    /* position: absolute;
+    bottom: 5px; */
 }
 
-.blog-list a{
-    color: #27496D;
+.blog-list a {
+    color: #142850;
     text-decoration: none;
+    /* background-color: #142850 !important; */
 }
+.blog-list2 #blog_btn
+{
+    background-color: #142850 !important;
+}
+
 
 .blog-title a{
-    color: #00909E;
+    color: #142850;
     text-decoration: none;
 }
 
 .blog img{
     height: 18vw;
 }
+.b_head h4 , .b_search label
+{
+    color:#142850;
+    
+}
+
+.product .card
+{
+    height:600px;
+}
+

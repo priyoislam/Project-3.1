@@ -60,10 +60,10 @@ else{
             <p><q>Reading is essential for those who seek to rise above the ordinary.</q></p>
         </div>
     </div>
-    <div class="container">
+    <div class="container b_head">
         <h4 class="text-center m-5"><em><q>Try searching specific research papers by specific authors or even research subject!</q></em></h4>
     </div>
-    <div class="container">
+    <div class="container b_search">
     <form action="" method="POST" class="text-center text-info font-weight-bold">
         <div class="form-row">
             <label for="inputName" class="col-sm-1 col-form-label">Topic</label>
@@ -95,7 +95,7 @@ else{
                 <div class="card blog">
                     <img class="card-img-top" src="../image/<?php echo $row['Image'];?>" style="width: 100%"
                         alt="Card image cap">
-                    <div class="card-body">
+                    <div class="card-body ">
                         <div class="blog-list">
                             <div>
                                 <span><?php echo $row['Topic']; ?></span>
@@ -107,8 +107,8 @@ else{
                         </div>
                         <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>"
                                 rel="bookmark"><?php echo $row['Title']; ?></a></h5>
-                        <div class="d-flex align-items-center justify-content-between blog-list">
-                            <div class="author d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-between blog-list2">
+                            <div class="author d-flex align-items-center" style="position:absolute;bottom:10px;">
 
                                 <a class="fw-bold" style="font-size: 13px;"
                                     href="blog.php?author=<?php echo $row['Author_ID'];?>">
@@ -117,8 +117,8 @@ else{
                             </div>
 
                             <a href="blog.php?article=<?php echo $row['Blog_ID'];?>"
-                                class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button"
-                                aria-disabled="true">Read full blog</a>
+                                class="btn  text-light btn-sm hhn"  id="blog_btn" tabindex="-1" role="button"
+                                aria-disabled="true" style="position:absolute;bottom:10px; left:230px;">Read full blog</a>
                         </div>
                     </div>
                 </div>
