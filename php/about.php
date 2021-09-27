@@ -43,7 +43,7 @@
               <div class="col-sm-6">
                 <div class="card cardd1">
                   <div class="card-body ">
-                    <h5 class="card-title cardclr">Why Research 101?</h5>
+                    <h5 class="card-title cardclr">Why CSWiki?</h5>
                     <p class="card-text cardclr1">Our site provides an organised set of ideas on research.Beginners may get help
                       from it.A collection of curated and hosted full-text publications from select publishers will ease the path
                       of research.Diffeent types of blogs,journels,papers are decorated alphabetically which may generate

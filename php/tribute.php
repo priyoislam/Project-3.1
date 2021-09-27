@@ -60,12 +60,12 @@
                 ?>
             <div class="col-md-4">
                 <div class="card mb-3">
-                    <img src="../image/<?php echo $row['Sci_img'];?>" alt="John" style="width:200px; align-items:center"
+                    <img src="../image/<?php echo $row['Sci_img'];?>" alt="John" style="width:200px; height: 200px; align-items:center"
                         class="center p-2 rounded-circle">
                     <h3><?php echo $row['Sci_Name'];?></h3>
                     <?php 
                     if($connect){
-                    $sql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Scientist_ID='1'";
+                    $sql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Sci_Name='$row[Sci_Name]'";
                     $result = mysqli_query($connect, $sql1);
                     }
                     ?>
