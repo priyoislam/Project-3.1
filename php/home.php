@@ -17,47 +17,50 @@
 </head>
 
 <body>
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="width: 100vw; height: 30vw;">
-                <img src="../image/research-areas.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3 class="slide1">"If I have seen further, it is by standing on the shoulders of giants" - Isaac Newton</h3>
-                </div>
-            </div>
-            <div class="carousel-item" style="width: 100vw; height: 30vw;">
-                <img src="../image/cs_scientist.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3 class="slide1">"If I have seen further, it is by standing on the shoulders of giants" Isaac Newton</h3>
-                </div>
-            </div>
-            <div class="carousel-item" style="width: 100vw; height: 30vw;">
-                <img src="../image/AI2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3 class="slide1">"If I have seen further, it is by standing on the shoulders of giants" - Isaac Newton</h3>
-                </div>
-            </div>
-            <div class="carousel-item" style="width: 100vw; height: 30vw;">
-                <img src="../image/machine learning.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3 class="slide1">"If I have seen further, it is by standing on the shoulders of giants" - Isaac Newton</h3>
-                </div>
-            </div>
+    
+<?php include("navbar.php");?>
+
+    <div class="container">
+        
+
+        <!-- Full-width images with number text -->
+        <div class="mySlides">
+          <div class="numbertext">1 / 4</div>
+            <img src="../image/research-areas.png" style="width:100%">
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+      
+        <div class="mySlides">
+          <div class="numbertext">2 / 4</div>
+            <img src="../image/cs_scientist.jpg" style="width:100%">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">3 / 4</div>
+            <img src="../image/AI2.jpg" style="width:100%">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">4 / 4</div>
+            <img src="../image/machine learning.jpg" style="width:100%">
+        </div>
+      
+ 
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+        <!-- Image text -->
+        <div class="caption-container">
+          <p id="caption">"If I have seen further, it is by standing on the shoulders of giants" - Isaac Newton</p>
+        </div>
+      
+   
+        </div>
+      </div>
+
+
+
     </div>
     <div class="container text-center description mt-5">
         <div class="row">
@@ -98,101 +101,65 @@
         </div>
 
     </div>
-    <h5 class="text-center p-5 idea"><em><q>Try searching for Pioneers of Computer Science, specific research papers by specific authors or
+    <h5 class="text-center p-5 idea"><em><q>Try searching  specific research papers by specific authors or
             even research subject!</q></em></h5>
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title"><b>Research Subject</b></h4>
-                        <a href=""><span>Analysis of algorithm</span></a>
-                        <a href=""><span class="double">Artificial Intelligence</span></a>
-                        <a href=""><span>Computer Architecture</span></a>
-                        <a href=""><span class="double">Cryptography</span></a>
-                        <a href=""><span>Computer Hardware</span></a>
-                        <a href=""><span>Numerical analysis</span></a>
-                        <a href=""><span class="double">Software Engineering</span></a>
-                        <a href=""><span>Numerical Method</span></a>
-                        <a href=""><span class="double">Machine Learning</span></a>
-                        <a href=""><span>Operating System</span></a>
-                        <a href=""><span class="double">Programming Language</span></a>
-                        <a href=""><span>Object Oriented Programming</span></a>
-                        <a href=""><span>Database</span></a>
-                        <a href=""><span class="double">Data Structure</span></a>
-                        <a href=""><span>Computer System</span></a>
-                        <a href=""><span class="double">Programming</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title"><b>Author</b></h4>
-                        <a href=""><span>SIR TIM BERNERS-LEE</span></a>
-                        <a href=""><span class="double">LESLIE LAMPORT</span></a>
-                        <a href=""><span>IVAN SUTHERLAND</span></a>
-                        <a href=""><span class="double">BARBARA LISKOV</span></a>
-                        <a href=""><span>DOUGLAS ENGELBART</span></a>
-                        <a href=""><span>KRISTEN NYGAARD </span></a>
-                        <a href=""><span class="double">ALAN KAY</span></a>
-                        <a href=""><span>OLE-JOHAN DAHL</span></a>
-                        <a href=""><span class="double">EDSGER WYBE DIJKSTRA</span></a>
-                        <a href=""><span>JOHN MCCARTHY</span></a>
-                        <a href=""><span class="double">MARVIN MINSKY</span></a>
-                        <a href=""><span>CARL HEWITT</span></a>
-                        <a href=""><span>MARL S. MILLER</span></a>
-                        <a href=""><span class="double">JOE ARMSTRONG</span></a>
-                        <a href=""><span>MARTIN FOWLER</span></a>
-                        <a href=""><span class="double">ALAN DIX</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container text-center description mt-3 mb-5">
+            <?php include("searchbytopic.php");?>
+            <?php include("searchbyauthor.php");?>
+
+   
+    <div class="container text-center description mt-3 pioneers">
         <h3 class="p-4"><q>Pioneers of Computer Science</q></h3>
         <div class="row">
             <div class="col-sm-6 col-md-3">
                 <div class="card">
-                    <div class="container author text-center">
-                        <img class="author_pp" src="../image/alan_kay.jpg" alt="not found">
-                        <h5>Alan Kay</h5>
-                    </div>
+                    <img src="../image/john_mccarthy.jpg" alt="John" style="width:90%; align-items:center; height:200px" class="center">
+                    <h1>John McCarthy</h1>
+                    <p class="title">Artificial intelligence, Lisp, circumscription, situation calculus</p>
+                    
+
+                    <button>See Details</button>
                 </div>
             </div>
 
             <div class="col-sm-6 col-md-3">
                 <div class="card">
-                    <div class="container author text-center">
-                        <img class="author_pp" src="../image/john_mccarthy.jpg" alt="not found">
-                        <h5>John Mccarthy</h5>
-                    </div>
+                    <img src="../image/joe_armstrong.jpg" alt="John" style="width:90%; align-items:center; height:200px" class="center">
+                    <h1>Joe Armstrong</h1>
+                    <p class="title">Artificial intelligence, Lisp, circumscription, situation calculus</p>
+                    
+
+                    <button>See Details</button>
                 </div>
             </div>
 
             <div class="col-sm-6 col-md-3">
                 <div class="card">
-                    <div class="container author text-center">
-                        <img class="author_pp" src="../image/joe_armstrong.jpg" alt="not found">
-                        <h5>Joe Armstrong</h5>
-                    </div>
+                    <img src="../image/alan_kay.jpg" alt="John" style="width:80%; align-items:center; height:200px" class="center">
+                    <h1>Alan Kay</h1>
+                    <p class="title">OOP , Dynabook , Smalltalk</p>
+                    
+
+                    <button>See Details</button>
                 </div>
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="card">
-                    <div class="container author text-center">
-                        <img class="author_pp" src="../image/marvin_minsky.jpg" alt="not found">
-                        <h5>MARVIN MINSKY</h5>
-                    </div>
+                    <img src="../image/marvin_minsky.jpg" alt="John" style="width:80%; align-items:center; height:200px" class="center">
+                    <h1>Marvin Minsky</h1>
+                    <p class="title">Artificial intelligence</p>
+                    
+
+                    <button>See Details</button>
                 </div>
             </div>
 
         </div>
 
     </div>
-    <?php include('footer.php'); ?>
+
+    <?php include("footer.php");?>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
@@ -209,6 +176,44 @@
     new WOW.init();
     </script>
     <script src="../js/main.js"></script>
+
+    <script>
+                        var slideIndex = 1;
+                showSlides(slideIndex);
+
+                // Next/previous controls
+                function plusSlides(n) {
+                showSlides(slideIndex += n);
+                }
+
+                // Thumbnail image controls
+                function currentSlide(n) {
+                showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
+                }
+    </script>
+
+
+
+
+
 </body>
 
 </html>

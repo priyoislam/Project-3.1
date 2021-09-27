@@ -43,15 +43,7 @@
             <img src="../image/machine learning.jpg" style="width:100%">
         </div>
       
-        <!-- <div class="mySlides">
-          <div class="numbertext">5 / 6</div>
-            <img src="img_nature_wide.jpg" style="width:100%">
-        </div>
-      
-        <div class="mySlides">
-          <div class="numbertext">6 / 6</div>
-            <img src="img_snow_wide.jpg" style="width:100%">
-        </div> -->
+ 
       
         <!-- Next and previous buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -110,6 +102,38 @@
     </div>
     <h5 class="text-center p-5 idea"><em><q>Try searching for Pioneers of Computer Science, specific research papers by specific authors or
             even research subject!</q></em></h5>
+
+            <div class="container" id="searchtopic">
+                <div class="row">
+                    <div class="card">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+                                    <table id="myTable">
+                                    <tr class="header">
+                                        <th style="width:70%;">Name</th>
+                                        <th style="width:30%;">Country</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td>Germany</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Berglunds snabbkop</td>
+                                        <td>Sweden</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Island Trading</td>
+                                        <td>UK</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Koniglich Essen</td>
+                                        <td>Germany</td>
+                                    </tr>
+                                    </table>
+
+                    </div>
+                </div>
+            </div>
 
     <div class="container text-center">
         <div class="row">
@@ -260,6 +284,34 @@
                 captionText.innerHTML = dots[slideIndex-1].alt;
                 }
     </script>
+
+
+
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+</script>
+
+
 </body>
 
 </html>

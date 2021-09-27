@@ -16,8 +16,8 @@ if (isset($_SESSION['Sci_ID'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/all.min.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/fontawesome.min.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -27,13 +27,13 @@ if (isset($_SESSION['Sci_ID'])) {
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="../css/profile.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/animate.min.css?v=<?php echo time(); ?>">
     <script src="https://kit.fontawesome.com/5aa077ca5f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 <?php 
-include("navbar.php");  
+//include("navbar.php");  
 ?>
         
     <tbody class="first">
