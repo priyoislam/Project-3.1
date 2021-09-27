@@ -1,5 +1,3 @@
-
-  
 <?php
     include('dbcon.php');
     
@@ -46,7 +44,7 @@ else{
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/blog.css?v=<?php echo time();?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
         rel="stylesheet">
@@ -84,7 +82,7 @@ else{
                     value="<?php echo $valuetosearch3;?>">
             </div>
         </div>
-        <input class="form-group col-md-1 btn btn-info text-center" type="submit" name="search" value="Search"><br><br>
+        <input class="form-group col-md-1 btn btn-info text-center"  style="background-color: #142850;" type="submit" name="search" value="Search"><br><br>
     </form>
 
     </div>
