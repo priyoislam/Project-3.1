@@ -1,3 +1,9 @@
+<?php
+include('dbcon.php');
+if($connect){
+    $art = "SELECT * from publication inner join research_area using(Sub_ID)";
+    $res = mysqli_query($connect, $art);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,70 +23,49 @@
 </head>
 
 <body>
-    
+
 
     <div class="container" style="margin-top: 20px;margin-bottom:20px; ">
-        
 
-            <div class="container-fluid" id="searchtopic">
-                <div class="row ">
-                    <div class="card ">
 
-                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="   Search for Topics..">
+        <div class="container-fluid" id="searchtopic">
+            <div class="row ">
+                <div class="card ">
 
-                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="   Search for Topics..">
+
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
                         <table id="myTable">
-                                            <tr class="header">
-                                                <th style="width:60%;">Name</th>
-                                                <th style="width:40%;">Topics</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Paper Link</td>
-                                                <td>Artificial Intelligence , Language</td>
-                                            </tr>
-                                            <tr>
-                                            <td>Paper Link</td>
-                                            <td>Programming Language</td>
-                                            </tr>
-                                            <tr>
-                                            <td>Paper Link</td>
-                                                <td>OOP</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Koniglich Essen</td>
-                                                <td>Topics by comma</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Paper Link</td>
-                                                <td>Artificial Intelligence , Language</td>
-                                            </tr>
-                                            <tr>
-                                            <td>Paper Link</td>
-                                            <td>Programming Language</td>
-                                            </tr>
-                                            <tr>
-                                            <td>Paper Link</td>
-                                                <td>OOP</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Koniglich Essen</td>
-                                                <td>Topics by comma</td>
-                                            </tr>
-                                    </table>
-
-                        </div>
-                                    
+                            <tr class="header">
+                                <th style="width:60%;">Name</th>
+                                <th style="width:40%;">Topics</th>
+                            </tr>
+                            <?php
+                while ($row = mysqli_fetch_assoc($res)) :
+                ?>
+                            <tr>
+                                <td><a href="<?php echo $row['Pub_Link'];?>"><?php echo $row['Pub_Name'];?></a></td>
+                                <td><?php echo $row['Sub_Name'];?></td>
+                            </tr>
+                    <?php endwhile ?>
+                    <?php
+                    }
+                    ?>
+                        </table>
 
                     </div>
+
+
                 </div>
             </div>
+        </div>
 
-</div>
+    </div>
 
 
 
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
@@ -92,37 +77,35 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    
- 
-   
 
 
 
-<script>
+
+
+
+    <script>
     function myFunction() {
-      // Declare variables
-      var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-    
-      // Loop through all table rows, and hide those who don't match the search query
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
 
-   
-</script>
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    </script>
 
 
 

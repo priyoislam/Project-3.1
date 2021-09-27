@@ -7,13 +7,18 @@
             header('location:scientist_profile.php');
     }
 ?>
-
 <?php
-        if ($connect) {
-            $art = "SELECT * from scientist where Pub_Count!='0'";
-            $res = mysqli_query($connect, $art);
-        }
-        ?>
+if(isset($_POST['search'])){
+    $valuetosearch=$_POST['valueTosearch'];
+    $query="SELECT * FROM scientist where Sci_Name LIKE '%$valuetosearch%'";
+    $res=mysqli_query($connect,$query);
+}
+else{
+    $art = "SELECT * from scientist where Pub_Count!='0'";
+    $res = mysqli_query($connect, $art);
+    $valuetosearch="";
+}
+?>
 
 <!DOCTYPE html>
 
@@ -52,7 +57,10 @@
         </div>
 
     </div>
-
+    <form  action="" method="POST" class="text-center mt-4">
+   <input type="text" name="valueTosearch" placeholder="Value To Search" value="<?php echo $valuetosearch;?>"><br><br>
+   <input type="submit" name="search" value="Filter"><br><br>
+    </form>
     <div class="container mt-5">
         <div class="row">
             <?php
