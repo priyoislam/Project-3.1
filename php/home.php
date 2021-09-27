@@ -14,6 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
         rel="stylesheet">
+
+
+           <!-- Java Script -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -138,7 +144,7 @@
     <script src="../js/wow.js"></script>
     
     <script src="../js/main.js"></script>
-
+<!-- 
     <script>
                         var slideIndex = 1;
                 showSlides(slideIndex);
@@ -170,7 +176,7 @@
                 dots[slideIndex-1].className += " active";
                 captionText.innerHTML = dots[slideIndex-1].alt;
                 }
-    </script>
+    </script> -->
 
 
 
