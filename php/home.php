@@ -110,6 +110,7 @@
    
     <div class="container text-center description mt-3 pioneers">
         <h3 class="p-4"><q>Pioneers of Computer Science</q></h3>
+        
         <div class="row">
             <div class="col-sm-6 col-md-3">
                 <div class="card">
