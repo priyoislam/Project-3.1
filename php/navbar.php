@@ -66,7 +66,6 @@
                         <form method="post" action="" enctype="multipart/form-data">
                             <button type="submit" class="btn btn-lg" name="logout">Log out</button>
                         </form>
-                        <!-- <a href="home.php"><button type="button" class="btn btn-lg">Log Out</button></a> -->
                     </div>
 
 
