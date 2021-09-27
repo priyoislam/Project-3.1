@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 27, 2021 at 08:06 PM
+-- Generation Time: Sep 27, 2021 at 08:42 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -185,7 +185,17 @@ INSERT INTO `experience` (`Scientist_ID`, `experience`) VALUES
 (1, 'Assistant Professor communication,Massachusetts Institute of Technology (1958-1962)'),
 (1, 'Professor of mathematics,Stanford University(1962-1965)'),
 (1, 'Professor of Computer Science,Stanford University(1965-2011)'),
-(1, 'Director of the Stanford Artificial Intelligence Laboratory(1966-1980)');
+(1, 'Director of the Stanford Artificial Intelligence Laboratory(1966-1980)'),
+(5, 'Professorial Fellow of Computer Science at the University of Oxford'),
+(5, 'Inventor of the World Wide Web'),
+(5, 'Professor at the Massachusetts Institute of Technology'),
+(5, 'Implemented the first successful communication between a Hypertext Transfer Protocol (HTTP)'),
+(5, 'Member of the advisory board of the MIT Center for Collective Intelligence'),
+(5, 'Senior researcher and holder of the 3Com founder\'s chair at the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL)'),
+(5, 'Director of the World Wide Web Consortium (W3C)'),
+(9, 'Computer scientist at Massachusetts Computer Associates'),
+(9, 'Joined Microsoft Research in California'),
+(9, 'Computer scientist at SRI International');
 
 -- --------------------------------------------------------
 
@@ -279,8 +289,8 @@ CREATE TABLE IF NOT EXISTS `research_area` (
 INSERT INTO `research_area` (`Sub_ID`, `Sub_Name`) VALUES
 (501, 'Artificial intelligence'),
 (502, 'Lisp Programming Language'),
-(503, 'Circumscription'),
-(504, 'Situation calculus');
+(503, 'Linked data on the Web'),
+(504, 'Semantic web to social machines');
 
 -- --------------------------------------------------------
 
@@ -400,7 +410,12 @@ INSERT INTO `work` (`Scientist_ID`, `Sub_ID`) VALUES
 (1, 501),
 (1, 502),
 (1, 503),
-(1, 504);
+(1, 504),
+(5, 503),
+(5, 505),
+(9, 504),
+(9, 506),
+(9, 507);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
