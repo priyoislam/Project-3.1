@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 27, 2021 at 07:28 AM
+-- Generation Time: Sep 27, 2021 at 05:30 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `publication` (
   `Citation_Count` int(11) NOT NULL,
   `Sub_ID` int(100) NOT NULL,
   PRIMARY KEY (`Pub_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3006 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3008 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `publication`
@@ -191,7 +191,9 @@ INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Citation_Count`, `
 (3002, 'Applications of circumscription to formalizing common-sense knowledge', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:9yKSN-GCB0IC', 1676, 501),
 (3003, 'LISP I programmer\'s manual', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:dhFuZR0502QC', 1541, 502),
 (3004, 'LISP 1.5 programmer\'s manual', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:2osOgNQ5qMEC', 1538, 502),
-(3005, 'Circumscription - a form of non-monotonic reasoning', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:u-x6o8ySG0sC', 3308, 501);
+(3005, 'Circumscription - a form of non-monotonic reasoning', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:u-x6o8ySG0sC', 3308, 501),
+(3006, 'Linked Data on theWeb and its Relationship with Distributed Ledgers (LDOW/LDDL)', 'https://dl.acm.org/doi/10.1145/3308560.3317072', 3210, 503),
+(3007, 'From the Semantic Web to social machines', 'https://www.sciencedirect.com/science/article/pii/S0004370209001404', 1302, 505);
 
 -- --------------------------------------------------------
 
@@ -217,7 +219,14 @@ INSERT INTO `publish` (`Scientist_ID`, `Pub_ID`) VALUES
 (1, 3005),
 (2, 3001),
 (3, 3001),
-(4, 3001);
+(4, 3001),
+(6, 3006),
+(5, 3006),
+(7, 3006),
+(5, 505),
+(8, 505),
+(5, 3008),
+(8, 3008);
 
 -- --------------------------------------------------------
 
@@ -266,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `scientist` (
   `research_gate` varchar(255) NOT NULL,
   `wikipedia` varchar(255) NOT NULL,
   PRIMARY KEY (`Scientist_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `scientist`
@@ -276,7 +285,11 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 (1, 'John McCarthy', 'Stanford University', 'john_mccarthy.jpg', '4 September 1927, Boston, Massachusetts', '24 October 2011, Stanford, California', 'BS mathematics, California Institute of Technology (1948); PhD mathematics, Princeton University (1951)', 'His father, John Patrick McCarthy, was an Irish Catholic who became a labor organizer and later the Business Manager of the Daily Worker, a national newspaper owned by the Communist Party USA. His mother, Ida Glatt, was a Lithuanian Jewish immigrant who worked for a wire service, then for the Daily Worker and finally as a social worker.McCarthy considered himself an atheist.McCarthy showed an early aptitude for mathematics; during his teens he taught himself college mathematics by studying the textbooks used at the nearby California Institute of Technology (Caltech). As a result, he was able to skip the first two years of mathematics at Caltech.[8] McCarthy was suspended from Caltech for failure to attend physical education courses.From 1978 to 1986, McCarthy developed the circumscription method of non-monotonic reasoning.McCarthy was a serious book reader, an optimist, and a staunch supporter of free speech. His best Usenet interaction is visible in rec.arts.books archives.', '1962-2002', 11, 336, 31, 'https://www.youtube.com/results?search_query=john+mccarthy+artificial+intelligence', 'https://www.researchgate.net/scientific-contributions/John-McCarthy-2029411824', 'https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)'),
 (2, 'ML Minsky', '', '', '', '', '', '', '', 0, 0, 0, '', '', ''),
 (3, 'N Rochester', '', '', '', '', '', '', '', 0, 0, 0, '', '', ''),
-(4, 'CE Shannon', '', '', '', '', '', '', '', 0, 0, 0, '', '', '');
+(4, 'CE Shannon', '', '', '', '', '', '', '', 0, 0, 0, '', '', ''),
+(5, 'Tim Berners Lee', 'Massachusetts Institute of Technology', 'tim_berners_lee.jfif', '8 June 1955 London', 'living till now', 'Bachelor\'s degree in Physics, The Queen\'s College, Oxford', 'His father Conway Berners-Lee was an English mathematician and computer scientist', '1988-2019', 37, 1970, 53, 'https://www.youtube.com/watch?v=GUrDI6OkJfU', 'https://www.researchgate.net/profile/Tim-Berners-Lee', 'https://en.wikipedia.org/wiki/Tim_Berners-Lee'),
+(6, 'Maribel Acosta', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0, 0, 0, ' ', ' ', ' '),
+(7, 'Anastasia Dimou', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0, 0, 0, ' ', ' ', ' '),
+(8, 'Jim Hendler', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0, 0, 0, ' ', ' ', ' ');
 
 -- --------------------------------------------------------
 
