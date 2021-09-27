@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 27, 2021 at 08:42 PM
+-- Generation Time: Sep 27, 2021 at 10:46 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -55,7 +55,12 @@ INSERT INTO `article` (`ArticleID`, `Article_Name`, `Article_Link`, `Scientist_I
 (2013, 'How to make a multiprocessor computer that correctly executes multiprocess programs', 'https://dl.acm.org/doi/10.1145/3335772.3335935', 9),
 (2014, 'Time, clocks, and the ordering of events in a distributed system', 'https://dl.acm.org/doi/10.1145/3335772.3335934', 9),
 (2015, 'Reconfiguring a state machine', 'https://dl.acm.org/doi/10.1145/1753171.1753191', 9),
-(2016, 'Checking Cache-Coherence Protocols with TLA+', 'https://dl.acm.org/doi/10.1023/A%3A1022969405325', 9);
+(2016, 'Checking Cache-Coherence Protocols with TLA+', 'https://dl.acm.org/doi/10.1023/A%3A1022969405325', 9),
+(2017, 'Barbara Liskov on Programming, Career, and the Future', 'https://www.researchgate.net/publication/3453137_Barbara_Liskov_on_Programming_Career_and_the_Future', 14),
+(2017, 'Abstraction and specification in program development By Barbara Liskov and John Guttag', 'https://www.researchgate.net/publication/242818032_Abstraction_and_specification_in_program_development_By_Barbara_Liskov_and_John_Guttag', 14),
+(2017, 'Liskov on Liskov', 'https://www.researchgate.net/publication/278280443_Liskov_on_Liskov', 14),
+(2017, 'Bibliography', 'https://www.researchgate.net/publication/2820112_Bibliography', 14),
+(2017, 'Cross-chain deals and adversarial commerce', 'https://www.researchgate.net/publication/354045128_Cross-chain_deals_and_adversarial_commerce', 14);
 
 -- --------------------------------------------------------
 
@@ -123,7 +128,12 @@ INSERT INTO `award` (`Scientist_ID`, `Year`, `Prize`, `Catagory`) VALUES
 (9, '2013', 'Queen Elizabeth Prize', 'Engineering and Innovation'),
 (9, '2009', 'Foreign Associate of the National Academy of Sciences', 'Distinguished and continuing achievements in original research'),
 (9, '2007', 'Order of Merit', 'Distinguished service in the armed forces, science, art, literature, or for the promotion of culture'),
-(9, '1995', 'ACM Software System Award', 'Lasting influence, reflected in contributions to concepts, in commercial acceptance, or both');
+(9, '1995', 'ACM Software System Award', 'Lasting influence, reflected in contributions to concepts, in commercial acceptance, or both'),
+(14, '2004', 'IEEE John von Neumann Medal', 'Lasting and major technical importance to the computer field'),
+(14, '2018', 'Women of the ENIAC Computer Pioneer Award', 'Efforts resulted in the creation and continued vitality of the computer industry'),
+(14, '2008', 'A. M. Turing Award ', 'Achievements in computer-related science and technology'),
+(14, '2008', 'ACM SIGPLAN Programming Languages Lifetime Achievement Award', 'contribution to the field of programming languages'),
+(14, '2008', 'ACM SIGSOFT Impact Paper Award', 'breadth and vitality of the software engineering community');
 
 -- --------------------------------------------------------
 
@@ -195,7 +205,10 @@ INSERT INTO `experience` (`Scientist_ID`, `experience`) VALUES
 (5, 'Director of the World Wide Web Consortium (W3C)'),
 (9, 'Computer scientist at Massachusetts Computer Associates'),
 (9, 'Joined Microsoft Research in California'),
-(9, 'Computer scientist at SRI International');
+(9, 'Computer scientist at SRI International'),
+(14, 'MIT as Associate Department Head and later as Associate Provost'),
+(14, 'Mitre Corporation'),
+(14, 'Ford Professor of Engineering');
 
 -- --------------------------------------------------------
 
@@ -211,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `publication` (
   `Citation_Count` int(11) NOT NULL,
   `Sub_ID` int(100) NOT NULL,
   PRIMARY KEY (`Pub_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3012 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3016 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `publication`
@@ -227,7 +240,11 @@ INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Citation_Count`, `
 (3007, 'From the Semantic Web to social machines', 'https://www.sciencedirect.com/science/article/pii/S0004370209001404', 1302, 505),
 (3009, 'Time, clocks, and the ordering of events in a distributed system', 'https://dl.acm.org/doi/abs/10.1145/3335772.3335934', 16, 506),
 (3010, 'The part-time parliament', 'https://dl.acm.org/doi/abs/10.1145/3335772.3335939', 9, 507),
-(3011, 'A new solution of Dijkstra\'s concurrent programming problem', 'https://dl.acm.org/doi/abs/10.1145/3335772.3335782', 1, 504);
+(3011, 'A new solution of Dijkstra\'s concurrent programming problem', 'https://dl.acm.org/doi/abs/10.1145/3335772.3335782', 1, 504),
+(3012, 'Fast databases with fast durability and recovery through multicore parallelism', 'https://dl.acm.org/doi/10.5555/2685048.2685085', 37, 508),
+(3013, 'Lightweight, flexible object-oriented generics', 'https://dl.acm.org/doi/10.1145/2737924.2738008', 15, 509),
+(3014, 'Type-aware transactions for faster concurrent code', 'https://dl.acm.org/doi/10.14778/3364324.3364326', 21, 510),
+(3015, 'Cross-chain deals and adversarial commerce', 'https://dl.acm.org/doi/10.5555/2685048.2685085', 7, 511);
 
 -- --------------------------------------------------------
 
@@ -267,7 +284,19 @@ INSERT INTO `publish` (`Scientist_ID`, `Pub_ID`) VALUES
 (9, 3009),
 (11, 3009),
 (11, 3011),
-(9, 3011);
+(9, 3011),
+(14, 3012),
+(15, 3012),
+(16, 3012),
+(17, 3012),
+(14, 3013),
+(18, 3013),
+(19, 3013),
+(14, 3014),
+(20, 3014),
+(14, 3015),
+(21, 3015),
+(22, 3015);
 
 -- --------------------------------------------------------
 
@@ -280,7 +309,7 @@ CREATE TABLE IF NOT EXISTS `research_area` (
   `Sub_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Sub_Name` varchar(255) NOT NULL,
   PRIMARY KEY (`Sub_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=505 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=512 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `research_area`
@@ -290,7 +319,12 @@ INSERT INTO `research_area` (`Sub_ID`, `Sub_Name`) VALUES
 (501, 'Artificial intelligence'),
 (502, 'Lisp Programming Language'),
 (503, 'Linked data on the Web'),
-(504, 'Semantic web to social machines');
+(504, 'Semantic web to social machines'),
+(507, 'Distribute3d System'),
+(508, 'Databases durability and Recovary'),
+(509, 'Lightweight, flexible object-oriented generics'),
+(510, 'Transaction and concurrent code'),
+(511, 'Cross Chain');
 
 -- --------------------------------------------------------
 
@@ -316,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `scientist` (
   `research_gate` varchar(255) NOT NULL,
   `wikipedia` varchar(255) NOT NULL,
   PRIMARY KEY (`Scientist_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `scientist`
@@ -335,7 +369,16 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 (10, 'deBruijn', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
 (11, 'Schwartz', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
 (12, 'Dijkstra', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
-(13, 'Bernstein', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', '');
+(13, 'Bernstein', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(14, 'BARBARA LISKOV', 'Institute Professor at the Massachusetts Institute of Technology', 'BARBARA LISKOV.jpeg', 'November 7, 1939, California', ' ', ' BSc in Mathematics, University of California, Berkeley', ' ', '1971-2020', 154, 11652, 76, 'https://www.youtube.com/watch?v=O6By99JW_V8', 'https://www.researchgate.net/publication/2452271_Barbara_H_Liskov', 'https://en.wikipedia.org/wiki/Barbara_Liskov'),
+(15, 'Wenting Zheng', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(16, 'Stephen Tu', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(17, 'Eddie Kohler', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(18, 'Matthew C. Loring', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(19, 'Guido Salvaneschi', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(20, 'Jeevana Priya Inala\r\n', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(21, 'Liuba Shrira', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(22, 'Maurice Herlihy', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -388,7 +431,19 @@ INSERT INTO `videos` (`Scientist_ID`, `Videos`, `video_link`) VALUES
 (1, 'John McCarthy (1927-2011): Artificial Intelligence (complete) - Thinking Allowed -Jeffrey Mishlove', 'https://www.youtube.com/watch?v=Ozipf13jRr4'),
 (1, 'John McCarthy, on Philosophy of AI (Mini Symposium Philosophy of Information)', 'https://www.youtube.com/watch?v=K13_sWm_gZw'),
 (1, 'Science Lives: John McCarthy', 'https://www.youtube.com/watch?v=rWJZvnsbw7E'),
-(1, 'Oral History of John McCarthy', 'https://www.youtube.com/watch?v=KuU82i3hi8c&t=4735s');
+(1, 'Oral History of John McCarthy', 'https://www.youtube.com/watch?v=KuU82i3hi8c&t=4735s'),
+(5, 'Tim Berners-Lee: The next Web of open, \r\nlinked data ', 'https://www.youtube.com/watch?v=OM6XIICm_qo&t=8s'),
+(5, 'Tim Berners-Lee: A Magna Carta for the web ', 'https://www.youtube.com/watch?v=rCplocVemjo'),
+(5, 'The Future of the Web • Sir Tim Berners-Lee • GOTO 2018  ', 'https://www.youtube.com/watch?v=Rxqko96C5ZI'),
+(5, 'Tim Berners Lee: What is the future of the internet?', 'https://www.youtube.com/watch?v=BnXF_O_WjAA'),
+(9, 'Leslie Lamport: Thinking Above the Code ', 'https://www.youtube.com/watch?v=-4Yp3j_jk8Q'),
+(9, 'What\'s the difference between programming and coding - Leslie Lamport @ HLF 2019  ', 'https://www.youtube.com/watch?v=4RptzbNNoU0 '),
+(9, 'Oral History of Leslie Lamport - Part 1', 'https://www.youtube.com/watch?v=SXt3-iZpQQc'),
+(9, 'What is Computation -- Dr. Leslie Lamport, Microsoft  ', 'https://www.youtube.com/watch?v=BDPHfRuAFnU'),
+(14, 'How Data Abstraction changed Computing forever | Barbara Liskov | TEDxMIT', 'https://www.youtube.com/watch?v=_jTc1BTFdIo'),
+(14, 'Barbara Liskov on the Future of Computer Science', 'https://www.youtube.com/watch?v=VFh8wT57R50'),
+(14, 'Barbara Liskov at MIT - 2001 EECS Colloquium on Practical Byzantine Fault Tolerance', 'https://www.youtube.com/watch?v=Uj638eFIWg8'),
+(14, 'Liskov: The Liskov Substitution Principle', 'https://www.youtube.com/watch?v=-Z-17h3jG0A');
 
 -- --------------------------------------------------------
 
@@ -415,7 +470,11 @@ INSERT INTO `work` (`Scientist_ID`, `Sub_ID`) VALUES
 (5, 505),
 (9, 504),
 (9, 506),
-(9, 507);
+(9, 507),
+(14, 508),
+(14, 509),
+(14, 510),
+(14, 511);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
