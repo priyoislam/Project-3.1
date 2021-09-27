@@ -1,7 +1,5 @@
 <?php
     include('dbcon.php');
-    
-    session_start();
     if(isset($_GET['author'])){
         $Author_ID=$_GET['author'];
         $_SESSION['Author_ID']=$Author_ID;
