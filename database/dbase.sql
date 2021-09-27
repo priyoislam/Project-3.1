@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 26, 2021 at 08:35 PM
+-- Generation Time: Sep 27, 2021 at 07:28 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -177,6 +177,7 @@ CREATE TABLE IF NOT EXISTS `publication` (
   `Pub_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Pub_Name` varchar(1000) NOT NULL,
   `Pub_Link` varchar(1000) NOT NULL,
+  `Citation_Count` int(11) NOT NULL,
   `Sub_ID` int(100) NOT NULL,
   PRIMARY KEY (`Pub_ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3006 DEFAULT CHARSET=latin1;
@@ -185,12 +186,12 @@ CREATE TABLE IF NOT EXISTS `publication` (
 -- Dumping data for table `publication`
 --
 
-INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Sub_ID`) VALUES
-(3001, 'A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:hqOjcs7Dif8C', 501),
-(3002, 'Applications of circumscription to formalizing common-sense knowledge', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:9yKSN-GCB0IC', 501),
-(3003, 'LISP I programmer\'s manual', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:dhFuZR0502QC', 502),
-(3004, 'LISP 1.5 programmer\'s manual', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:2osOgNQ5qMEC', 502),
-(3005, 'Circumscription - a form of non-monotonic reasoning', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:u-x6o8ySG0sC', 501);
+INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Citation_Count`, `Sub_ID`) VALUES
+(3001, 'A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:hqOjcs7Dif8C', 1706, 501),
+(3002, 'Applications of circumscription to formalizing common-sense knowledge', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:9yKSN-GCB0IC', 1676, 501),
+(3003, 'LISP I programmer\'s manual', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:dhFuZR0502QC', 1541, 502),
+(3004, 'LISP 1.5 programmer\'s manual', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:2osOgNQ5qMEC', 1538, 502),
+(3005, 'Circumscription - a form of non-monotonic reasoning', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:u-x6o8ySG0sC', 3308, 501);
 
 -- --------------------------------------------------------
 

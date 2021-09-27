@@ -128,7 +128,8 @@ if (isset($_SESSION['Sci_ID'])) {
                         <?php 
                             while ($row4 = mysqli_fetch_assoc($result4)) :
                         ?>
-                        <a href="<?php echo $row4['Pub_Link'];?>"><?php echo $row4['Pub_Name'];?></a></li><br>
+                        <a href="<?php echo $row4['Pub_Link'];?>"><?php echo $row4['Pub_Name'];?></a><br>
+                        <span class="fs-.5">Cited by: <?php echo $row4['Citation_Count'];?></span><br>
                         <span class="text-muted">
                             <?php 
                                 if($connect){
