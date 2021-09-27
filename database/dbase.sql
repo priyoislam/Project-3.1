@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 27, 2021 at 06:51 PM
+-- Generation Time: Sep 27, 2021 at 08:06 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -45,7 +45,17 @@ INSERT INTO `article` (`ArticleID`, `Article_Name`, `Article_Link`, `Scientist_I
 (2003, 'The Philosophy of AI and the AI of Philosophy', 'http://jmc.stanford.edu/articles/aiphil2.html', 1),
 (2004, 'Making Robots Conscious of their Mental States', 'http://jmc.stanford.edu/articles/consciousness.html', 1),
 (2005, 'Modality for Robots - Responses to Halpern and Wansing', 'http://jmc.stanford.edu/articles/halpern.html', 1),
-(2006, 'LISP - Notes on its Past and Future - 1980', 'http://jmc.stanford.edu/articles/lisp20th.html', 1);
+(2006, 'LISP - Notes on its Past and Future - 1980', 'http://jmc.stanford.edu/articles/lisp20th.html', 1),
+(2007, 'WWW at 15 years: looking forward', 'https://dl.acm.org/doi/10.1145/1060745.1060746', 5),
+(2008, 'World-wide computer', 'https://dl.acm.org/doi/10.1145/253671.253704', 5),
+(2009, 'CERN experience', 'https://dl.acm.org/doi/10.1145/504092.504100', 5),
+(2010, 'The next wave of the web', 'https://dl.acm.org/doi/10.1145/1135777.1135889', 5),
+(2011, 'The part-time parliament', 'https://dl.acm.org/doi/10.1145/3335772.3335939', 9),
+(2012, 'The Byzantine generals problem', 'https://dl.acm.org/doi/10.1145/3335772.3335936', 9),
+(2013, 'How to make a multiprocessor computer that correctly executes multiprocess programs', 'https://dl.acm.org/doi/10.1145/3335772.3335935', 9),
+(2014, 'Time, clocks, and the ordering of events in a distributed system', 'https://dl.acm.org/doi/10.1145/3335772.3335934', 9),
+(2015, 'Reconfiguring a state machine', 'https://dl.acm.org/doi/10.1145/1753171.1753191', 9),
+(2016, 'Checking Cache-Coherence Protocols with TLA+', 'https://dl.acm.org/doi/10.1023/A%3A1022969405325', 9);
 
 -- --------------------------------------------------------
 
@@ -102,7 +112,18 @@ INSERT INTO `award` (`Scientist_ID`, `Year`, `Prize`, `Catagory`) VALUES
 (1, '1985', 'Research Excellence Award of the International Conference', 'Artificial Intelligence'),
 (1, '1990', 'National Medal of Science', 'Mathematical, Statistical, and Computational Sciences'),
 (1, '2003', 'Benjamin Franklin Medal', 'Computer and Cognitive Science'),
-(1, '2011', 'IEEE Intelligent Systems\' AI\'s Hall of Fame', 'Significant contributions to the field of AI and intelligent systems');
+(1, '2011', 'IEEE Intelligent Systems\' AI\'s Hall of Fame', 'Significant contributions to the field of AI and intelligent systems'),
+(5, '2000', 'Dijkstra Prize', 'Principles of Distributed Computing'),
+(5, '2004', 'IEEE Emanuel R. Piore Award', 'Principles of Distributed Computing'),
+(5, '2004', 'IEEE Emanuel R. Piore Award', 'Technical Field Award'),
+(5, '2008', 'IEEE John von Neumann Medal', 'outstanding achievements in computer-related science and technology'),
+(5, '2013', 'Turing Award', 'lasting and major technical importance to the computer field'),
+(5, '2011', 'Member of the National Academy of Sciences', 'distinguished and continuing achievements in original research'),
+(9, '2016', 'Turing Award', 'Lasting and major technical importance to the computer field'),
+(9, '2013', 'Queen Elizabeth Prize', 'Engineering and Innovation'),
+(9, '2009', 'Foreign Associate of the National Academy of Sciences', 'Distinguished and continuing achievements in original research'),
+(9, '2007', 'Order of Merit', 'Distinguished service in the armed forces, science, art, literature, or for the promotion of culture'),
+(9, '1995', 'ACM Software System Award', 'Lasting influence, reflected in contributions to concepts, in commercial acceptance, or both');
 
 -- --------------------------------------------------------
 
