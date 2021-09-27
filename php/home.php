@@ -8,9 +8,9 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../css/animate.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../css/index.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
         rel="stylesheet">
@@ -20,48 +20,11 @@
     
 <?php include("navbar.php");?>
 
-    <div class="container">
-        
-
-        <!-- Full-width images with number text -->
-        <div class="mySlides">
-          <div class="numbertext">1 / 4</div>
-            <img src="../image/research-areas.png" style="width:100%">
-        </div>
-      
-        <div class="mySlides">
-          <div class="numbertext">2 / 4</div>
-            <img src="../image/cs_scientist.jpg" style="width:100%">
-        </div>
-      
-        <div class="mySlides">
-          <div class="numbertext">3 / 4</div>
-            <img src="../image/AI2.jpg" style="width:100%">
-        </div>
-      
-        <div class="mySlides">
-          <div class="numbertext">4 / 4</div>
-            <img src="../image/machine learning.jpg" style="width:100%">
-        </div>
-      
- 
-      
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      
-        <!-- Image text -->
-        <div class="caption-container">
-          <p id="caption">"If I have seen further, it is by standing on the shoulders of giants" - Isaac Newton</p>
-        </div>
-      
-   
-        </div>
-      </div>
+<?php include("slideshow.php");?>
 
 
 
-    </div>
+    
     <div class="container text-center description mt-5">
         <div class="row">
             <div class="col-sm-6 col-md-4">
@@ -172,9 +135,7 @@
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/wow.js"></script>
-    <script>
-    new WOW.init();
-    </script>
+    
     <script src="../js/main.js"></script>
 
     <script>
