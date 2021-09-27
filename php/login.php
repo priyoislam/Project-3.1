@@ -9,11 +9,12 @@ if ($connect) {
         $sql = "SELECT * FROM signup where name='$U_name' AND password='$U_password'";
         $res = mysqli_query($connect, $sql);
         if (mysqli_num_rows($res) > 0) {
-            session_start();
+            // session_start();
+            $row=mysqli_fetch_assoc($res);
             $_SESSION['is_login']=true;
             $_SESSION['name'] = $U_name;
-            
-                header('location:blog.php');
+            $_SESSION['email'] = $row['email'];
+                header('location:user_profile.php');
         } else {
             echo "<SCRIPT> //not showing me this
             alert('Please create an account')

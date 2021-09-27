@@ -62,7 +62,7 @@ if (isset($_SESSION['email'])) {
     } else 
     {
         ?>
-        <div class="card text-center" style="width: 18rem;">
+        <div class="card text-center mb-5" style="width: 18rem;">
             <div class="card-body">
                 <h6 class="card-title">Do you wanna add a new blog?</h6>
                 <?php
@@ -71,7 +71,12 @@ if (isset($_SESSION['email'])) {
                     values ('$A_name','$A_mail','','')";
                     $insertequery=mysqli_query($connect,$query);
                     if($insertequery){
-                        header('location:user_profile.php');
+                    ?>
+                    <script>
+                      window.location.reload();
+                    </script>
+                    <!-- header('location:user_profile.php'); -->
+                    <?php
                     }
                     else{
                         echo "not added";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 27, 2021 at 05:30 PM
+-- Generation Time: Sep 27, 2021 at 08:06 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -45,7 +45,17 @@ INSERT INTO `article` (`ArticleID`, `Article_Name`, `Article_Link`, `Scientist_I
 (2003, 'The Philosophy of AI and the AI of Philosophy', 'http://jmc.stanford.edu/articles/aiphil2.html', 1),
 (2004, 'Making Robots Conscious of their Mental States', 'http://jmc.stanford.edu/articles/consciousness.html', 1),
 (2005, 'Modality for Robots - Responses to Halpern and Wansing', 'http://jmc.stanford.edu/articles/halpern.html', 1),
-(2006, 'LISP - Notes on its Past and Future - 1980', 'http://jmc.stanford.edu/articles/lisp20th.html', 1);
+(2006, 'LISP - Notes on its Past and Future - 1980', 'http://jmc.stanford.edu/articles/lisp20th.html', 1),
+(2007, 'WWW at 15 years: looking forward', 'https://dl.acm.org/doi/10.1145/1060745.1060746', 5),
+(2008, 'World-wide computer', 'https://dl.acm.org/doi/10.1145/253671.253704', 5),
+(2009, 'CERN experience', 'https://dl.acm.org/doi/10.1145/504092.504100', 5),
+(2010, 'The next wave of the web', 'https://dl.acm.org/doi/10.1145/1135777.1135889', 5),
+(2011, 'The part-time parliament', 'https://dl.acm.org/doi/10.1145/3335772.3335939', 9),
+(2012, 'The Byzantine generals problem', 'https://dl.acm.org/doi/10.1145/3335772.3335936', 9),
+(2013, 'How to make a multiprocessor computer that correctly executes multiprocess programs', 'https://dl.acm.org/doi/10.1145/3335772.3335935', 9),
+(2014, 'Time, clocks, and the ordering of events in a distributed system', 'https://dl.acm.org/doi/10.1145/3335772.3335934', 9),
+(2015, 'Reconfiguring a state machine', 'https://dl.acm.org/doi/10.1145/1753171.1753191', 9),
+(2016, 'Checking Cache-Coherence Protocols with TLA+', 'https://dl.acm.org/doi/10.1023/A%3A1022969405325', 9);
 
 -- --------------------------------------------------------
 
@@ -102,7 +112,18 @@ INSERT INTO `award` (`Scientist_ID`, `Year`, `Prize`, `Catagory`) VALUES
 (1, '1985', 'Research Excellence Award of the International Conference', 'Artificial Intelligence'),
 (1, '1990', 'National Medal of Science', 'Mathematical, Statistical, and Computational Sciences'),
 (1, '2003', 'Benjamin Franklin Medal', 'Computer and Cognitive Science'),
-(1, '2011', 'IEEE Intelligent Systems\' AI\'s Hall of Fame', 'Significant contributions to the field of AI and intelligent systems');
+(1, '2011', 'IEEE Intelligent Systems\' AI\'s Hall of Fame', 'Significant contributions to the field of AI and intelligent systems'),
+(5, '2000', 'Dijkstra Prize', 'Principles of Distributed Computing'),
+(5, '2004', 'IEEE Emanuel R. Piore Award', 'Principles of Distributed Computing'),
+(5, '2004', 'IEEE Emanuel R. Piore Award', 'Technical Field Award'),
+(5, '2008', 'IEEE John von Neumann Medal', 'outstanding achievements in computer-related science and technology'),
+(5, '2013', 'Turing Award', 'lasting and major technical importance to the computer field'),
+(5, '2011', 'Member of the National Academy of Sciences', 'distinguished and continuing achievements in original research'),
+(9, '2016', 'Turing Award', 'Lasting and major technical importance to the computer field'),
+(9, '2013', 'Queen Elizabeth Prize', 'Engineering and Innovation'),
+(9, '2009', 'Foreign Associate of the National Academy of Sciences', 'Distinguished and continuing achievements in original research'),
+(9, '2007', 'Order of Merit', 'Distinguished service in the armed forces, science, art, literature, or for the promotion of culture'),
+(9, '1995', 'ACM Software System Award', 'Lasting influence, reflected in contributions to concepts, in commercial acceptance, or both');
 
 -- --------------------------------------------------------
 
@@ -180,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `publication` (
   `Citation_Count` int(11) NOT NULL,
   `Sub_ID` int(100) NOT NULL,
   PRIMARY KEY (`Pub_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3008 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3012 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `publication`
@@ -193,7 +214,10 @@ INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Citation_Count`, `
 (3004, 'LISP 1.5 programmer\'s manual', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:2osOgNQ5qMEC', 1538, 502),
 (3005, 'Circumscription - a form of non-monotonic reasoning', 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SuVID2wAAAAJ&citation_for_view=SuVID2wAAAAJ:u-x6o8ySG0sC', 3308, 501),
 (3006, 'Linked Data on theWeb and its Relationship with Distributed Ledgers (LDOW/LDDL)', 'https://dl.acm.org/doi/10.1145/3308560.3317072', 3210, 503),
-(3007, 'From the Semantic Web to social machines', 'https://www.sciencedirect.com/science/article/pii/S0004370209001404', 1302, 505);
+(3007, 'From the Semantic Web to social machines', 'https://www.sciencedirect.com/science/article/pii/S0004370209001404', 1302, 505),
+(3009, 'Time, clocks, and the ordering of events in a distributed system', 'https://dl.acm.org/doi/abs/10.1145/3335772.3335934', 16, 506),
+(3010, 'The part-time parliament', 'https://dl.acm.org/doi/abs/10.1145/3335772.3335939', 9, 507),
+(3011, 'A new solution of Dijkstra\'s concurrent programming problem', 'https://dl.acm.org/doi/abs/10.1145/3335772.3335782', 1, 504);
 
 -- --------------------------------------------------------
 
@@ -226,7 +250,14 @@ INSERT INTO `publish` (`Scientist_ID`, `Pub_ID`) VALUES
 (5, 505),
 (8, 505),
 (5, 3008),
-(8, 3008);
+(8, 3008),
+(9, 3010),
+(12, 3010),
+(13, 3010),
+(9, 3009),
+(11, 3009),
+(11, 3011),
+(9, 3011);
 
 -- --------------------------------------------------------
 
@@ -275,7 +306,7 @@ CREATE TABLE IF NOT EXISTS `scientist` (
   `research_gate` varchar(255) NOT NULL,
   `wikipedia` varchar(255) NOT NULL,
   PRIMARY KEY (`Scientist_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `scientist`
@@ -289,7 +320,12 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 (5, 'Tim Berners Lee', 'Massachusetts Institute of Technology', 'tim_berners_lee.jfif', '8 June 1955 London', 'living till now', 'Bachelor\'s degree in Physics, The Queen\'s College, Oxford', 'His father Conway Berners-Lee was an English mathematician and computer scientist', '1988-2019', 37, 1970, 53, 'https://www.youtube.com/watch?v=GUrDI6OkJfU', 'https://www.researchgate.net/profile/Tim-Berners-Lee', 'https://en.wikipedia.org/wiki/Tim_Berners-Lee'),
 (6, 'Maribel Acosta', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0, 0, 0, ' ', ' ', ' '),
 (7, 'Anastasia Dimou', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0, 0, 0, ' ', ' ', ' '),
-(8, 'Jim Hendler', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0, 0, 0, ' ', ' ', ' ');
+(8, 'Jim Hendler', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0, 0, 0, ' ', ' ', ' '),
+(9, 'LESLIE LAMPORT', ' Microsoft Research in California', 'LESLIE LAMPORT.jpg', 'July 2, 1941 New York City, New York', ' ', ' B.S. in mathematics from Massachusetts Institute of Technology', ' ', '1966-2019', 150, 25646, 171, 'https://www.youtube.com/watch?v=pgWTmOyUjtM', 'https://www.researchgate.net/profile/Leslie_Lamport', 'https://en.wikipedia.org/wiki/Leslie_Lamport'),
+(10, 'deBruijn', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(11, 'Schwartz', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(12, 'Dijkstra', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(13, 'Bernstein', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
