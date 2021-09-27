@@ -61,7 +61,7 @@ else{
    <input type="text" name="valueTosearch" placeholder="Value To Search" value="<?php echo $valuetosearch;?>"><br><br>
    <input type="submit" name="search" value="Filter"><br><br>
     </form>
-    <div class="container mt-5">
+    <div class="container mt-5 tribute">
         <div class="row">
             <?php
                 while ($row = mysqli_fetch_assoc($res)) :

@@ -26,7 +26,14 @@ body{
 .blog-list{
     color: #27496D;
     font-size: small;
-}
+    margin-top: auto;}
+
+
+.blog-list2{
+  
+    margin-top: auto;
+  }
+  
 
 .blog-list a{
     color: #27496D;

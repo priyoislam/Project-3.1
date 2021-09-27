@@ -41,51 +41,17 @@ if($connect){
 <body>
     
 <?php include("navbar.php");?>
+<br>
 
-<?php include("slideshow.php");?>
+<?php include("home-banner.php");?>
 
 
 
+
+<h5 class="text-center p-5 idea"><em><q>Popular Blogs !</q></em></h5>
+<?php include("home-blog.php");?>
     
-    <div class="container text-center description mt-5">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="card" style="width: 22rem;">
-                    <img src="../image/ressub.jfif" class="card-img-top i20" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title"><b>Research Subject</b></h4>
-                        
-                        <p class="card-text">Topic selection is based on many factors and considerations, including relevant, significant, and interesting. It's important because it will keep one motivated in his/her  research journey.</p>
-                        <a href="#">read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class="card" style="width: 22rem;">
-                    <img src="../image/relatedpages.jpg" class="card-img-top i20" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title"><b>Related Papers</b></h4>
-                        <p class="card-text">Reading a research paper means reading the chronologically ordered structure of someone's experiments which helps one to design his/her own experiment.</p>
-                        <a href="#">read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class="card" style="width: 22rem;">
-                    <img src="../image/authors.jpg" class="card-img-top i20" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title"><b>Authors</b></h4>
-                        <p class="card-text">The first author is the one who has made the most intellectual contribution to the work, designing the study, acquiring and analyzing data, and writing the manuscript.</p>
-                        <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+   
     <h5 class="text-center p-5 idea"><em><q>Try searching  specific research papers by specific authors or
             even research subject!</q></em></h5>
 
@@ -93,57 +59,11 @@ if($connect){
             <?php include("searchbyauthor.php");?>
             <?php include("pioneer.php");?>
 
+
+            <?php include("home-tribute.php");?>
+
    
-    <div class="container text-center description mt-3 pioneers">
-        <h3 class="p-4"><q>Pioneers of Computer Science</q></h3>
-        
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="card">
-                    <img src="../image/john_mccarthy.jpg" alt="John" style="width:90%; align-items:center; height:200px" class="center">
-                    <h1>John McCarthy</h1>
-                    <p class="title">Artificial intelligence, Lisp, circumscription, situation calculus</p>
-                    
-
-                    <button>See Details</button>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-                <div class="card">
-                    <img src="../image/joe_armstrong.jpg" alt="John" style="width:90%; align-items:center; height:200px" class="center">
-                    <h1>Joe Armstrong</h1>
-                    <p class="title">Artificial intelligence, Lisp, circumscription, situation calculus</p>
-                    
-
-                    <button>See Details</button>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-                <div class="card">
-                    <img src="../image/alan_kay.jpg" alt="John" style="width:80%; align-items:center; height:200px" class="center">
-                    <h1>Alan Kay</h1>
-                    <p class="title">OOP , Dynabook , Smalltalk</p>
-                    
-
-                    <button>See Details</button>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="card">
-                    <img src="../image/marvin_minsky.jpg" alt="John" style="width:80%; align-items:center; height:200px" class="center">
-                    <h1>Marvin Minsky</h1>
-                    <p class="title">Artificial intelligence</p>
-                    
-
-                    <button>See Details</button>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+   
 
     <?php include("footer.php");?>
 
@@ -161,39 +81,7 @@ if($connect){
     <script src="../js/wow.js"></script>
     
     <script src="../js/main.js"></script>
-<!-- 
-    <script>
-                        var slideIndex = 1;
-                showSlides(slideIndex);
 
-                // Next/previous controls
-                function plusSlides(n) {
-                showSlides(slideIndex += n);
-                }
-
-                // Thumbnail image controls
-                function currentSlide(n) {
-                showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                var i;
-                var slides = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("demo");
-                var captionText = document.getElementById("caption");
-                if (n > slides.length) {slideIndex = 1}
-                if (n < 1) {slideIndex = slides.length}
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex-1].style.display = "block";
-                dots[slideIndex-1].className += " active";
-                captionText.innerHTML = dots[slideIndex-1].alt;
-                }
-    </script> -->
 
 
 
