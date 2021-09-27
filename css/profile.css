@@ -106,6 +106,26 @@ table-hover{
     font-family: sans-serif;
     line-height: 1.5em;
 } */
+ .biograph{
+    width: 90%;
+    margin-left: 75px;
+    background-color: #A0CFEC;
+    border: none;
+      }
+  .biograph   .biog{
+            font-size: 25px;
+            font-size: bolder;
+            }
+
+.biograph ul.demo {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align:left;
+    
+    
+  }
 .tebb{
     width: 90%;
    margin-left: 75px;
@@ -226,15 +246,7 @@ text-align: center;
 .chead{
     padding-top: 0px;
 }
-ul.demo {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align:left;
-    
-    
-  }
+
   ul.demo_1{
       list-style-position: outside;
       text-align: left;
@@ -275,16 +287,7 @@ ul.demo {
       height: 50%;
      margin-left: 220px;
   }
-  .biog{
-font-size: 25px;
-font-size: bolder;
-  }
-  .biograph{
-    width: 90%;
-    margin-left: 75px;
-    background-color: #A0CFEC;
-    border: none;
-  }
+  
   .city{
       width: 90%;
       margin-left: 75px;
