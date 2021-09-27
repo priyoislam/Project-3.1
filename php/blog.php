@@ -1,3 +1,5 @@
+
+  
 <?php
     include('dbcon.php');
     
@@ -44,7 +46,7 @@ else{
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/blog.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../css/blog.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
         rel="stylesheet">
@@ -91,30 +93,29 @@ else{
             <?php
                 while ($row = mysqli_fetch_assoc($res)) :
                 ?>
-                    <div class="col">
-                        <div class="card blog">
-                            <img class="card-img-top" src="../image/<?php echo $row['Image'];?>" style="width: 100%" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="blog-list">
-                                    <div>
-                                        <a href="#" title="blog about education"><?php echo $row['Topic']; ?></a>
-                                    </div>
-                                    <span><i class="fa fa-calendar me-1"></i>
-                                        <?php echo $row['Date']; ?></span>
-                                    </a>
-                                    </span>
-                                </div>
-                                <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
-                                <div class="d-flex align-items-center justify-content-between blog-list2">
-                                    <div class="author d-flex align-items-center">
-                        
-                                        <a class="fw-bold" style="font-size: 13px;" href="blog.php?author=<?php echo $row['Author_ID'];?>">
-                                            <span><?php echo $row['Author_Name'];?></span>
-                                        </a>
-                                    </div>
-                                
-                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
-                                </div>
+            <div class="col">
+                <div class="card blog">
+                    <img class="card-img-top" src="../image/<?php echo $row['Image'];?>" style="width: 100%"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <div class="blog-list">
+                            <div>
+                                <span><?php echo $row['Topic']; ?></span>
+                            </div>
+                            <span><i class="fa fa-calendar me-1"></i>
+                                <?php echo $row['Date']; ?></span>
+                            </a>
+                            </span>
+                        </div>
+                        <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>"
+                                rel="bookmark"><?php echo $row['Title']; ?></a></h5>
+                        <div class="d-flex align-items-center justify-content-between blog-list">
+                            <div class="author d-flex align-items-center">
+
+                                <a class="fw-bold" style="font-size: 13px;"
+                                    href="blog.php?author=<?php echo $row['Author_ID'];?>">
+                                    <span><?php echo $row['Author_Name'];?></span>
+                                </a>
                             </div>
 
                             <a href="blog.php?article=<?php echo $row['Blog_ID'];?>"
@@ -149,3 +150,4 @@ else{
 </body>
 
 </html>
+
