@@ -28,7 +28,6 @@ if($connect){
 
     <div class="container" style="margin-top: 20px;margin-bottom:20px; ">
 
-
         <div class="container-fluid" id="searchtopic2">
             <div class="row ">
                 <div class="card ">
@@ -64,8 +63,6 @@ if($connect){
                             <?php
                     }
                     ?>
-
-
                         </table>
 
                     </div>
