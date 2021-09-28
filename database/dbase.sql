@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 28, 2021 at 01:13 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Host: 127.0.0.1:3306
+-- Generation Time: Sep 28, 2021 at 01:33 PM
+-- Server version: 5.7.31
+-- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,7 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `article`
 --
 
-CREATE TABLE `article` (
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE IF NOT EXISTS `article` (
   `ArticleID` int(100) NOT NULL,
   `Article_Name` varchar(255) NOT NULL,
   `Article_Link` varchar(255) NOT NULL,
@@ -70,13 +71,15 @@ INSERT INTO `article` (`ArticleID`, `Article_Name`, `Article_Link`, `Scientist_I
 -- Table structure for table `author`
 --
 
-CREATE TABLE `author` (
-  `Author_ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `author`;
+CREATE TABLE IF NOT EXISTS `author` (
+  `Author_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Author_Name` varchar(100) NOT NULL,
   `Author_Email` varchar(255) NOT NULL,
   `Author_Image` varchar(100) NOT NULL,
-  `Description` varchar(10000) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Description` varchar(10000) NOT NULL,
+  PRIMARY KEY (`Author_ID`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=1011 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `author`
@@ -99,7 +102,8 @@ INSERT INTO `author` (`Author_ID`, `Author_Name`, `Author_Email`, `Author_Image`
 -- Table structure for table `award`
 --
 
-CREATE TABLE `award` (
+DROP TABLE IF EXISTS `award`;
+CREATE TABLE IF NOT EXISTS `award` (
   `Scientist_ID` int(100) NOT NULL,
   `Year` varchar(100) NOT NULL,
   `Prize` varchar(100) NOT NULL,
@@ -140,15 +144,17 @@ INSERT INTO `award` (`Scientist_ID`, `Year`, `Prize`, `Catagory`) VALUES
 -- Table structure for table `blog`
 --
 
-CREATE TABLE `blog` (
-  `Blog_ID` int(100) NOT NULL,
+DROP TABLE IF EXISTS `blog`;
+CREATE TABLE IF NOT EXISTS `blog` (
+  `Blog_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Topic` varchar(100) NOT NULL,
   `Date` date NOT NULL,
   `Image` varchar(100) NOT NULL,
   `Title` varchar(100) NOT NULL,
   `Content` varchar(50000) NOT NULL,
-  `Author_ID` int(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Author_ID` int(100) NOT NULL,
+  PRIMARY KEY (`Blog_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=111 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
@@ -174,7 +180,8 @@ INSERT INTO `blog` (`Blog_ID`, `Topic`, `Date`, `Image`, `Title`, `Content`, `Au
 -- Table structure for table `experience`
 --
 
-CREATE TABLE `experience` (
+DROP TABLE IF EXISTS `experience`;
+CREATE TABLE IF NOT EXISTS `experience` (
   `Scientist_ID` int(100) NOT NULL,
   `experience` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -224,37 +231,18 @@ INSERT INTO `experience` (`Scientist_ID`, `experience`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `follow`
---
-
-CREATE TABLE `follow` (
-  `Scientist_ID` int(100) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `follow`
---
-
-INSERT INTO `follow` (`Scientist_ID`, `email`) VALUES
-(1, 'mkaikaus@gmail.com'),
-(5, 'mkaikaus@gmail.com'),
-(1, 'kaikaus@gmail.com'),
-(9, 'kaikaus@gmail.com');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `publication`
 --
 
-CREATE TABLE `publication` (
-  `Pub_ID` int(100) NOT NULL,
+DROP TABLE IF EXISTS `publication`;
+CREATE TABLE IF NOT EXISTS `publication` (
+  `Pub_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Pub_Name` varchar(1000) NOT NULL,
   `Pub_Link` varchar(1000) NOT NULL,
   `Citation_Count` int(11) NOT NULL,
-  `Sub_ID` int(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Sub_ID` int(100) NOT NULL,
+  PRIMARY KEY (`Pub_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3019 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `publication`
@@ -285,7 +273,8 @@ INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Citation_Count`, `
 -- Table structure for table `publish`
 --
 
-CREATE TABLE `publish` (
+DROP TABLE IF EXISTS `publish`;
+CREATE TABLE IF NOT EXISTS `publish` (
   `Scientist_ID` int(100) NOT NULL,
   `Pub_ID` int(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -341,10 +330,12 @@ INSERT INTO `publish` (`Scientist_ID`, `Pub_ID`) VALUES
 -- Table structure for table `research_area`
 --
 
-CREATE TABLE `research_area` (
-  `Sub_ID` int(100) NOT NULL,
-  `Sub_Name` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `research_area`;
+CREATE TABLE IF NOT EXISTS `research_area` (
+  `Sub_ID` int(100) NOT NULL AUTO_INCREMENT,
+  `Sub_Name` varchar(255) NOT NULL,
+  PRIMARY KEY (`Sub_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=515 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `research_area`
@@ -367,33 +358,12 @@ INSERT INTO `research_area` (`Sub_ID`, `Sub_Name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `save`
---
-
-CREATE TABLE `save` (
-  `Blog_ID` int(100) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `save`
---
-
-INSERT INTO `save` (`Blog_ID`, `email`) VALUES
-(101, 'mkaikaus@gmail.com'),
-(102, 'mkaikaus@gmail.com'),
-(103, 'mkaikaus@gmail.com'),
-(103, 'kaikaus@gmail.com'),
-(102, 'priyoislam@gmail.com');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `scientist`
 --
 
-CREATE TABLE `scientist` (
-  `Scientist_ID` int(100) NOT NULL,
+DROP TABLE IF EXISTS `scientist`;
+CREATE TABLE IF NOT EXISTS `scientist` (
+  `Scientist_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Sci_Name` varchar(100) NOT NULL,
   `Work_place` varchar(255) NOT NULL,
   `Sci_img` varchar(255) NOT NULL,
@@ -407,8 +377,9 @@ CREATE TABLE `scientist` (
   `Avg_Cite_Count` int(100) NOT NULL,
   `Youtube` varchar(255) NOT NULL,
   `research_gate` varchar(255) NOT NULL,
-  `wikipedia` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `wikipedia` varchar(255) NOT NULL,
+  PRIMARY KEY (`Scientist_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `scientist`
@@ -439,7 +410,9 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 (22, 'Maurice Herlihy', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
 (23, 'Ivan Edward Sutherland', 'Professor of Computer Science at California Institute of Technology', 'Ivan Edward Sutherland.jpeg', 'May 16, 1938 Hastings, Nebraska, United States', ' ', ' B.S. (electrical engineering) Carnegie Institute of Technology; \r\nM.S. (electrical engineering) California Institute of Technology', 'His father was a Civil Engineer', '1963-2012', 45, 4154, 92, 'https://www.youtube.com/watch?v=aYqQ-vAHv6Q', ' ', 'https://en.wikipedia.org/wiki/Ivan_Sutherland'),
 (24, '\r\nScott Fairbanks\r\n', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
-(25, 'DOUGLAS ENGELBART', 'Stanford Research Institute', 'DOUGLAS ENGELBART.jpeg', 'January 30, 1925 in Portland, Oregon', 'July 2, 2013 in Atherton, California', 'B.S. in Electrical Engineering, Oregon State University; M.S. in Electrical Engineering, University of California at Berkeley', 'Midway through his undergraduate years at Oregon State University, he served two years in the United States Navy as a radio and radar technician in the Philippines.', '1968-2006', 28, 477, 17, 'https://youtu.be/B6rKUf9DWRI', 'https://www.researchgate.net/search.Search.html?type=researcher&query=DOUGLAS%20ENGELBART', 'https://en.wikipedia.org/wiki/Douglas_Engelbart');
+(25, 'DOUGLAS ENGELBART', 'Stanford Research Institute', 'DOUGLAS ENGELBART.jpeg', 'January 30, 1925 in Portland, Oregon', 'July 2, 2013 in Atherton, California', 'B.S. in Electrical Engineering, Oregon State University; M.S. in Electrical Engineering, University of California at Berkeley', 'Midway through his undergraduate years at Oregon State University, he served two years in the United States Navy as a radio and radar technician in the Philippines.', '1968-2006', 28, 477, 17, 'https://youtu.be/B6rKUf9DWRI', 'https://www.researchgate.net/search.Search.html?type=researcher&query=DOUGLAS%20ENGELBART', 'https://en.wikipedia.org/wiki/Douglas_Engelbart'),
+(26, 'EDSGER WYBE DIJKSTRA', 'Mathematisch Centrum\r\nEindhoven University of Technology', 'EDSGER WYBE DIJKSTRA.jpeg', '11 May 1930, Rotterdam, The Netherlands', '6 August 2002, Nuenen, The Netherlands.', ' Gymnasium Erasmianum in Rotterdam; undergraduate degree, physics, University of Leyden; PhD computer science', 'His father was a chemist, president of the Dutch Chemical Society;His mother was a mathematician', '1961-2007', 98, 3758, 67, 'https://youtu.be/mLEOZO1GwVc', ' ', 'https://en.wikipedia.org/wiki/Edsger_W._Dijkstra'),
+(27, 'MARVIN MINSKY', 'Massachusetts Institute of Technology (MIT)', 'MARVIN MINSKY.jpeg', 'New York City, August 9, 1927', 'Boston, January 24, 2016', ' Harvard University, B.A. Mathematics; Princeton University', 'Minsky married pediatrician Gloria Rudisch;Minsky was a talented improvisational pianist', '1961-2010', 57, 1358, 87, 'https://youtu.be/EI0NXTrS5Pw', ' ', 'https://en.wikipedia.org/wiki/Marvin_Minsky');
 
 -- --------------------------------------------------------
 
@@ -447,14 +420,16 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 -- Table structure for table `signup`
 --
 
-CREATE TABLE `signup` (
-  `id` int(255) NOT NULL,
+DROP TABLE IF EXISTS `signup`;
+CREATE TABLE IF NOT EXISTS `signup` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `phone` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `signup`
@@ -475,7 +450,8 @@ INSERT INTO `signup` (`id`, `name`, `email`, `address`, `password`, `phone`) VAL
 -- Table structure for table `videos`
 --
 
-CREATE TABLE `videos` (
+DROP TABLE IF EXISTS `videos`;
+CREATE TABLE IF NOT EXISTS `videos` (
   `Scientist_ID` int(100) NOT NULL,
   `Videos` varchar(255) NOT NULL,
   `video_link` varchar(1000) NOT NULL
@@ -517,7 +493,8 @@ INSERT INTO `videos` (`Scientist_ID`, `Videos`, `video_link`) VALUES
 -- Table structure for table `work`
 --
 
-CREATE TABLE `work` (
+DROP TABLE IF EXISTS `work`;
+CREATE TABLE IF NOT EXISTS `work` (
   `Scientist_ID` int(100) NOT NULL,
   `Sub_ID` int(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -540,86 +517,6 @@ INSERT INTO `work` (`Scientist_ID`, `Sub_ID`) VALUES
 (14, 509),
 (14, 510),
 (14, 511);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `author`
---
-ALTER TABLE `author`
-  ADD PRIMARY KEY (`Author_ID`) USING BTREE;
-
---
--- Indexes for table `blog`
---
-ALTER TABLE `blog`
-  ADD PRIMARY KEY (`Blog_ID`);
-
---
--- Indexes for table `publication`
---
-ALTER TABLE `publication`
-  ADD PRIMARY KEY (`Pub_ID`);
-
---
--- Indexes for table `research_area`
---
-ALTER TABLE `research_area`
-  ADD PRIMARY KEY (`Sub_ID`);
-
---
--- Indexes for table `scientist`
---
-ALTER TABLE `scientist`
-  ADD PRIMARY KEY (`Scientist_ID`);
-
---
--- Indexes for table `signup`
---
-ALTER TABLE `signup`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `author`
---
-ALTER TABLE `author`
-  MODIFY `Author_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1011;
-
---
--- AUTO_INCREMENT for table `blog`
---
-ALTER TABLE `blog`
-  MODIFY `Blog_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
-
---
--- AUTO_INCREMENT for table `publication`
---
-ALTER TABLE `publication`
-  MODIFY `Pub_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3019;
-
---
--- AUTO_INCREMENT for table `research_area`
---
-ALTER TABLE `research_area`
-  MODIFY `Sub_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=515;
-
---
--- AUTO_INCREMENT for table `scientist`
---
-ALTER TABLE `scientist`
-  MODIFY `Scientist_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT for table `signup`
---
-ALTER TABLE `signup`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
