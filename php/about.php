@@ -1,3 +1,8 @@
+<?php
+include('dbcon.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +31,7 @@
               <div class="inner-container">
                 <h1>About</h1>
                 <p class="text">
-                  Research-101 brings together computing educators, researchers, and professionals to inspire dialogue, share
+                  CSWiki brings together computing educators, researchers, and professionals to inspire dialogue, share
                   resources, and address the field's challenges. Research 101 strengthens the profession's collective voice through
                   strong leadership, promotion of the highest standards, and recognition of technical excellence.It supports the
                   professional growth of its members by providing opportunities for life‐long learning, career development, and
