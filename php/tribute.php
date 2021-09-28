@@ -96,7 +96,7 @@ if (isset($_POST['search'])) {
                         </div>
 
 
-                        <p style="background-color: #142850;" class="m-0"><a href="tribute.php?profile=<?php echo $row['Scientist_ID']; ?>" class="btn btn-block text-light link_btn" role="button" aria-disabled="true">See Details</a></p>
+                       <a class="seedet" href="tribute.php?profile=<?php echo $row['Scientist_ID']; ?>" class="btn btn-block text-light link_btn" role="button" aria-disabled="true">See Details</a>
                     </div>
                 </div>
             <?php endwhile; ?>

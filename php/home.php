@@ -57,7 +57,6 @@ if($connect){
 
             <?php include("searchbytopic.php");?>
             <?php include("searchbyauthor.php");?>
-            <?php include("pioneer.php");?>
 
             <h2 class="text-center p-5 home-titles"><em><q>Pioneers of Computer Science!</q></em></h2>
             <?php include("home-tribute.php");?>

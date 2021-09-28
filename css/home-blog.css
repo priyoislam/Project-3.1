@@ -56,3 +56,8 @@
 #owl-blog .owl-next { right: -20px; }
 
 #owl-blog .owl-prev i, .owl-next i {transform : scale(3,5); color: #142850;} 
+
+.blog-list2 #blog_btn3
+{
+    background-color: #142850 !important;
+}

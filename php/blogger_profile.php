@@ -80,7 +80,7 @@ if (isset($_SESSION['Author_ID'])) {
                                     </div>
 
                                     <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" 
-                                    class="btn  text-light btn-sm hhn"  id="blog_btn2" tabindex="-1" role="button"
+                                    class="btn  text-light btn-sm hhn"  id="blog_btn3" tabindex="-1" role="button"
                                 aria-disabled="true" style="position:absolute;bottom:10px; left:230px;">Read full blog</a>
                                 </div>
                             </div>
