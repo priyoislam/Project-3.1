@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 28, 2021 at 10:00 AM
+-- Generation Time: Sep 28, 2021 at 10:12 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -60,7 +60,10 @@ INSERT INTO `article` (`ArticleID`, `Article_Name`, `Article_Link`, `Scientist_I
 (2017, 'Abstraction and specification in program development By Barbara Liskov and John Guttag', 'https://www.researchgate.net/publication/242818032_Abstraction_and_specification_in_program_development_By_Barbara_Liskov_and_John_Guttag', 14),
 (2017, 'Liskov on Liskov', 'https://www.researchgate.net/publication/278280443_Liskov_on_Liskov', 14),
 (2017, 'Bibliography', 'https://www.researchgate.net/publication/2820112_Bibliography', 14),
-(2017, 'Cross-chain deals and adversarial commerce', 'https://www.researchgate.net/publication/354045128_Cross-chain_deals_and_adversarial_commerce', 14);
+(2017, 'Cross-chain deals and adversarial commerce', 'https://www.researchgate.net/publication/354045128_Cross-chain_deals_and_adversarial_commerce', 14),
+(2018, 'The tyranny of the clock', 'https://dl.acm.org/doi/10.1145/2347736.2347749', 23),
+(2019, 'Self-timing: a step beyond synchrony (tutorial talk)', 'https://dl.acm.org/doi/10.5555/2157654.2157656', 23),
+(2020, 'The sequential prison', 'https://dl.acm.org/doi/10.1145/2048066.2048068', 23);
 
 -- --------------------------------------------------------
 
@@ -208,29 +211,22 @@ INSERT INTO `experience` (`Scientist_ID`, `experience`) VALUES
 (9, 'Computer scientist at SRI International'),
 (14, 'MIT as Associate Department Head and later as Associate Provost'),
 (14, 'Mitre Corporation'),
-(14, 'Ford Professor of Engineering');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `follow`
---
-
-DROP TABLE IF EXISTS `follow`;
-CREATE TABLE IF NOT EXISTS `follow` (
-  `Scientist_ID` int(100) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `follow`
---
-
-INSERT INTO `follow` (`Scientist_ID`, `email`) VALUES
-(1, 'mkaikaus@gmail.com'),
-(5, 'mkaikaus@gmail.com'),
-(1, 'kaikaus@gmail.com'),
-(9, 'kaikaus@gmail.com');
+(14, 'Ford Professor of Engineering'),
+(23, 'Research Laboratory of Electronics at Massachusetts Institute of Technology'),
+(23, ' Massachusetts Institute of Technology Lincoln Laboratory'),
+(23, 'Fletcher Jones Professor of Computer Science and Head,\r\n Department of Computer Science, California Institute of Technology'),
+(23, 'AProfessor of Computer Science, University of Utah'),
+(23, 'AProfessor of Computer Science, University of Utah'),
+(23, 'Associate Professor of Electrical Engineering, Harvard University'),
+(23, ' Massachusetts Institute of Technology Lincoln Laboratory'),
+(25, 'US Navy, electronic/radar technician, WW II'),
+(25, 'Assistant Professor, electrical engineering, University of California at Berkeley'),
+(25, ' Researcher, Stanford Research Institute'),
+(25, 'Director, Augmentation Research Center, Stanford Research Institute'),
+(25, 'Senior Scientist, Tymshare, Inc., Cupertino, California'),
+(25, 'Senior Scientist, McDonnell Douglas Corporation ISG, San Jose, California'),
+(25, ' Director, Bootstrap Project, Stanford University'),
+(25, 'Director, Bootstrap Institute & Bootstrap Alliance (now DEI), Menlo Park, California');
 
 -- --------------------------------------------------------
 
@@ -246,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `publication` (
   `Citation_Count` int(11) NOT NULL,
   `Sub_ID` int(100) NOT NULL,
   PRIMARY KEY (`Pub_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3016 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3019 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `publication`
@@ -266,7 +262,10 @@ INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Citation_Count`, `
 (3012, 'Fast databases with fast durability and recovery through multicore parallelism', 'https://dl.acm.org/doi/10.5555/2685048.2685085', 37, 508),
 (3013, 'Lightweight, flexible object-oriented generics', 'https://dl.acm.org/doi/10.1145/2737924.2738008', 15, 509),
 (3014, 'Type-aware transactions for faster concurrent code', 'https://dl.acm.org/doi/10.14778/3364324.3364326', 21, 510),
-(3015, 'Cross-chain deals and adversarial commerce', 'https://dl.acm.org/doi/10.5555/2685048.2685085', 7, 511);
+(3015, 'Cross-chain deals and adversarial commerce', 'https://dl.acm.org/doi/10.5555/2685048.2685085', 7, 511),
+(3016, 'GasP: A Minimal FIFO Control', 'https://dl.acm.org/doi/10.5555/785167.785351', 27, 512),
+(3017, 'Virtual Community Knowledge Evolution', 'https://dl.acm.org/doi/10.5555/820760.822023', 28, 513),
+(3018, 'Knowledge-domain interoperability and an open hyperdocument system', 'https://dl.acm.org/doi/10.1145/99332.99351', 41, 514);
 
 -- --------------------------------------------------------
 
@@ -318,7 +317,9 @@ INSERT INTO `publish` (`Scientist_ID`, `Pub_ID`) VALUES
 (20, 3014),
 (14, 3015),
 (21, 3015),
-(22, 3015);
+(22, 3015),
+(23, 3016),
+(24, 3016);
 
 -- --------------------------------------------------------
 
@@ -331,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `research_area` (
   `Sub_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Sub_Name` varchar(255) NOT NULL,
   PRIMARY KEY (`Sub_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=512 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=515 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `research_area`
@@ -346,29 +347,10 @@ INSERT INTO `research_area` (`Sub_ID`, `Sub_Name`) VALUES
 (508, 'Databases durability and Recovary'),
 (509, 'Lightweight, flexible object-oriented generics'),
 (510, 'Transaction and concurrent code'),
-(511, 'Cross Chain');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `save`
---
-
-DROP TABLE IF EXISTS `save`;
-CREATE TABLE IF NOT EXISTS `save` (
-  `Blog_ID` int(100) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `save`
---
-
-INSERT INTO `save` (`Blog_ID`, `email`) VALUES
-(101, 'mkaikaus@gmail.com'),
-(102, 'mkaikaus@gmail.com'),
-(103, 'mkaikaus@gmail.com'),
-(103, 'kaikaus@gmail.com');
+(511, 'Cross Chain'),
+(512, 'FIFO Control'),
+(513, 'Virtual Evaluation'),
+(514, 'Interoperability and an open hyperdocument system');
 
 -- --------------------------------------------------------
 
@@ -394,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `scientist` (
   `research_gate` varchar(255) NOT NULL,
   `wikipedia` varchar(255) NOT NULL,
   PRIMARY KEY (`Scientist_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `scientist`
@@ -422,7 +404,10 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 (19, 'Guido Salvaneschi', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
 (20, 'Jeevana Priya Inala\r\n', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
 (21, 'Liuba Shrira', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
-(22, 'Maurice Herlihy', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', '');
+(22, 'Maurice Herlihy', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(23, 'Ivan Edward Sutherland', 'Professor of Computer Science at California Institute of Technology', 'Ivan Edward Sutherland.jpeg', 'May 16, 1938 Hastings, Nebraska, United States', ' ', ' B.S. (electrical engineering) Carnegie Institute of Technology; \r\nM.S. (electrical engineering) California Institute of Technology', 'His father was a Civil Engineer', '1963-2012', 45, 4154, 92, 'https://www.youtube.com/watch?v=aYqQ-vAHv6Q', ' ', 'https://en.wikipedia.org/wiki/Ivan_Sutherland'),
+(24, '\r\nScott Fairbanks\r\n', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+(25, 'DOUGLAS ENGELBART', 'Stanford Research Institute', 'DOUGLAS ENGELBART.jpeg', 'January 30, 1925 in Portland, Oregon', 'July 2, 2013 in Atherton, California', 'B.S. in Electrical Engineering, Oregon State University; M.S. in Electrical Engineering, University of California at Berkeley', 'Midway through his undergraduate years at Oregon State University, he served two years in the United States Navy as a radio and radar technician in the Philippines.', '1968-2006', 28, 477, 17, 'https://youtu.be/B6rKUf9DWRI', 'https://www.researchgate.net/search.Search.html?type=researcher&query=DOUGLAS%20ENGELBART', 'https://en.wikipedia.org/wiki/Douglas_Engelbart');
 
 -- --------------------------------------------------------
 
@@ -439,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `signup` (
   `password` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `signup`
@@ -452,8 +437,7 @@ INSERT INTO `signup` (`id`, `name`, `email`, `address`, `password`, `phone`) VAL
 (9, 'Maleeha ', 'mkaikaus@gmail.com', 'Feni', '12345', '01636538666'),
 (10, 'Lamis', 'mkaikaus16@gmail.com', 'Dhaka', '12345', '01612345678'),
 (12, 'saad', 'saad@gmail.com', 'Feni', '54321', '01936538666'),
-(13, 'Maleeha Kaikaus', 'mkaikaus333@gmail.com', 'Feni', '12345', '01636538666'),
-(14, 'kaikaus', 'kaikaus@gmail.com', 'Feni', '54321', '01636538666');
+(13, 'Maleeha Kaikaus', 'mkaikaus333@gmail.com', 'Feni', '12345', '01636538666');
 
 -- --------------------------------------------------------
 
@@ -488,7 +472,15 @@ INSERT INTO `videos` (`Scientist_ID`, `Videos`, `video_link`) VALUES
 (14, 'How Data Abstraction changed Computing forever | Barbara Liskov | TEDxMIT', 'https://www.youtube.com/watch?v=_jTc1BTFdIo'),
 (14, 'Barbara Liskov on the Future of Computer Science', 'https://www.youtube.com/watch?v=VFh8wT57R50'),
 (14, 'Barbara Liskov at MIT - 2001 EECS Colloquium on Practical Byzantine Fault Tolerance', 'https://www.youtube.com/watch?v=Uj638eFIWg8'),
-(14, 'Liskov: The Liskov Substitution Principle', 'https://www.youtube.com/watch?v=-Z-17h3jG0A');
+(14, 'Liskov: The Liskov Substitution Principle', 'https://www.youtube.com/watch?v=-Z-17h3jG0A'),
+(23, 'White Rabbit: Interview with Doug Engelbart', 'https://www.youtube.com/watch?v=Bt0_3pppG88 '),
+(23, 'The Augmentation of Douglas Engelbart | Full Documentary', 'https://www.youtube.com/watch?v=_7ZtISeGyCY'),
+(23, 'Inventing the Computer Mouse | Douglas Engelbart | Talks at Google', 'https://www.youtube.com/watch?v=xQx-tuW9A4Q'),
+(23, '1968 “Mother of All Demos” by SRI’s Doug Engelbart and Team', 'https://www.youtube.com/watch?v=B6rKUf9DWRI'),
+(25, 'Edsger Dijkstra interview', 'https://www.youtube.com/watch?v=mLEOZO1GwVc'),
+(25, 'Edsger W. Dijkstra - Lecture: Reasoning About Programs - Solving 2 problems using programing - 1990', 'https://www.youtube.com/watch?v=GX3URhx6i2E'),
+(25, 'Edsger W. Dijkstra - The Power of Counting Arguments', 'https://www.youtube.com/watch?v=0kXjl2e6qD0'),
+(25, 'Edsger Dijkstra\'s Turing Award Speech - Part 1 of 8', 'https://www.youtube.com/watch?v=6sIlKP2LzbA');
 
 -- --------------------------------------------------------
 
