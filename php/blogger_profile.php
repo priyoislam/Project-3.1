@@ -27,12 +27,9 @@ if (isset($_SESSION['Author_ID'])) {
 <body>
 
 <?php include("navbar.php");?>
-    <div class="blog_banner">
-        <!-- <img src="../image/blogging.jpg" class="img-fluid banner" alt="Banner image for blog"> -->
-    </div>
 
-    <div class="container author m-5 text-center">
-        <img class="author_pp" src="../image/<?php echo $row['Author_Image'];?>" alt="not found" style="width: 175px; height: 175px;">
+    <div class="container author m-5 text-center mr-auto">
+        <img class="center rounded-circle" src="../image/<?php echo $row['Author_Image'];?>" alt="not found" style="width: 175px; height: 175px;">
         <h3><?php echo $row['Author_Name'];?></h3>
         <p><?php echo $row['Description']; ?></p>
     </div>
