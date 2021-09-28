@@ -35,7 +35,9 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <?php include("navbar.php");?>
+    <?php 
+    include("navbar.php");
+    ?>
     <div class="container">
         <div class="text-center m-4">
             <h3><?php echo $row['name']; ?></h3>
@@ -46,14 +48,19 @@ if (isset($_SESSION['email'])) {
             $row2 = mysqli_fetch_assoc($res2);
             if (mysqli_num_rows($res2) > 0) {
         ?>
-        <div class="card text-center mx-auto mb-5 justify-content-center" style="width: 18rem;">
+        <div class="card text-center mb-5" style="width: 18rem;">
             <div class="card-body">
                 <h6 class="card-title">Do you wanna add a new blog?</h6>
                 <?php
                 if(isset($_POST['upload_blog'])){
                     $A_ID=$row2['Author_ID'];
                     $_SESSION['Author_ID'] = $A_ID;
-                    header('location:upload_blog.php');
+                    ?>
+                    <script>
+
+                    window.location.href = "upload_blog.php";
+                    </script>
+                    <?php
                 }
                 ?>
                 <form method="post" action="" enctype="multipart/form-data">
@@ -95,8 +102,8 @@ if (isset($_SESSION['email'])) {
         <?php
     }
     ?>
+    <br>
     </div>
-
     <div class="product container ">
         <?php
         if ($connect) {
