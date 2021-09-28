@@ -26,9 +26,13 @@ if (isset($_SESSION['Blog_ID'])) {
 
 <body>
 <?php include("navbar.php");?>
-    <div class="blog_banner">
+<br>
+
+<div class="blog_banner container">
         <img src="../image/<?php echo $row['Image']; ?>" class="img-fluid banner" alt="Banner image for blog">
     </div>
+
+    
 
     <div class="container" id="artc">
         <div class="content">
@@ -38,6 +42,7 @@ if (isset($_SESSION['Blog_ID'])) {
             <p><?php echo $row['Content']; ?></p>
         </div>
     </div>
+    <br>
 
     <?php include("footer.php");?>
     
