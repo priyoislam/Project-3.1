@@ -42,7 +42,7 @@
         <div id="owl-banner" class="owl-carousel">
         <div class="items">
           
-            <img src="../image/csa.jpg" style="width:100%">
+            <img src="../image/CSRC.jpg" style="width:100%">
         </div>
       
         <div class="items">

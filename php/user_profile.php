@@ -147,6 +147,48 @@ if (isset($_SESSION['email'])) {
         ?>
     </div>
 
+    <div class="container tribute">
+    <?php
+        if ($connect) {
+            $sqlquery = "SELECT * from (scientist inner join `follow` using(Scientist_ID)) inner join signup using(email) where email='$_SESSION[email]';";
+            $fres = mysqli_query($connect, $sqlquery);
+        ?>  
+            <?php 
+            if (mysqli_num_rows($fres) > 0){
+                ?>
+            <h6>Following:</h6>
+            <?php } ?>
+            <div class="row">
+                <?php
+                while ($frow = mysqli_fetch_assoc($fres)) :
+                ?>
+                <div class="col-md-4">
+                    <div class="card mb-3" style="width: 18rem; height: 25rem;">
+                        <img src="../image/<?php echo $frow['Sci_img']; ?>" alt="John" style="width:200px; height: 200px; align-items:center" class="center p-2 rounded-circle">
+                        <h3><?php echo $frow['Sci_Name']; ?></h3>
+                        <?php
+                        if ($connect) {
+                            $fsql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Sci_Name='$frow[Sci_Name]'";
+                            $fresult = mysqli_query($connect, $fsql1);
+                        }
+                        ?>
+                        <p class="title"><?php
+                                            while ($frow1 = mysqli_fetch_assoc($fresult)) :
+                                            ?>
+                                <span class="fs-6"><?php echo $frow1['Sub_Name']; ?>, </span>
+                            <?php endwhile; ?>
+                        </p>
+                        <p><b><?php echo $frow['Work_place']; ?></b></p>
+
+                       <a class="seedet" href="tribute.php?profile=<?php echo $frow['Scientist_ID']; ?>" class="btn btn-block text-light link_btn" role="button" aria-disabled="true">See Details</a>
+                    </div>
+                </div>
+                <?php endwhile; ?>
+            </div>
+        <?php
+        }
+        ?>
+    </div>
     <div class="product container ">
         <?php
         if ($connect) {
@@ -156,7 +198,7 @@ if (isset($_SESSION['email'])) {
             <?php 
             if (mysqli_num_rows($res) > 0){
                 ?>
-            <h6>Saved blog:</h6>
+            <h6>Saved blogs:</h6>
             <?php } ?>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php
@@ -200,51 +242,6 @@ if (isset($_SESSION['email'])) {
         <?php
         }
         ?>
-    </div>
-
-    <div class="container mt-5 tribute">
-    <?php
-        if ($connect) {
-            $sqlquery = "SELECT * from (scientist inner join `follow` using(Scientist_ID)) inner join signup using(email) where email='$_SESSION[email]';";
-            $fres = mysqli_query($connect, $sqlquery);
-        ?>  
-            <?php 
-            if (mysqli_num_rows($fres) > 0){
-                ?>
-            <h6>Followed pioneers:</h6>
-            <?php } ?>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php
-                while ($frow = mysqli_fetch_assoc($fres)) :
-                ?>
-                <div class="col-md-4">
-                    <div class="card mb-3" style="width: 18rem; height: 25rem;">
-                        <img src="../image/<?php echo $frow['Sci_img']; ?>" alt="John" style="width:200px; height: 200px; align-items:center" class="center p-2 rounded-circle">
-                        <h3><?php echo $frow['Sci_Name']; ?></h3>
-                        <?php
-                        if ($connect) {
-                            $fsql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Sci_Name='$frow[Sci_Name]'";
-                            $fresult = mysqli_query($connect, $fsql1);
-                        }
-                        ?>
-                        <p class="title"><?php
-                                            while ($frow1 = mysqli_fetch_assoc($fresult)) :
-                                            ?>
-                                <span class="fs-6"><?php echo $frow1['Sub_Name']; ?>, </span>
-                            <?php endwhile; ?>
-                        </p>
-                        <p><b><?php echo $frow['Work_place']; ?></b></p>
-
-                       <a class="seedet" href="tribute.php?profile=<?php echo $frow['Scientist_ID']; ?>" class="btn btn-block text-light link_btn" role="button" aria-disabled="true">See Details</a>
-                    </div>
-                </div>
-                <?php endwhile; ?>
-            </div>
-        <?php
-        }
-        ?>
-
-
     </div>
     <?php include("footer.php"); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
