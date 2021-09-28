@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 28, 2021 at 10:12 AM
+-- Generation Time: Sep 28, 2021 at 10:59 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -319,7 +319,10 @@ INSERT INTO `publish` (`Scientist_ID`, `Pub_ID`) VALUES
 (21, 3015),
 (22, 3015),
 (23, 3016),
-(24, 3016);
+(24, 3016),
+(23, 512),
+(25, 513),
+(25, 514);
 
 -- --------------------------------------------------------
 
