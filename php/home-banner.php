@@ -42,22 +42,22 @@
         <div id="owl-banner" class="owl-carousel">
         <div class="items">
           
-            <img src="../image/research-areas.png" style="width:100%">
+            <img src="../image/csa.jpg" style="width:100%">
         </div>
       
         <div class="items">
           
-            <img src="../image/cs_scientist.jpg" style="width:100%">
+            <img src="../image/csa3.jpeg" style="width:100%">
         </div>
       
         <div class="items">
           
-            <img src="../image/AI2.jpg" style="width:100%">
+            <img src="../image/csa4.jpg" style="width:100%">
         </div>
       
         <div class="items">
           
-            <img src="../image/machine learning.jpg" style="width:100%">
+            <img src="../image/csa2.jpg" style="width:100%">
         </div>
           </div>
 
