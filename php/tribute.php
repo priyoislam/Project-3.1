@@ -89,9 +89,9 @@ if (isset($_POST['search'])) {
                         <p><b><?php echo $row['Work_place']; ?></b></p>
                         <div class="d-flex justify-content-center social-links">
 
-                            <a href="<?php echo $row1['Youtube']; ?>"><i class="fab fa-youtube"></i></a>
-                            <a href="<?php echo $row1['research_gate']; ?>"><i class="fab fa-researchgate"></i></a>
-                            <a href="<?php echo $row1['wikipedia']; ?>"><i class="fab fa-wikipedia-w"></i></a>
+                            <a href="<?php echo $row['Youtube']; ?>"><i class="fab fa-youtube"></i></a>
+                            <a href="<?php echo $row['research_gate']; ?>"><i class="fab fa-researchgate"></i></a>
+                            <a href="<?php echo $row['wikipedia']; ?>"><i class="fab fa-wikipedia-w"></i></a>
 
                         </div>
 
