@@ -108,7 +108,7 @@ else{
                         <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>"
                                 rel="bookmark"><?php echo $row['Title']; ?></a></h5>
                         <div class="d-flex align-items-center justify-content-between blog-list2">
-                            <div class="author d-flex align-items-center" style="position:absolute;bottom:10px;">
+                            <div class="author d-flex align-items-center" style="position:absolute;bottom:15px;">
 
                                 <a class="fw-bold" style="font-size: 13px;"
                                     href="blog.php?author=<?php echo $row['Author_ID'];?>">

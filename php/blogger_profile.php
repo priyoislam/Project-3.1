@@ -18,8 +18,8 @@ if (isset($_SESSION['Author_ID'])) {
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/blogger_profile.css">
-    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/blogger_profile.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="../css/blog.css?v=<?php echo time();?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
 </head>
@@ -72,7 +72,7 @@ if (isset($_SESSION['Author_ID'])) {
                                 </div>
                                 <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
                                 <div class="d-flex align-items-center justify-content-between blog-list2">
-                                    <div class="author d-flex align-items-center" style="position:absolute;bottom:10px;">
+                                    <div class="author d-flex align-items-center" style="position:absolute;bottom:15px;">
 
                                         <a class="fw-bold" style="font-size: 13px;" href="blog.php?author=<?php echo $row['Author_ID']; ?>">
                                             <span><?php echo $row['Author_Name']; ?></span>
