@@ -1,6 +1,8 @@
 <?php
 include('dbcon.php');
 session_start();
+
+
 if (isset($_SESSION['email'])) {
     $sql = "SELECT * from signup where email='$_SESSION[email]'";
     $res = mysqli_query($connect, $sql);
@@ -33,7 +35,7 @@ if (isset($_SESSION['email'])) {
 <body>
     <?php include("navbar.php");?>
     <div class="container">
-        <div class="text-center">
+        <div class="text-center m-4">
             <h3><?php echo $row['name']; ?></h3>
         </div>
         <?php
@@ -42,7 +44,7 @@ if (isset($_SESSION['email'])) {
             $row2 = mysqli_fetch_assoc($res2);
             if (mysqli_num_rows($res2) > 0) {
         ?>
-        <div class="card text-center mb-5" style="width: 18rem;">
+        <div class="card text-center mx-auto mb-5 justify-content-center" style="width: 18rem;">
             <div class="card-body">
                 <h6 class="card-title">Do you wanna add a new blog?</h6>
                 <?php
@@ -109,7 +111,9 @@ if (isset($_SESSION['email'])) {
                 while ($row = mysqli_fetch_assoc($res)) :
                 ?>
                     <div class="col pt-3">
-                        <div class="card blog">
+                        <div class="card blog mb-3" style="width: 18rem; height: 12rem;">
+                        <!-- <img class="card-img-top" src="../image/<?php echo ['Image'];?>" style="width: 100%"
+                        alt="Card image cap"> -->
                             <div class="card-body">
                                 <div class="blog-list">
                                     <div>
@@ -120,7 +124,7 @@ if (isset($_SESSION['email'])) {
                                     </a>
                                     </span>
                                 </div>
-                                <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Article_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
+                                <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
                                 <div class="d-flex align-items-center justify-content-between blog-list">
                                     <div class="author d-flex align-items-center">
                         
@@ -129,7 +133,62 @@ if (isset($_SESSION['email'])) {
                                         </a>
                                     </div>
                                 
-                                    <a href="blog.php?article=<?php echo $row['Article_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
+                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+        <?php
+        }
+        ?>
+    </div>
+
+    <div class="product container ">
+        <?php
+        if ($connect) {
+            $art = "SELECT * from (blog inner join `save` using(Blog_ID)) inner join signup using(email) where email='$_SESSION[email]';";
+            $res = mysqli_query($connect, $art);
+        ?>  
+            <?php 
+            if (mysqli_num_rows($res) > 0){
+                ?>
+            <h6>All blogs saved by <?php echo $row['name'];?></h6>
+            <?php } ?>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <?php
+                while ($row = mysqli_fetch_assoc($res)) :
+                ?>
+                    <div class="col pt-3">
+                        <div class="card blog mb-3" style="width: 18rem; height: 12rem;">
+                        <!-- <img class="card-img-top" src="../image/<?php echo ['Image'];?>" style="width: 100%"
+                        alt="Card image cap"> -->
+                            <div class="card-body">
+                                <div class="blog-list">
+                                    <div>
+                                        <a href="#" title="blog about education"><?php echo $row['Topic']; ?></a>
+                                    </div>
+                                    <span><i class="fa fa-calendar me-1"></i>
+                                        <?php echo $row['Date']; ?></span>
+                                    </a>
+                                    </span>
+                                </div>
+                                <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
+                                <div class="d-flex align-items-center justify-content-between blog-list">
+                                    <?php
+                                         $sql = "SELECT * from blog inner join author using(Author_ID) where Blog_ID='$row[Blog_ID]';";
+                                         $result = mysqli_query($connect, $sql);
+                                         $row2 = mysqli_fetch_assoc($result);
+                                    ?>
+                                    <div class="author d-flex align-items-center">
+                        
+                                        <a class="fw-bold" style="font-size: 13px;" href="blog.php?author=<?php echo $row2['Author_ID'];?>">
+                                            <span><?php echo $row2['Author_Name'];?></span>
+                                        </a>
+                                    </div>
+                                
+                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
                                 </div>
                             </div>
                         </div>

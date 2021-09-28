@@ -38,12 +38,10 @@ include("navbar.php");
 ?>
            <br>
                     <table id="first">
-                            
-                    
                             <tr>
                                 <td>
                                     <div class="skill-row">
-                                        <img class="chilli-img" src="../image/<?php echo $row['Sci_img'];?>" alt="chillies-img">
+                                        <img class="chilli-img center rounded-circle" src="../image/<?php echo $row['Sci_img'];?>" alt="Scientist-img"  style="width:200px; height: 200px; align-items:center" >
 
                                         <h3 class="john"><?php echo $row['Sci_Name'];?></h3>
                                         <?php 

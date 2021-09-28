@@ -95,7 +95,7 @@ else{
                 <div class="card blog">
                     <img class="card-img-top" src="../image/<?php echo $row['Image'];?>" style="width: 100%"
                         alt="Card image cap">
-                    <div class="card-body ">
+                    <div class="card-body">
                         <div class="blog-list">
                             <div>
                                 <span><?php echo $row['Topic']; ?></span>
