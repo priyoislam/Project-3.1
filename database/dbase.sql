@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+<<<<<<< HEAD
+-- Generation Time: Sep 28, 2021 at 01:33 PM
+=======
 -- Generation Time: Sep 28, 2021 at 01:20 PM
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -79,7 +83,11 @@ CREATE TABLE IF NOT EXISTS `author` (
   `Author_Image` varchar(100) NOT NULL,
   `Description` varchar(10000) NOT NULL,
   PRIMARY KEY (`Author_ID`) USING BTREE
+<<<<<<< HEAD
+) ENGINE=MyISAM AUTO_INCREMENT=1011 DEFAULT CHARSET=latin1;
+=======
 ) ENGINE=MyISAM AUTO_INCREMENT=1012 DEFAULT CHARSET=latin1;
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 
 --
 -- Dumping data for table `author`
@@ -155,7 +163,11 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `Content` varchar(50000) NOT NULL,
   `Author_ID` int(100) NOT NULL,
   PRIMARY KEY (`Blog_ID`)
+<<<<<<< HEAD
+) ENGINE=MyISAM AUTO_INCREMENT=111 DEFAULT CHARSET=latin1;
+=======
 ) ENGINE=MyISAM AUTO_INCREMENT=112 DEFAULT CHARSET=latin1;
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 
 --
 -- Dumping data for table `blog`
@@ -231,6 +243,8 @@ INSERT INTO `experience` (`Scientist_ID`, `experience`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+=======
 -- Table structure for table `follow`
 --
 
@@ -255,6 +269,7 @@ INSERT INTO `follow` (`Scientist_ID`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 -- Table structure for table `publication`
 --
 
@@ -359,7 +374,11 @@ CREATE TABLE IF NOT EXISTS `research_area` (
   `Sub_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Sub_Name` varchar(255) NOT NULL,
   PRIMARY KEY (`Sub_ID`)
+<<<<<<< HEAD
+) ENGINE=MyISAM AUTO_INCREMENT=515 DEFAULT CHARSET=latin1;
+=======
 ) ENGINE=MyISAM AUTO_INCREMENT=517 DEFAULT CHARSET=latin1;
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 
 --
 -- Dumping data for table `research_area`
@@ -384,6 +403,8 @@ INSERT INTO `research_area` (`Sub_ID`, `Sub_Name`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+=======
 -- Table structure for table `save`
 --
 
@@ -408,6 +429,7 @@ INSERT INTO `save` (`Blog_ID`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 -- Table structure for table `scientist`
 --
 
@@ -429,7 +451,11 @@ CREATE TABLE IF NOT EXISTS `scientist` (
   `research_gate` varchar(255) NOT NULL,
   `wikipedia` varchar(255) NOT NULL,
   PRIMARY KEY (`Scientist_ID`)
+<<<<<<< HEAD
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+=======
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 
 --
 -- Dumping data for table `scientist`
@@ -460,7 +486,13 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 (22, 'Maurice Herlihy', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
 (23, 'Ivan Edward Sutherland', 'Professor of Computer Science at California Institute of Technology', 'Ivan_Edward_Sutherland.jpg', 'May 16, 1938 Hastings, Nebraska, United States', ' ', ' B.S. (electrical engineering) Carnegie Institute of Technology; \r\nM.S. (electrical engineering) California Institute of Technology', 'His father was a Civil Engineer', '1963-2012', 45, 4154, 92, 'https://www.youtube.com/watch?v=aYqQ-vAHv6Q', ' ', 'https://en.wikipedia.org/wiki/Ivan_Sutherland'),
 (24, '\r\nScott Fairbanks\r\n', ' ', '', '', ' ', ' ', ' ', '', 0, 0, 0, '', '', ''),
+<<<<<<< HEAD
+(25, 'DOUGLAS ENGELBART', 'Stanford Research Institute', 'DOUGLAS ENGELBART.jpeg', 'January 30, 1925 in Portland, Oregon', 'July 2, 2013 in Atherton, California', 'B.S. in Electrical Engineering, Oregon State University; M.S. in Electrical Engineering, University of California at Berkeley', 'Midway through his undergraduate years at Oregon State University, he served two years in the United States Navy as a radio and radar technician in the Philippines.', '1968-2006', 28, 477, 17, 'https://youtu.be/B6rKUf9DWRI', 'https://www.researchgate.net/search.Search.html?type=researcher&query=DOUGLAS%20ENGELBART', 'https://en.wikipedia.org/wiki/Douglas_Engelbart'),
+(26, 'EDSGER WYBE DIJKSTRA', 'Mathematisch Centrum\r\nEindhoven University of Technology', 'EDSGER WYBE DIJKSTRA.jpeg', '11 May 1930, Rotterdam, The Netherlands', '6 August 2002, Nuenen, The Netherlands.', ' Gymnasium Erasmianum in Rotterdam; undergraduate degree, physics, University of Leyden; PhD computer science', 'His father was a chemist, president of the Dutch Chemical Society;His mother was a mathematician', '1961-2007', 98, 3758, 67, 'https://youtu.be/mLEOZO1GwVc', ' ', 'https://en.wikipedia.org/wiki/Edsger_W._Dijkstra'),
+(27, 'MARVIN MINSKY', 'Massachusetts Institute of Technology (MIT)', 'MARVIN MINSKY.jpeg', 'New York City, August 9, 1927', 'Boston, January 24, 2016', ' Harvard University, B.A. Mathematics; Princeton University', 'Minsky married pediatrician Gloria Rudisch;Minsky was a talented improvisational pianist', '1961-2010', 57, 1358, 87, 'https://youtu.be/EI0NXTrS5Pw', ' ', 'https://en.wikipedia.org/wiki/Marvin_Minsky');
+=======
 (25, 'DOUGLAS ENGELBART', 'Stanford Research Institute', 'DOUGLAS_ENGELBART.jpg', 'January 30, 1925 in Portland, Oregon', 'July 2, 2013 in Atherton, California', 'B.S. in Electrical Engineering, Oregon State University; M.S. in Electrical Engineering, University of California at Berkeley', 'Midway through his undergraduate years at Oregon State University, he served two years in the United States Navy as a radio and radar technician in the Philippines.', '1968-2006', 28, 477, 17, 'https://youtu.be/B6rKUf9DWRI', 'https://www.researchgate.net/search.Search.html?type=researcher&query=DOUGLAS%20ENGELBART', 'https://en.wikipedia.org/wiki/Douglas_Engelbart');
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 
 -- --------------------------------------------------------
 
@@ -477,7 +509,11 @@ CREATE TABLE IF NOT EXISTS `signup` (
   `password` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+=======
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 
 --
 -- Dumping data for table `signup`
@@ -565,9 +601,13 @@ INSERT INTO `work` (`Scientist_ID`, `Sub_ID`) VALUES
 (14, 508),
 (14, 509),
 (14, 510),
+<<<<<<< HEAD
+(14, 511);
+=======
 (14, 511),
 (25, 515),
 (23, 516);
+>>>>>>> 95308ec88cb1dc654ac3d9feddf5a59eed8ed295
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
