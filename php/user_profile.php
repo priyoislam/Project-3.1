@@ -27,11 +27,91 @@ if (isset($_SESSION['email'])) {
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/blogger_profile.css">
-    <link rel="stylesheet" href="../css/tribute.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../css/blog.css">
+    <!-- <link rel="stylesheet" href="../css/tribute.css?v=<?php echo time(); ?>"> -->
+    <link rel="stylesheet" href="../css/blog.css=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
         rel="stylesheet">
+
+
+        <style>
+
+.social-links
+{
+    padding: 10px;
+    font-size: 50px;
+    position: absolute;
+    justify-content: center;
+    bottom: 50px;
+    left:100px;
+}
+
+.social-links a 
+{
+    font-size: 40px;
+    padding: 10px;
+    color:#142850;
+    border: none;
+    outline: 0;
+    display: inline-block !important;
+    /* padding: 8px; */
+    color: white;
+    /* background-color: #142850; */
+    cursor: pointer;
+    /* width: 100%; */
+    /* font-size: 18px; */
+    /* margin-top: auto; */
+    
+}
+
+
+.tribute .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    /* margin: auto; */
+    text-align: center;
+    height: 500px;
+    
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.tribute .card .seedet{
+    border: none;
+    outline: 0;
+    display: inline-block !important;
+    padding: 8px;
+    color: white;
+    background-color: #142850;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: auto;
+}
+
+
+.tribute a ,h1{
+    text-decoration: none;
+    font-size: 22px;
+    color: #142850;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+.center {
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 50%;
+}
+
+
+</style>
 </head>
 
 <body>
@@ -154,7 +234,7 @@ if (isset($_SESSION['email'])) {
         ?>
     </div>
 
-    <div class="container tribute">
+    <div class="container product tribute">
     <?php
         if ($connect) {
             $sqlquery = "SELECT * from (scientist inner join `follow` using(Scientist_ID)) inner join signup using(email) where email='$_SESSION[email]';";
@@ -163,7 +243,7 @@ if (isset($_SESSION['email'])) {
             <?php 
             if (mysqli_num_rows($fres) > 0){
                 ?>
-            <h6>Following:</h6>
+            <h1>Following:</h1>
             <?php } ?>
             <div class="row">
                 <?php
@@ -205,7 +285,7 @@ if (isset($_SESSION['email'])) {
             <?php 
             if (mysqli_num_rows($res) > 0){
                 ?>
-            <h6>Saved blogs:</h6>
+            <h1>Saved blogs:</h1>
             <?php } ?>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php

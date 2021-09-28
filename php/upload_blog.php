@@ -52,11 +52,19 @@ if ($connect) {
     <script src="../js/jquery.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+   
+
 
 </head>
 
 <body>
+
+<?php include("navbar.php");?>
+
     <div class="container">
+    <br>
+    <h1 class="text-center"> Write a Blog!</h1>
+    <br>
         <div class="blog_post m-4 p-5">
             <form method="post" action="" enctype="multipart/form-data">
                 <div class="form-row">
@@ -92,6 +100,8 @@ if ($connect) {
             </form>
         </div>
     </div>
+
+    <?php include("footer.php");?>
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
