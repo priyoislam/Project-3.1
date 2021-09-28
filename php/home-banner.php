@@ -62,14 +62,6 @@
           </div>
 
 
-
-          
-      
-        <!-- Image text -->
-        <div class="caption-container">
-          <p id="caption">"If I have seen further, it is by standing on the shoulders of giants" - Isaac Newton</p>
-        </div>
-
     </div>
   
       <script>

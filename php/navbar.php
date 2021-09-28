@@ -131,7 +131,7 @@
                 </div>
 
 
-                <div class="d-flex  searchbar">
+                <!-- <div class="d-flex  searchbar">
 
 
                     <div>
@@ -139,12 +139,11 @@
 
                     </div>
                     <div>
-                        <!-- <button class="btn btn_src" type="submit">Search</button> -->
                         <button class="btn btn_src" type="submit"><i class="fa fa-search"></i></button>
                     </div>
 
 
-                </div>
+                </div> -->
 
 
 

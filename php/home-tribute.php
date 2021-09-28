@@ -1,3 +1,20 @@
+<?php
+    include('dbcon.php');
+    if(isset($_GET['profile'])){
+            $Sci_ID=$_GET['profile'];
+            $_SESSION['Sci_ID']=$Sci_ID;
+            header('location:scientist_profile.php');
+    }
+?>
+<?php
+if($connect){
+    $art = "SELECT * from scientist where Pub_Count!='0'";
+    $res = mysqli_query($connect, $art);
+    $valuetosearch="";
+}
+?>
+
+
 <!doctype html>
 <html>
 <head>
@@ -10,7 +27,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/home-pioneer.css">
+    <link rel="stylesheet" href="../css/home-pioneer.css?v=<?php echo time();?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
         rel="stylesheet">
@@ -37,53 +54,37 @@
     <div class="container">
    
         <div id="owl-pioneer" class="owl-carousel pioneers">
-        <div class="items">
+        
           
-        <div class="card">
-                    <img src="../image/marvin_minsky.jpg" alt="John" style="width:80%; align-items:center; height:200px" class="center">
-                    <h1>Marvin Minsky</h1>
-                    <p class="title">Artificial intelligence</p>
                     
+                        <?php
+                            while ($row = mysqli_fetch_assoc($res)) :
+                            ?>
+                        <div class="items">
+                            <div class="card d-flex flex-column justify-content-center align-items-center text-cente">
+                                <img src="../image/<?php echo $row['Sci_img'];?>" alt="John" style="width:200px; height: 200px; align-items:center"
+                                    class="center p-2 rounded-circle">
+                                <h3><?php echo $row['Sci_Name'];?></h3>
+                                <?php 
+                                if($connect){
+                                $sql1 = "SELECT * from (scientist inner join work using(Scientist_ID)) inner join research_area using(Sub_ID) where Sci_Name='$row[Sci_Name]'";
+                                $result = mysqli_query($connect, $sql1);
+                                }
+                                ?>
+                                <p class="title"><?php 
+                                        while ($row1 = mysqli_fetch_assoc($result)) :
+                                    ?>
+                                    <span class="fs-6"><?php echo $row1['Sub_Name'];?>, </span>
+                                    <?php endwhile; ?>
+                                </p>
 
-                    <button>See Details</button>
-                </div>
-        </div>
-      
-        <div class="items">
-         
-        <div class="card">
-                    <img src="../image/alan_kay.jpg" alt="John" style="width:80%; align-items:center; height:200px" class="center">
-                    <h1>Alan Kay</h1>
-                    <p class="title">OOP , Dynabook , Smalltalk</p>
+                                <a href="tribute.php?profile=<?php echo $row['Scientist_ID'];?>" class="btn btn-block text-light" role="button" aria-disabled="true">See Details</a>
+                            </div>
+                            </div>
+                        
+                        <?php endwhile; ?>
                     
-
-                    <button>See Details</button>
-                </div>
-        </div>
-      
-        <div class="items">
-      
-          <div class="card">
-                    <img src="../image/joe_armstrong.jpg" alt="John" style="width:90%; align-items:center; height:200px" class="center">
-                    <h1>Joe Armstrong</h1>
-                    <p class="title">Artificial intelligence, Lisp, circumscription, situation calculus</p>
-                    
-
-                    <button>See Details</button>
-                </div>
-        </div>
-      
-        <div class="items">
-          
-        <div class="card">
-                    <img src="../image/john_mccarthy.jpg" alt="John" style="width:90%; align-items:center; height:200px" class="center">
-                    <h1>John McCarthy</h1>
-                    <p class="title">Artificial intelligence, Lisp, circumscription, situation calculus</p>
-                    
-
-                    <button>See Details</button>
-                </div>
-        </div>
+    
           </div>
 
 

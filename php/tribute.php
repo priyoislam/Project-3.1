@@ -89,14 +89,14 @@ if (isset($_POST['search'])) {
                         <p><b><?php echo $row['Work_place']; ?></b></p>
                         <div class="d-flex justify-content-center social-links">
 
-                            <a href="<?php echo $row1['Youtube']; ?>"><i class="fab fa-youtube"></i></a>
-                            <a href="<?php echo $row1['research_gate']; ?>"><i class="fab fa-researchgate"></i></a>
-                            <a href="<?php echo $row1['wikipedia']; ?>"><i class="fab fa-wikipedia-w"></i></a>
+                            <a href="<?php echo $row['Youtube']; ?>"><i class="fab fa-youtube"></i></a>
+                            <a href="<?php echo $row['research_gate']; ?>"><i class="fab fa-researchgate"></i></a>
+                            <a href="<?php echo $row['wikipedia']; ?>"><i class="fab fa-wikipedia-w"></i></a>
 
                         </div>
 
 
-                        <p style="background-color: #142850;" class="m-0"><a href="tribute.php?profile=<?php echo $row['Scientist_ID']; ?>" class="btn btn-block text-light link_btn" role="button" aria-disabled="true">See Details</a></p>
+                       <a class="seedet" href="tribute.php?profile=<?php echo $row['Scientist_ID']; ?>" class="btn btn-block text-light link_btn" role="button" aria-disabled="true">See Details</a>
                     </div>
                 </div>
             <?php endwhile; ?>
