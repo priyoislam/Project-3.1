@@ -5,10 +5,14 @@
     color: #142850;
 } */
 
-h1,h5{
-    color: #04009A;
+#blog-profile h1,h5,h3,h4,h6,p{
+    color: #142850;
+
+
 }
 
-h3,h4,h6{
-    color: #00909E;
+
+.blog-list2 #blog_btn2
+{
+    background-color: #142850 !important;
 }

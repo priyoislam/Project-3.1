@@ -27,15 +27,27 @@ if (isset($_SESSION['Author_ID'])) {
 <body>
 
 <?php include("navbar.php");?>
+<br>
 
-    <div class="container author m-5 text-center mr-auto">
+<div id="blog-profile">
+
+<div class="container">
+<div class="d-flex flex-column justify-content-center align-items-center text-center">
+    <h1>Writers Profile</h1>
         <img class="center rounded-circle" src="../image/<?php echo $row['Author_Image'];?>" alt="not found" style="width: 175px; height: 175px;">
+        <br>
         <h3><?php echo $row['Author_Name'];?></h3>
+        <br>
         <p><?php echo $row['Description']; ?></p>
     </div>
+
+</div>
+<br>
+    
+<h3 class="text-center">All blogs by <?php echo $row['Author_Name']; ?></h3>
     
     <div class="product container mt-5">
-        <h5>All blogs by <?php echo $row['Author_Name']; ?></h5>
+      
         <?php
         if ($connect) {
             $art = "SELECT * from blog inner join author using(Author_ID) where Author_ID='$_SESSION[Author_ID]'";
@@ -59,15 +71,17 @@ if (isset($_SESSION['Author_ID'])) {
                                     </span>
                                 </div>
                                 <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
-                                <div class="d-flex align-items-center justify-content-between blog-list">
-                                    <div class="author d-flex align-items-center">
+                                <div class="d-flex align-items-center justify-content-between blog-list2">
+                                    <div class="author d-flex align-items-center" style="position:absolute;bottom:10px;">
 
                                         <a class="fw-bold" style="font-size: 13px;" href="blog.php?author=<?php echo $row['Author_ID']; ?>">
                                             <span><?php echo $row['Author_Name']; ?></span>
                                         </a>
                                     </div>
 
-                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
+                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" 
+                                    class="btn  text-light btn-sm hhn"  id="blog_btn2" tabindex="-1" role="button"
+                                aria-disabled="true" style="position:absolute;bottom:10px; left:230px;">Read full blog</a>
                                 </div>
                             </div>
                         </div>
@@ -78,6 +92,12 @@ if (isset($_SESSION['Author_ID'])) {
         }
         ?>
     </div>
+
+
+</div>
+
+
+    <br>
     <?php include("footer.php");?>
 
     <script src="../js/jquery-3.5.1.js"></script>
