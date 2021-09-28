@@ -38,18 +38,18 @@ padding:90px;
     color: #142850;
 }
 .text{
-    /* font-size: 17px; */
+    font-size: 20px;
     color: #142850;
     line-height: 1.5;
     text-align: justify;
     margin-bottom: 40px;
 }
-.skills{
+/* .skills{
     display: flex;
     justify-content: space-between;
     font-weight: 700;
     font-size: 13px;
-}
+} */
 @media screen and (max-width:1200px){
     .inner-container{
         padding: 80px;
@@ -80,7 +80,7 @@ padding:90px;
     box-sizing: border-box;
 }
 body{
-    font-family: poppins;
+    /* font-family: poppins; */
     margin: 0;
     display: grid;
     /* font-size: 14px; */
@@ -95,9 +95,9 @@ main{
     justify-content: center;
     color:#9b9b9b;
     line-height: 1.5;
-    font-size: 15px;
+    /* font-size: 20px; */
     /* text-transform: */
-    font-weight: bold;
+    /* font-weight: bold; */
     background-color: #142850 ;
 
     padding-top: 20px;
@@ -112,9 +112,17 @@ main{
     width: 95%;
     height: 450px;
 }
-.card-body
+.cardd2 .card-body
 {
-    background-color: #c0cac2
+    background-color: #c0cac2;
+    font-size:15px;
+    color:#142850;
+}
+.cardd1 .card-body
+{
+    background-color: #c0cac2;
+    font-size:15px;
+    color:#142850;
 }
 .accordion-item
 {
@@ -134,7 +142,7 @@ main{
 }
 .cardclr1{
     color: #142850;
-    font-size: 16px;}
+    font-size: 20px;}
     .faq1{
         padding-top: 20px;
         padding-bottom: 20px;

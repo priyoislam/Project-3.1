@@ -48,7 +48,7 @@
 }
 
 .blog img{
-    height: 18vw;
+    height: 50%;
 }
 .b_head h4 , .b_search label
 {
@@ -58,6 +58,6 @@
 
 .product .card
 {
-    height:600px;
+    height:450px;
 }
 

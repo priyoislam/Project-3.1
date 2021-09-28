@@ -1,3 +1,8 @@
+<?php
+include('dbcon.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +31,7 @@
               <div class="inner-container">
                 <h1>About</h1>
                 <p class="text">
-                  Research-101 brings together computing educators, researchers, and professionals to inspire dialogue, share
+                  CSWiki brings together computing educators, researchers, and professionals to inspire dialogue, share
                   resources, and address the field's challenges. Research 101 strengthens the profession's collective voice through
                   strong leadership, promotion of the highest standards, and recognition of technical excellence.It supports the
                   professional growth of its members by providing opportunities for life‐long learning, career development, and
@@ -52,6 +57,8 @@
 
                       If, after sometimes hundreds or thousands of tests, the theory stands true, it becomes widly accepted as
                       reliable.
+
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo animi nulla quia assumenda nam sequi alias inventore vitae! Quaerat dignissimos doloremque incidunt facilis, porro expedita repellat laborum. Repellat iste officiis, recusandae voluptas tempora inventore modi voluptates esse sunt officia adipisci accusantium eum blanditiis ea. Impedit nihil iusto culpa obcaecati dicta deleniti, sunt eos officiis blanditiis modi nemo numquam consequatur ipsam distinctio exercitationem ad molestiae ullam sequi, nisi dolore ipsum provident! Saepe aperiam praesentium maxime est veritatis vero, suscipit architecto, deserunt repellat iure dolorem consequuntur modi fuga cum neque laboriosam aspernatur, ex at. Dolores, consequuntur placeat velit rerum quibusdam voluptas? Voluptatibus?
                    </p>
 
                    </p>
