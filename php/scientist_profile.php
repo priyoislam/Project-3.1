@@ -108,7 +108,7 @@ if (isset($_SESSION['Sci_ID'])) {
 
             <hr class="high">
             <h2 class="titl">Biography:</h2>
-            <div id="cardcss">
+            <div id="cardcss"class="lead ">
                 <div class="biograph card">
 
                     <div class="card-body ">
@@ -119,7 +119,7 @@ if (isset($_SESSION['Sci_ID'])) {
                             <li><b>Death: </b><?php echo $row['Death']; ?></li>
                             <li><b>Education: </b><?php echo $row['Education']; ?></li>
                             <li><b>Additional Info: </b><?php echo $row['Add_Info']; ?></li>
-                            <li><b class="biog">Experience:</b><br>
+                            <li><b class="biog"><strong>Experience:</strong> </b><br>
                                 <?php
                                 if ($connect) {
                                     $sql2 = "SELECT * from scientist inner join experience using(Scientist_ID) where Scientist_ID='$_SESSION[Sci_ID]'";
@@ -157,11 +157,14 @@ if (isset($_SESSION['Sci_ID'])) {
                             $result3 = mysqli_query($connect, $sql3);
                         }
                         ?>
-                        <ul class="demo" style="list-style-type:circle">
+                        <ul class="demo " style="list-style-type:circle">
+                        
                             <?php
                             while ($row3 = mysqli_fetch_assoc($result3)) :
                             ?>
-                                <a href="<?php echo $row3['Article_Link']; ?>"><?php echo $row3['Article_Name']; ?></a></li><br>
+                            <li>
+
+                                <a href="<?php echo $row3['Article_Link']; ?>" class="link-primary lead "><?php echo $row3['Article_Name']; ?></a></li><br>
                                 
 
                             <?php endwhile; ?>
@@ -188,7 +191,7 @@ if (isset($_SESSION['Sci_ID'])) {
                             <?php
                             while ($row4 = mysqli_fetch_assoc($result4)) :
                             ?>
-                                <a href="<?php echo $row4['Pub_Link']; ?>"><?php echo $row4['Pub_Name'];?></a><br>
+                                <a href="<?php echo $row4['Pub_Link']; ?>"class="link-primary lead "><?php echo $row4['Pub_Name'];?></a><br>
                                
                                 <span class="fs-.5">Cited by: <?php echo $row4['Citation_Count']; ?></span><br>
                                 <span class="text-muted">
@@ -313,7 +316,7 @@ if (isset($_SESSION['Sci_ID'])) {
                             <?php
                             while ($row5 = mysqli_fetch_assoc($result5)) :
                             ?>
-                                <li><a href="<?php echo $row5['video_link']; ?>"><?php echo $row5['Videos']; ?></a></li><br>
+                                <li><a href="<?php echo $row5['video_link']; ?>"class="link-primary lead "><?php echo $row5['Videos']; ?></a></li><br>
                             <?php endwhile; ?>
                         </ul>
                     </div>
