@@ -70,7 +70,7 @@ if (isset($_SESSION['email'])) {
     max-width: 400px;
     /* margin: auto; */
     text-align: center;
-    height: 500px;
+    height: 500px; */
     
 }
 
@@ -108,6 +108,10 @@ button:hover, a:hover {
     /* margin-left: auto;
     margin-right: auto; */
     width: 50%;
+}
+.blog-list2 #blog_btn3
+{
+    background-color: #142850 !important;
 }
 
 
@@ -250,8 +254,8 @@ button:hover, a:hover {
                 while ($frow = mysqli_fetch_assoc($fres)) :
                 ?>
                 <div class="col-md-4">
-                    <div class="card mb-3" style="width: 18rem; height: 25rem;">
-                        <img src="../image/<?php echo $frow['Sci_img']; ?>" alt="John" style="width:200px; height: 200px; align-items:center" class="center p-2 rounded-circle">
+                    <div class="card d-flex align-items-center p-2" style="width: 18rem; height: 28rem;">
+                        <img src="../image/<?php echo $frow['Sci_img']; ?>" alt="John" style="width:200px; height: 200px; " class="center  rounded-circle">
                         <h3><?php echo $frow['Sci_Name']; ?></h3>
                         <?php
                         if ($connect) {
@@ -292,8 +296,8 @@ button:hover, a:hover {
                 while ($row = mysqli_fetch_assoc($res)) :
                 ?>
                     <div class="col pt-3">
-                        <div class="card blog mb-3" style="width: 18rem; height: 22rem;">
-                        <img class="card-img-top" src="../image/<?php echo $row['Image'];?>" style="width: 100%"
+                        <div class="card blog mb-3" style="width: 18rem; height: 25rem;">
+                        <img class="card-img-top" src="../image/<?php echo $row['Image'];?>" style="width: 100% ; height:50%"
                         alt="Card image cap">
                             <div class="card-body">
                                 <div class="blog-list">
@@ -306,20 +310,22 @@ button:hover, a:hover {
                                     </span>
                                 </div>
                                 <h5 class="blog-title"><a href="blog.php?article=<?php echo $row['Blog_ID'];?>" rel="bookmark"><?php echo $row['Title']; ?></a></h5>
-                                <div class="d-flex align-items-center justify-content-between blog-list">
+                                <div class="d-flex align-items-center justify-content-between blog-list2">
                                     <?php
                                          $sql = "SELECT * from blog inner join author using(Author_ID) where Blog_ID='$row[Blog_ID]';";
                                          $result = mysqli_query($connect, $sql);
                                          $row2 = mysqli_fetch_assoc($result);
                                     ?>
-                                    <div class="author d-flex align-items-center">
+                                    <div class="author d-flex align-items-center" style="position:absolute;bottom:15px;">
                         
                                         <a class="fw-bold" style="font-size: 13px;" href="blog.php?author=<?php echo $row2['Author_ID'];?>">
                                             <span><?php echo $row2['Author_Name'];?></span>
                                         </a>
                                     </div>
                                 
-                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" class="btn btn-primary btn-info text-light btn-sm" tabindex="-1" role="button" aria-disabled="true">Read full blog</a>
+                                    <a href="blog.php?article=<?php echo $row['Blog_ID'];?>" 
+                                    class="btn  text-light btn-sm"  id="blog_btn3"  tabindex="-1" role="button" a
+                                    ria-disabled="true"style="position:absolute;bottom:10px; left:170px; color:#142850;">Read full blog</a>
                                 </div>
                             </div>
                         </div>

@@ -11,6 +11,6 @@
 }
 
 .upload_btn{
-    background-color: #142850;
-    color: #DAE1E7;
+    background-color: #142850 !important;
+    color: #DAE1E7 !important;
 }
