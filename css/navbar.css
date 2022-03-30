@@ -1,13 +1,8 @@
 
-
-
 #navs .navbar{
     /* width: 100%; */
     background-color:#142850;
-    font-size: 30px;
-  
-    
-    
+    font-size: 30px;    
 }
 
 #navs .logo
@@ -15,10 +10,6 @@
     height: 150px;
     width: 200px;
 }
-
-
-
-
 
 #navs .nav-item li a{
 

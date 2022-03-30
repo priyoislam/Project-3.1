@@ -70,7 +70,7 @@ if (isset($_SESSION['email'])) {
     max-width: 400px;
     /* margin: auto; */
     text-align: center;
-    height: 500px; */
+    height: 500px; 
     
 }
 

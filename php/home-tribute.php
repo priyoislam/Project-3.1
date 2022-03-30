@@ -95,12 +95,25 @@ if($connect){
       <script>
           var owl = $('#owl-pioneer');
             owl.owlCarousel({
-                items:3,
+                responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 2,
+                    nav: true
+                },
+                992: {
+                    items: 3,
+                    nav: true,
+                    loop: false
+                }
+            },
                 loop:true,
                 margin:10,
                 autoplay:true,
                 autoplayTimeout:2000,
-                 nav:true,
                 autoplayHoverPause:true,
                 // navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
                 navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],

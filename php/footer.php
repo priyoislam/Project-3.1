@@ -66,7 +66,7 @@
     </li>
   </ul>
   <div class="footer-bottom">
-    <p>All Rights Reserved By &copy;conceptial 2020</p>
+    <p>All Rights Reserved By &copy;CSwiki 2021</p>
   </div>
 </footer>
 

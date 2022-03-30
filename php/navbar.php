@@ -35,20 +35,10 @@
 
 
 <div class="container-fluid" id="navs">
-
-    
-
-
         <div class="row">
-
-
             <div class="top-nav d-flex justify-content-center">
-
-
                 <div>
-
                     <img class="logo" src="../image/logo">
-
                 </div>
 
                 <div class="topright d-flex">
@@ -68,43 +58,21 @@
                             <button type="submit" class="btn btn-lg" name="logout">Log out</button>
                         </form>
                     </div>
-
-
                     <?php } else { ?>
                     <div class="logbtn">
-
-
                         <a href="login.php"><button type="button " class="btn btn-lg">Log In</button></a>
-
-
-
                     </div>
                     <div class="logbtn">
-
                         <a href="signup.php"><button type="button " class="btn btn-lg">Sign Up</button></a>
-
-
-
                     </div>
                     <?php } ?>
-
-
-
-
                 </div>
-
             </div>
         </div>
-
         <div class="row">
-
             <div class="low-nav d-flex justify-content-center">
-
-
                 <div>
                     <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-center ">
-
-
                         <ul class="navbar-nav  nav-tabs ">
                             <li class="nav-item ">
                                 <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
@@ -117,60 +85,12 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="tribute.php">Tributes</a>
-
                             </li>
-
                         </ul>
-
-
-
                     </nav>
-
-
-
                 </div>
-
-
-                <!-- <div class="d-flex  searchbar">
-
-
-                    <div>
-                        <input class="form-control  form-search" type="search" placeholder="Search" aria-label="Search">
-
-                    </div>
-                    <div>
-                        <button class="btn btn_src" type="submit"><i class="fa fa-search"></i></button>
-                    </div>
-
-
-                </div> -->
-
-
-
-
             </div>
-
-
-
-
-
-
         </div>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
 

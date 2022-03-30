@@ -58,6 +58,9 @@
 
 .product .card
 {
-    height:450px;
+    height:500px;
 }
 
+.c-footer{
+    background-color: #142850 !important;
+}

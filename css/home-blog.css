@@ -1,14 +1,11 @@
-
-  #owl-blog .items .card {
+#owl-blog .items .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 400px;
     height: 500px;
     margin: 20px 5px;
     /* text-align: center; */
     padding: 20px;
-  }
-  
-
+}
   #owl-blog  .blog-list{
   color: #27496D;
   font-size: small;
@@ -33,13 +30,8 @@
 #owl-blog  .blog img{
   height: 10vw;
 }
-
- 
   
   /* On hover, add a black background color with a little bit see-through */
- 
-
-  
 
   #owl-blog .owl-prev, #owl-blog .owl-next {
     width: 80px;
