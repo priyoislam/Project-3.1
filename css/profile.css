@@ -1,8 +1,11 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
-#cardcss .card,.card-group .card,#cardcss2 .card{
+
+#cardcss .card,
+.card-group .card,
+#cardcss2 .card {
     /* background: rgba(255, 255, 255, 0.877); */
     border-width: 0;
     border-radius: .25rem;
@@ -11,23 +14,25 @@
     padding: 10px;
     background-color: #A0CFEC;
 }
-.titl{
+
+.titl {
     text-align: left;
-     color: #6D6968;
-     font-weight: bold;
-     margin-left: 5%;
- }
- .high{
+    color: #6D6968;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.high {
     border-width: 6px;
 }
 
-#first{
+#first {
     background-color: #6D6968;
-   
+
     width: 90%;
     margin-left: 5%;
 
-    
+
     border: none;
 }
 
@@ -36,7 +41,7 @@
     margin: 40px auto 90px auto;
     text-align: left;
     height: 40%;
- 
+
 }
 
 #first .chilli-img {
@@ -45,18 +50,35 @@
     margin-left: 30px;
     margin-top: 0px;
     margin-bottom: 40px;
-   
-  }
-  #first .john{
-      font-size: 35px;
-      font-weight: 700;
-     
-  }
-  #first .mcr{
-      font-size: 20px;
+}
+
+@media screen and (max-width: 1014px) {
+
+    #first .sci_img {
+        display: flex;
+        justify-content: center;
+    }
+    #first .s_name {
+        text-align: center;
+    }
+    #first .mcr {
+        text-align: center;
+    }
+}
+
+
+#first .john {
+    font-size: 35px;
+    font-weight: 700;
+
+}
+
+#first .mcr {
+    font-size: 20px;
     font-weight: 500;
-  }
-  /* .row_1{
+}
+
+/* .row_1{
       text-align: center;
     
       font-size: bolder;
@@ -116,42 +138,45 @@ table-hover{
     line-height: 1.5em;
 } */
 
-.biograph{
+.biograph {
     width: 90%;
     margin-left: 5%;
     background-color: #A0CFEC;
     border: none;
 }
 
-.biograph   .biog{
-            font-size: 25px;
-            font-size: bolder;
-            }
+.biograph .biog {
+    font-size: 25px;
+    font-size: bolder;
+}
 
 .biograph ul.demo {
     list-style-type: none;
     margin: 0;
     padding: 0;
     list-style: none;
-    text-align:left;
-    
-    
-  }
-.tebb{
-    width: 90%;
-   margin-left: 5%;
-   background-color: #A0CFEC;
-   padding: 15px;
-   padding-top: 20px;
+    text-align: left;
+
+
 }
-.tebb .syntax{
-    font-size:20px ;
+
+.tebb {
+    width: 90%;
+    margin-left: 5%;
+    background-color: #A0CFEC;
+    padding: 15px;
+    padding-top: 20px;
+}
+
+.tebb .syntax {
+    font-size: 20px;
     font-weight: 600;
 }
-.tebb .syntax i
-{
-padding-left: 30px;
+
+.tebb .syntax i {
+    padding-left: 30px;
 }
+
 /* .container{
     margin-left: 100px;
     margin-right: 100px;
@@ -159,26 +184,29 @@ padding-left: 30px;
 /* .cap{
     text-align: center;
 } */
-.dec{
+.dec {
     font-size: 20px;
     background-color: #A0CFEC;
 
 }
+
 /* .decr{
   
     background-color: #A0CFEC; 
 } */
-.dec_4{
+.dec_4 {
     width: 40%;
     font-size: 20px;
     font-weight: bold;
 }
-.dec_3{
+
+.dec_3 {
     width: 35%;
     font-size: 20px;
     font-weight: bold;
 }
-.dec_2{
+
+.dec_2 {
     width: 15%;
     font-size: 20px;
     font-weight: bold;
@@ -258,29 +286,30 @@ text-align: center;
     padding-top: 0px;
 } */
 
-  /* ul.demo_1{
+/* ul.demo_1{
       list-style-position: outside;
       text-align: left;
   } */
-  /* .tbl-1{
+/* .tbl-1{
       width: 80%;
       margin-left: 130px;
       background-color: #A0CFEC;
       border: none;
      
   } */
-  .tebb .roww-1{
+.tebb .roww-1 {
     float: right;
-     margin-right: 50px;
-      border: none;
-     
-  }
-  .tebb .roww-2{
-      margin-left: 50px;
-     float: left;
-  }
-  
-  /* .iframe-container{
+    margin-right: 50px;
+    border: none;
+
+}
+
+.tebb .roww-2 {
+    margin-left: 50px;
+    float: left;
+}
+
+/* .iframe-container{
     position: relative;
     width: 100%;
     padding-bottom:40%; 
@@ -293,17 +322,18 @@ text-align: center;
     width: 100%;
     height: 100%;
   } */
-  /* .crl-1{
+/* .crl-1{
       width: 70%;
       height: 50%;
      margin-left: 220px;
   }
    */
-  .city{
-      width: 90%;
-      margin-left: 5%;
-      background-color: #A0CFEC;
-  }
-  .carthy{
-      background-color:#A0CFEC;
-  }
+.city {
+    width: 90%;
+    margin-left: 5%;
+    background-color: #A0CFEC;
+}
+
+.carthy {
+    background-color: #A0CFEC;
+}

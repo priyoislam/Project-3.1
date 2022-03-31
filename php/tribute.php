@@ -57,6 +57,7 @@ if (isset($_POST['search'])) {
     <div class="container">
         <h4 class="text-center m-5"><em><q>Try searching specific pioneer using name.</q></em></h4>
     </div>
+    <div class="container">
     <form action="" method="POST" class="text-center">
         
                 <input class="form-control text-center col-md-5 mx-auto mb-1" type="text" name="valueTosearch" placeholder="Enter pioneer name" value="<?php echo $valuetosearch; ?>">
@@ -65,6 +66,7 @@ if (isset($_POST['search'])) {
         <!-- <input type="text" name="valueTosearch" placeholder="Value To Search" value="<?php echo $valuetosearch; ?>"><br><br>
         <input type="submit" name="search" value="Filter"><br><br> -->
     </form>
+    </div>
     <div class="container mt-5 tribute">
         <div class="row">
             <?php

@@ -39,8 +39,13 @@ if (isset($_SESSION['Sci_ID'])) {
                 <tr>
                     <td>
                         <div class="skill-row">
-                            <img class="chilli-img center rounded-circle" src="../image/<?php echo $row['Sci_img']; ?>" alt="Scientist-img" style="width:200px; height: 200px; align-items:center">
+                            <div class="sci_img">
+
+                            <img class="chilli-img center rounded-circle" src="../image/<?php echo $row['Sci_img']; ?>" alt="Scientist-img" style="width: 200px; height: 200px">
+                            </div>
+                            <div class="s_name">
                             <h3 class="john"><?php echo $row['Sci_Name']; ?></h3>
+                            </div>
 
                             <?php
                             if ($connect) {

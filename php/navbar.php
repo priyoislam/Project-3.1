@@ -37,7 +37,7 @@
 <div class="container-fluid" id="navs">
         <div class="row">
             <div class="top-nav d-flex justify-content-center">
-                <div>
+                <div class="cs_img">
                     <img class="logo" src="../image/logo">
                 </div>
 
