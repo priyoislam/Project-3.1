@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/pboot.css">
 </head>
 
-<script>
+<!-- <script>
     $(function(){
       var includes = $('[data-include]');
       jQuery.each(includes, function(){
@@ -20,7 +20,7 @@
         $(this).load(file);
       });
     });
-</script>
+</script> -->
 
 <body>
 <?php include("navbar.php");?>
