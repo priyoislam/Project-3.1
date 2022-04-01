@@ -1,21 +1,16 @@
 <?php
 include('dbcon.php');
 session_start();
-if (isset($_GET['profile'])) {
-    $Sci_ID = $_GET['profile'];
-    $_SESSION['Sci_ID'] = $Sci_ID;
-    header('location:scientist_profile.php');
+if ($connect) {
+    $sql = "SELECT * from post_work inner join signup using(id)";
+    $res = mysqli_query($connect, $sql);
 }
-?>
-<?php
-if (isset($_POST['search'])) {
-    $valuetosearch = $_POST['valueTosearch'];
-    $query = "SELECT * FROM scientist where Sci_Name LIKE '%$valuetosearch%'";
-    $res = mysqli_query($connect, $query);
-} else {
-    $art = "SELECT * from scientist where Pub_Count!='0'";
-    $res = mysqli_query($connect, $art);
-    $valuetosearch = "";
+if (isset($_GET['proposal']) && $_SESSION['is_login']) {
+    $Work_ID = $_GET['proposal'];
+    $Seller_ID=$row['id'];
+    $Buyer_ID=
+    $_SESSION['Work_ID'] = $Work_ID;
+    header('location:proposal.php');
 }
 ?>
 
@@ -39,24 +34,37 @@ if (isset($_POST['search'])) {
 
 <body>
     <?php include("navbar.php"); ?>
-
-
-    <div class="hero-image">
-        <div class="hero-text">
-            <!-- <h1>Our Blog</h1> -->
-            <p><q>The Best way to predict the future is to invent it.</q> - Alan Kay</p>
-
-        </div>
-        <div class="sub-text">
-            <!-- <h1>Our Blog</h1> -->
-            <p>We pay our Homage to the legends who invented the future</p>
-
-        </div>
-
+    <h1 class="text-center m-3">Find Work</h1>
+    <div class="product container mt-2 mb-2">
+    <div class="row">
+    <?php
+            while ($row = mysqli_fetch_assoc($res)) :
+            ?>
+            <div class="col">
+                <div class="card text-center mb-4" style="width: 18rem; height: 15rem;">
+                    <div class="card-body">
+                        <h6 class="card-title"><?php echo $row['title']; ?></h6>
+                        <a class="fw-bold" style="font-size: 13px;" href="#">
+                            <span><?php echo $row['name']; ?></span>
+                        </a>
+                        <div>
+                                    <span><?php echo $row['price']; ?></span>
+                                </div>
+                                <span><i class="fa fa-calendar me-1"></i>
+                                    <?php echo $row['time']; ?></span>
+                                </a>
+                                </span>
+                    </div>
+                    <div class="card-footer c-footer text-center">
+                            <a href="invitations.php?proposal=<?php echo $row['work_id']; ?>" class="btn btn-sm text-light font-weight-bold hhn" id="blog_btn" tabindex="-1" role="button" aria-disabled="true">See Details</a>
+                        </div>
+                </div>
+            </div>
+        <?php
+            endwhile;
+            ?>
+             </div>
     </div>
- 
-
-
 
     <?php include("footer.php"); ?>
 

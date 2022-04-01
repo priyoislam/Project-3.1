@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include 'feedback_config.php';
 
 error_reporting(0); // For not showing any error
