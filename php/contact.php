@@ -60,9 +60,12 @@ include 'feedback_config.php';
                     </p>
                     <p>
                         <label>Message:</label>
-                        <textarea id="Message" name="visitor_message" rows="6" cols="80" required></textarea>
+                        <textarea id="Message" name="visitor_message" rows="6" cols="60" required></textarea>
                     </p>
-                    <button name="btn-send" type="submit" class="btn btn-success">Send</button>
+                    <div class="text-center">
+                    <button name="btn-send" type="submit" class="btn btn-light">Send</button>
+                    </div>
+                    
 
                 </form>
             </div>
