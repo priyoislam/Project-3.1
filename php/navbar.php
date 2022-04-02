@@ -87,12 +87,10 @@
                             </li>
                             <?php if (isset($_SESSION['is_login'])) { ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="invitations.php">Invitations</a>
+                                    <a class="nav-link" href="invitations.php">Contracts</a>
                                 </li>
                             <?php } ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="feedback.php">Contracts</a>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.php">Contact Us</a>
                             </li>
