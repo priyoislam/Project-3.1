@@ -1,137 +1,111 @@
-#navs .navbar {
-     /* width: 100%;  */
-    background-color: #142850;
-    font-size: 30px;
-}
-
-#navs .logo {
-    height: 150px;
-    width: 200px;
-}
-
-@media screen and (max-width: 992px) {
-
-    #navs .logbtn {
-        width: 150px;
-        margin-top: 70px;
-        margin-right: 5px;
-        margin-right: auto;
-        text-align: center;
-        z-index: 2; 
-
-    } 
-
-    #navs .low-nav {
-        padding-top: 50px;
-        bottom: 50px;
-        text-align: center;
-    }
-
-     #navs .topright {
-        position: relative;
-        left: 32%;
-        right: 0;
-        font-size: 30px;
-    } 
-
-}
-
-@media screen and (max-width: 650px) {
-    #navs .topright {
-        position: absolute;
-        left: 25%;
-        right: 0;
-    }
-}
-
-
-#navs .nav-item li a {
-
-    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
-    line-height: 1.42857143;
-    /* color: #3CF6FF; */
-    box-sizing: border-box;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    /* z-index: 1000; */
-    float: left;
-    font-size: 20px;
-    text-align: left;
-    list-style: none;
-    /* background-color: #fff; */
-    /* box-shadow: 0 6px 12px rgba(0,0,0,.175);  */
-    display: block;
-    border-radius: 0;
-    background-clip: padding-box;
-    margin: 0;
-    border: none;
-    padding: 0;
-    text-transform: none;
-    min-width: 220px;
-
-}
-
-#navs .btn {
-    background-color: white;
-    color: #142850;
-
-}
-
-#navs .logbtn {
-    background-color: white;
-    color: #142850;
-    border-color: white;
-    border-radius: 5px;
-    width: 150px;
-    margin-right: 5px;
-    text-align: center;
-    /* margin-left: 2px; */
-
-}
-
-
-#navs .searchbar .btn {
-    background-color: white;
-    color: #142850;
-
-    margin-left: 5px;
-    height: 50px;
-    width: 50px;
-
-}
-
-
-#navs input.form-control.form-search {
-    height: 50px;
-    width: 250px;
-}
-
-#navs .searchbar {
-    /* padding-top: 15px;
-    padding-right: 15px; */
-    /* height: 30px; */
-    position: relative;
-    top: 10px;
-    right: 75px;
-    font-size: 25px;
-
-}
-
-#navs .top-nav {
-    position: relative;
-    background-color: #142850;
-}
-
-#navs .low-nav {
-    position: relative;
-    background-color: #142850;
-
-}
-
-#navs .topright {
-    position: absolute;
-    top: 50px;
-    right: 70px;
-    font-size: 30px;
-}
+                #navs .navbar {
+                    /* width: 100%;  */
+                    background-color: #142850;
+                    font-size: 30px;
+                }
+                
+                #navs .logo {
+                    height: 150px;
+                    width: 200px;
+                }
+                
+                @media screen and (max-width: 992px) {
+                    #navs .logbtn {
+                        width: 150px;
+                        margin-top: 70px;
+                        margin-right: 5px;
+                        margin-right: auto;
+                        text-align: center;
+                        z-index: 2;
+                    }
+                    #navs .low-nav {
+                        padding-top: 50px;
+                        bottom: 50px;
+                        text-align: center;
+                    }
+                    #navs .topright {
+                        position: relative;
+                        left: 32%;
+                        right: 0;
+                        font-size: 30px;
+                    }
+                }
+                
+                @media screen and (max-width: 650px) {
+                    #navs .topright {
+                        position: absolute;
+                        left: 25%;
+                        right: 0;
+                    }
+                }
+                
+                #navs .nav-item li a {
+                    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+                    line-height: 1.42857143;
+                    /* color: #3CF6FF; */
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    /* z-index: 1000; */
+                    float: left;
+                    font-size: 20px;
+                    text-align: left;
+                    list-style: none;
+                    /* background-color: #fff; */
+                    /* box-shadow: 0 6px 12px rgba(0,0,0,.175);  */
+                    display: block;
+                    border-radius: 0;
+                    background-clip: padding-box;
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                    text-transform: none;
+                    min-width: 220px;
+                }
+                
+                #navs .btn {
+                    background-color: white;
+                    color: #142850;
+                }
+                
+                #navs .logbtn {
+                    background-color: white;
+                    color: #142850;
+                    border-color: white;
+                    border-radius: 5px;
+                    width: 150px;
+                    margin-right: 5px;
+                    text-align: center;
+                    /* margin-left: 2px;*/
+                }
+                
+                #navs .searchbar .btn {
+                    background-color: white;
+                    color: #142850;
+                    margin-left: 5px;
+                    height: 50px;
+                    width: 50px;
+                }
+                
+                #navs input.form-control.form-search {
+                    height: 50px;
+                    width: 250px;
+                }
+                
+                #navs .top-nav {
+                    position: relative;
+                    background-color: #142850;
+                }
+                
+                #navs .low-nav {
+                    position: relative;
+                    background-color: #142850;
+                }
+                
+                #navs .topright {
+                    position: absolute;
+                    top: 50px;
+                    right: 70px;
+                    font-size: 30px;
+                }

@@ -3,32 +3,21 @@
     padding: 0;
     /* font-family: poppins; */
     box-sizing: border-box;
-  
- 
 }
-.new{
-    background-color: #142850;  
+
+.new {
+    background-color: #142850;
 }
-.start{
-    background-color: #142850;  
+
+.start {
+    background-color: #142850;
     margin-top: 60px;
     margin-bottom: 60px;
     margin-left: 470px;
     color: aliceblue;
 }
- 
- .main {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 1180px;
-    /* border: 2px solid white; */
-   /* position: relative;
-    top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%, -50%);*/
-  
-    
-}
+
+
 /*
 .first {
     margin-bottom: 30px;
@@ -152,18 +141,20 @@ h3 {
     /* border: 2px solid rgb(255, 99, 71); */
     height: 600px;
     width: 800px;
-    border: 2px solid whitesmoke; 
+    border: 2px solid whitesmoke;
     margin-right: 30px;
-   box-sizing: border-box;
-   margin-top: 30px;
+    box-sizing: border-box;
+    margin-top: 30px;
 }
-h2{
+
+h2 {
     text-align: center;
- 
 }
-.para{
+
+.para {
     margin-top: 40px;
 }
+
 form,
 p,
 h2,
@@ -171,16 +162,15 @@ label {
     font-size: 20px;
     margin-left: 10px;
     margin-right: 20px;
-    margin-top: 5px;/*
+    margin-top: 5px;
+    /*
     margin-bottom: 10px; */
 }
 
 input {
     background: transparent;
-  
-   
-   margin-left: 60px;
-   margin-right: 20px;
+    /* margin-left: 60px;
+    margin-right: 20px; */
     border: 2px solid white;
     color: white;
     border-radius: 8%;
@@ -195,14 +185,12 @@ textarea {
     height: 10%;
 }
 
-button {
-   
+.sendbtn {
     border: 2px solid tomato;
-     /* margin: 10%;  */
-    margin-left: 170px;
- 
+    /* margin: 10%;  */
+    /* margin-left: 170px; */
     color: whitesmoke;
     width: 30%;
     background-color: aquamarine;
     font-weight: 100;
-}  
+}

@@ -63,7 +63,7 @@ include 'feedback_config.php';
                         <textarea id="Message" name="visitor_message" rows="6" cols="60" required></textarea>
                     </p>
                     <div class="text-center">
-                    <button name="btn-send" type="submit" class="btn btn-light">Send</button>
+                    <button name="btn-send" type="submit" class="btn btn-light sendbtn">Send</button>
                     </div>
                     
 
