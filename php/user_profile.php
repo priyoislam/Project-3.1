@@ -13,11 +13,25 @@ if (isset($_SESSION['email'])) {
 }
 if (isset($_GET['proposal']) && $_SESSION['is_login']) {
     $Work_ID = $_GET['proposal'];
-    $Seller_ID=$row['id'];
-    $Buyer_ID=
-    $_SESSION['Work_ID'] = $Work_ID;
+    $Seller_ID = $row['id'];
+    $Buyer_ID =
+        $_SESSION['Work_ID'] = $Work_ID;
     header('location:proposal.php');
 }
+?>
+
+
+<?php
+if (isset($_GET['cancel'])) {
+    $proposal_id = $_GET['cancel'];
+    $del = "DELETE FROM proposal where proposal_id='$proposal_id'";
+    $res3 = mysqli_query($connect, $del);
+    if ($res3) {
+        $sqlcus = "SELECT * from proposal";
+        // $sqlcus="SELECT * FROM order_info where CustomerID='$CustomerID'";
+    }
+}
+
 ?>
 
 
@@ -365,6 +379,65 @@ if (isset($_GET['proposal']) && $_SESSION['is_login']) {
                                 <td><?php echo $row['area']; ?></td>
                                 <td><?php echo $row['price']; ?></td>
                                 <td><?php echo $row['time']; ?></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </table>
+                <?php } ?>
+            <?php
+            }
+            ?>
+        </div>
+        <div class="product container ">
+            <?php
+            if ($connect) {
+                $art = "SELECT * from (proposal inner join post_work using(work_id)) inner join signup on (post_work.id)=signup.id where seller_id='$_SESSION[id]'";
+                $res = mysqli_query($connect, $art);
+            ?>
+                <?php
+                if (mysqli_num_rows($res) > 0) {
+                ?>
+                    <h4 class="text-center">Sent offer</h4>
+                    <table class="table table-striped table-hover table-bordered mt-2">
+                        <thead class="bg-dark text-light text-center">
+
+                            <th>Title</th>
+                            <th>Area</th>
+                            <th>Seller</th>
+                            <th>Price</th>
+                            <th>Approximate Time</th>
+                            <th>Order status</th>
+                            <th>Cancel order</th>
+                        </thead>
+                        <?php while ($row = mysqli_fetch_array($res)) : ?>
+                            <tr class="text-center">
+                                <td><a href="user_profile.php?proposal=<?php echo $row['work_id']; ?>"><?php echo $row['title']; ?></a></td>
+                                <td><?php echo $row['area']; ?></td>
+                                <td><?php echo $row['name']; ?></td>
+                                <td><?php echo $row['price']; ?></td>
+                                <td><?php echo $row['time']; ?></td>
+                                <?php
+                                if ($row['flag'] == 0) {
+                                ?>
+                                    <td><?php echo "Order processed" ?><i class='fa fa-pause-circle' style='color: teal'></i></td>
+
+                                <?php
+                                } else {
+                                ?>
+                                    <td><?php echo "Confirmed" ?><i class='fa fa-check-circle' style='color: green'></i></td>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($row['flag'] == 0) {
+                                ?>
+                                    <td><a href="user_profile.php?cancel=<?php echo $row['proposal_id']; ?>" class="btn btn-danger">Cancel Order</a></button></td>
+                                <?php
+                                } else {
+                                ?>
+                                    <td><button type="button" class="btn btn-danger" disabled>Cancel order</button></td>
+                                <?php
+                                }
+                                ?>
                             </tr>
                         <?php endwhile; ?>
                     </table>

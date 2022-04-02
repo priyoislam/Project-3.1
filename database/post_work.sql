@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 01, 2022 at 09:04 PM
+-- Generation Time: Apr 02, 2022 at 04:57 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `post_work` (
   `price` varchar(100) NOT NULL,
   `time` varchar(100) NOT NULL,
   PRIMARY KEY (`work_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11008 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11009 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `post_work`
@@ -48,7 +48,8 @@ INSERT INTO `post_work` (`work_id`, `id`, `title`, `area`, `overview`, `price`, 
 (11002, 2, 'Looking for experts in deep learning', 'Deep learning', 'I am looking for expert in deep learning who can help me', '15$', '3 days'),
 (11003, 14, 'Machine Learning Project', 'Machine learning', '1) Detection of Pneumonia in Medical Images<br>2) Train Deep Reinforcement Learning (DRL) agents', '50$', '15 days'),
 (11006, 15, 'Create a forecast model and make the endpoint to predict in flask or fast api', 'Machine Learning', 'Build a cloud solution from the provider of your choice using the TICKIT dataset,\r\nthis sample database is used to track website sales activity\r\nfictitious TICKIT, where users buy and sell tickets online for sporting events,\r\nshows and concerts. In particular, analysts can identify the movement of\r\ntickets over time, the success rates of vendors, and the events, venues, and\r\nbest selling seasons. Analysts can use this information to provide\r\nincentives to buyers and sellers who frequent the site, to attract new\r\nusers and to generate advertising and promotions.', '15$', '3 days'),
-(11007, 15, 'Jasper Operator and Creative Writer/Researcher', 'Content Writing', 'The job consists of taking a spreadsheet of information, and following a pre-determined template, feeding the data from a spreadsheet into the Jasper AI writing tool, and creating articles that meet the strict template requirements. You may need to perform minor research to find further information where a research spreadsheet is missing key data (it happens, our researchers are human).', '100$', '1 month');
+(11007, 15, 'Jasper Operator and Creative Writer/Researcher', 'Content Writing', 'The job consists of taking a spreadsheet of information, and following a pre-determined template, feeding the data from a spreadsheet into the Jasper AI writing tool, and creating articles that meet the strict template requirements. You may need to perform minor research to find further information where a research spreadsheet is missing key data (it happens, our researchers are human).', '100$', '1 month'),
+(11008, 2, 'Help for ML project', 'Machine Learning', 'I need help for my ML project', '10', '3 days');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -9,8 +9,8 @@ if ($connect) {
         $overview = $_POST['overview'];
         $Price = $_POST['Price'];
         $Date = $_POST['time'];
-        $input = "INSERT INTO post_work(id,title,area,overview,price,`time`,flag)	
-                VALUES($user_ID,'$title','$area','$overview','$Price','$Date',0)";
+        $input = "INSERT INTO post_work(id,title,area,overview,price,`time`)	
+                VALUES($user_ID,'$title','$area','$overview','$Price','$Date')";
         $result = mysqli_query($connect, $input);
         if ($result) {
             header('location:invitations.php');

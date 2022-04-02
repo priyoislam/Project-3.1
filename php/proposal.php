@@ -9,14 +9,27 @@ if (isset($_SESSION['Work_ID'])) {
 ?>
 
 <?php
-if(isset($_GET['delivery'])){
-    $proposal_id=$_GET['delivery'];
-    $sql="UPDATE proposal SET `flag` = '1' WHERE proposal_id='$proposal_id'";
-    $res4=mysqli_query($connect,$sql);
-    if($res4){
+if (isset($_GET['delivery'])) {
+    $proposal_id = $_GET['delivery'];
+    $sql = "UPDATE proposal SET `flag` = '1' WHERE proposal_id='$proposal_id'";
+    $res4 = mysqli_query($connect, $sql);
+    if ($res4) {
         header('location:proposal.php');
-     }
     }
+}
+?>
+
+<?php
+    if(isset($_GET['cancel'])){
+        $proposal_id=$_GET['cancel'];
+        $del="DELETE FROM proposal where proposal_id='$proposal_id'";
+        $res3=mysqli_query($connect,$del);
+        if($res3){
+            $sqlcus="SELECT * from proposal";
+           // $sqlcus="SELECT * FROM order_info where CustomerID='$CustomerID'";
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -73,17 +86,6 @@ if(isset($_GET['delivery'])){
 
         </div>
         <br>
-
-        <!-- <h3>Related Writings </h3>
-
-        <div class="card ">
-
-            <div class="card-body">
-
-
-            </div>
-        </div> -->
-
         <br>
         <h3>Researchers </h3>
         <div class="card ">
@@ -123,6 +125,7 @@ if(isset($_GET['delivery'])){
                             <th>Price</th>
                             <th>Approximate Time</th>
                             <th>Confirm</th>
+                            <th>Cancel order</th>
                         </thead>
                         <?php while ($row = mysqli_fetch_array($res)) : ?>
                             <tr class="text-center">
@@ -131,14 +134,25 @@ if(isset($_GET['delivery'])){
                                 <td><?php echo $row['Price']; ?></td>
                                 <td><?php echo $row['date']; ?></td>
                                 <?php
-                                if($row['flag']==0){
-                                    ?>
-                                    <td><a href="proposal.php?delivery=<?php echo $row['proposal_id'];?>" class="btn btn-outline-primary">Confirm</a></td>
-                                    <?php
-                                }else{
-                                    ?>
-                                    <td><?php echo "Confirmed"?><i class='fa fa-check-circle' style='color: blue'></i></td>
-                                    <?php
+                                if ($row['flag'] == 0) {
+                                ?>
+                                    <td><a href="proposal.php?delivery=<?php echo $row['proposal_id']; ?>" class="btn btn-outline-primary">Confirm</a></td>
+                                <?php
+                                } else {
+                                ?>
+                                    <td><?php echo "Confirmed" ?><i class='fa fa-check-circle' style='color: blue'></i></td>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($row['flag'] == 0) {
+                                ?>
+                                    <td><a href="proposal.php?cancel=<?php echo $row['proposal_id']; ?>" class="btn btn-danger">Cancel Order</a></button></td>
+                                <?php
+                                } else {
+                                ?>
+                                    <td><button type="button" class="btn btn-danger" disabled>Cancel order</button></td>
+                                <?php
                                 }
                                 ?>
                             </tr>

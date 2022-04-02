@@ -8,14 +8,11 @@ if ($connect) {
         $letter = $_POST['letter'];
         $Price = $_POST['Price'];
         $Date = $_POST['time'];
-        $input = "INSERT INTO proposal(work_id,seller_id,letter,Price,`date`)	
-                VALUES($w_id,$seller_ID,'$letter',$Price,'$Date')";
-        echo var_dump($input);
+        $input = "INSERT INTO proposal(work_id,seller_id,letter,Price,`date`,flag)	
+                VALUES($w_id,$seller_ID,'$letter',$Price,'$Date',0)";
         $result = mysqli_query($connect, $input);
-        echo $result;
         if ($result) {
-            echo "added";
-            //header('location:product_table.php');
+            header('location:invitations.php');
         } else {
             echo '<script>alert("Please enter your information once again.")</script>';
         }
