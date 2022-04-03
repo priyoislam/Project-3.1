@@ -3,33 +3,39 @@ session_start();
 include_once('dbcon.php');
 if ($connect) {
     if (isset($_POST['upload'])) {
-        $user_ID=$_SESSION['id'];
+        $user_ID = $_SESSION['id'];
         $title = $_POST['title'];
         $area = $_POST['area'];
         $overview = $_POST['overview'];
-        $Price = $_POST['Price'];
-        $Date = $_POST['time'];
-        $input = "INSERT INTO post_work(id,title,area,overview,price,`time`)	
-                VALUES($user_ID,'$title','$area','$overview','$Price','$Date')";
+        $requirment = $_POST['requirment'];
+        $paper = time() . '_' . $_FILES['paper']['name'];
+        $target = '../user_image/' . $paper;
+        $input = "INSERT INTO post_work(id,title,area,overview,requirment,paper)	
+                VALUES($user_ID,'$title','$area','$overview','$requirment','$paper')";
         $result = mysqli_query($connect, $input);
         if ($result) {
+            move_uploaded_file($_FILES['paper']['tmp_name'], $target);
             header('location:invitations.php');
         } else {
             echo '<script>alert("Please enter your information once again.")</script>';
         }
     }
 }
+if ($connect) {
+    $sql2 = "SELECT * from research_area";
+    $res2 = mysqli_query($connect, $sql2);
+}
 ?>
 
 <?php
-    if(isset($_GET['delivery'])){
-        $cartID=$_GET['delivery'];
-        $sql="UPDATE cart SET `flag` = '1' WHERE cartID='$cartID'";
-        $res4=mysqli_query($connect,$sql);
-        if($res4){
-            header('location:order_overview.php');
-         }
-        }
+if (isset($_GET['delivery'])) {
+    $cartID = $_GET['delivery'];
+    $sql = "UPDATE cart SET `flag` = '1' WHERE cartID='$cartID'";
+    $res4 = mysqli_query($connect, $sql);
+    if ($res4) {
+        header('location:order_overview.php');
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,23 +64,46 @@ if ($connect) {
 </script>
 
 <body>
-    <div class="container signup bg-transparent font-weight-bold" style="margin: 15vh auto; background-color: white; color: #142850;">
+    <div class="container">
+        <div class="mt-4 text-center">
+            <a href="user_profile.php" class="btn btn-rounded btn-dark">Close <i class="fa fa-window-close" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="container signup bg-transparent font-weight-bold" style="margin: 10vh auto; background-color: white; color: #142850;">
         <form method="post" action="" enctype="multipart/form-data">
-                <div class="form-row">
+            <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputPrice">Title</label>
                     <input type="text" class="form-control" id="inputPrice" name="title">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputArea">Area</label>
-                    <input type="text" class="form-control" id="inputArea" name="area">
+                    <select class="form-select form-select-lg p-2" aria-label=".form-select-lg example" class="text-dark" name="area">
+                        <option selected>Open this select menu</option>
+                        <?php
+                        while ($row2 = mysqli_fetch_assoc($res2)) :
+                        ?>
+                            <option><?php echo $row2['Sub_Name'] ?></option>
+                        <?php
+                        endwhile;
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputName">Overview</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="overview"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="overview"></textarea>
             </div>
-            <div class="form-row">
+            <div class="form-group">
+                <label for="inputName">Requirement</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="requirment"></textarea>
+            </div>
+            <label for="custome-file">Upload your paper</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="paper">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <!-- <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputPrice">Amount</label>
                     <input type="text" class="form-control" id="inputPrice" name="Price">
@@ -89,7 +118,7 @@ if ($connect) {
                         <option>More than 1 month</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
             <button type="submit" class="btn mt-2" style="background-color:#142850; color: white;" name="upload">Upload</button>
         </form>
@@ -99,6 +128,12 @@ if ($connect) {
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="../js/wow.js"></script>
+    <script>
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
     <script>
         new WOW.init();
     </script>

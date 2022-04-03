@@ -20,6 +20,20 @@ if (isset($_GET['delivery'])) {
 ?>
 
 <?php
+if (isset($_GET['check'])) {
+    $area = $_GET['check'];
+    if($area=$row['research_area']){
+        header('location:submit_proposal.php');
+    }
+    else {
+        echo '<script>alert("Your research interest does not match the requirement.")</script>';
+        header('location:submit_proposal.php');
+    }
+
+}
+?>
+
+<?php
     if(isset($_GET['cancel'])){
         $proposal_id=$_GET['cancel'];
         $del="DELETE FROM proposal where proposal_id='$proposal_id'";
@@ -81,11 +95,23 @@ if (isset($_GET['delivery'])) {
                 <p><?php echo $row['overview']; ?></p>
 
             </div>
-
-
-
         </div>
         <br>
+        <h3>Requirement</h3>
+        <div class="card">
+            <div class="card-body ">
+                <p><?php echo $row['requirment']; ?></p>
+            </div>
+        </div>
+        <br>
+        <h3>Document</h3>
+        <div class="card ">
+            <div class="card-body">
+                <ul>
+                    <li><?php echo "<b>Paper: </b>"?> <a href="../user_image/<?php $row['paper'];?>"><?php echo $row['paper'];?></a></li>
+                </ul>
+            </div>
+        </div>
         <br>
         <h3>Researchers </h3>
         <div class="card ">
@@ -164,7 +190,7 @@ if (isset($_GET['delivery'])) {
             ?>
         <?php } else { ?>
             <div class="col-md-12 text-center">
-                <a href="submit_proposal.php" class="btn btn-primary">Submit proposal</a>
+                <a href="proposal.php?check=<?php echo $row['area'];?>" class="btn btn-primary">Submit proposal</a>
             </div>
         <?php } ?>
         <br>

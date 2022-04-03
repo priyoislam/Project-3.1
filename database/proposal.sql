@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 02, 2022 at 04:57 AM
+-- Generation Time: Apr 03, 2022 at 07:16 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -33,23 +33,23 @@ CREATE TABLE IF NOT EXISTS `proposal` (
   `work_id` int(255) NOT NULL,
   `seller_id` int(255) NOT NULL,
   `letter` varchar(10000) NOT NULL,
-  `Price` varchar(255) NOT NULL,
-  `date` varchar(100) NOT NULL,
+  `Paper` varchar(25500) NOT NULL,
+  `cv` varchar(255) NOT NULL,
   `flag` int(11) NOT NULL,
   PRIMARY KEY (`proposal_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `proposal`
 --
 
-INSERT INTO `proposal` (`proposal_id`, `work_id`, `seller_id`, `letter`, `Price`, `date`, `flag`) VALUES
-(2, 11002, 15, 'I can do this', '15', '7 days', 1),
-(3, 11003, 15, 'I can do this', '15', '3 days', 0),
-(4, 11003, 15, 'I can do this', '25', '7 days', 0),
-(5, 11002, 14, 'I saw your proposal. Maybe I can do it.', '20', '15 days', 0),
-(6, 11001, 2, 'I can do your work..', '15', '7 days', 0),
-(7, 11001, 2, 'I can do your work..', '15', '7 days', 0);
+INSERT INTO `proposal` (`proposal_id`, `work_id`, `seller_id`, `letter`, `Paper`, `cv`, `flag`) VALUES
+(2, 11002, 15, 'I can do this', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 1),
+(8, 11008, 15, 'Hello I am interested for this work.', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(6, 11001, 2, 'I can do your work..', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(7, 11001, 2, 'I can do your work..', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(9, 11007, 24, 'hello', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(10, 11003, 15, 'I have some idea about this research', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

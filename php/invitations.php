@@ -41,19 +41,12 @@ if (isset($_GET['proposal']) && $_SESSION['is_login']) {
             while ($row = mysqli_fetch_assoc($res)) :
             ?>
             <div class="col">
-                <div class="card text-center mb-4" style="width: 18rem; height: 15rem;">
+                <div class="card text-center mb-4" style="width: 18rem; height: 13rem;">
                     <div class="card-body">
                         <h6 class="card-title"><?php echo $row['title']; ?></h6>
                         <a class="fw-bold" style="font-size: 13px;" href="#">
                             <span><?php echo $row['name']; ?></span>
                         </a>
-                        <div>
-                                    <span><?php echo $row['price']; ?></span>
-                                </div>
-                                <span><i class="fa fa-calendar me-1"></i>
-                                    <?php echo $row['time']; ?></span>
-                                </a>
-                                </span>
                     </div>
                     <div class="card-footer c-footer text-center">
                             <a href="invitations.php?proposal=<?php echo $row['work_id']; ?>" class="btn btn-sm text-light font-weight-bold hhn" id="blog_btn" tabindex="-1" role="button" aria-disabled="true">See Details</a>

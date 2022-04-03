@@ -346,7 +346,7 @@ if (isset($_GET['cancel'])) {
             }
             ?>
         </div>
-        <h4 class="text-center">Post a job offer</h4>
+        <h4 class="text-center">Post a Task</h4>
         <div class="card text-center mb-5" style="width: 18rem;">
             <div class="card-body">
                 <h6 class="card-title">Get offers from sellers for your project</h6>
@@ -370,15 +370,11 @@ if (isset($_GET['cancel'])) {
 
                             <th>Title</th>
                             <th>Area</th>
-                            <th>Price</th>
-                            <th>Approximate Time</th>
                         </thead>
                         <?php while ($row = mysqli_fetch_array($res)) : ?>
                             <tr class="text-center">
                                 <td><a href="user_profile.php?proposal=<?php echo $row['work_id']; ?>"><?php echo $row['title']; ?></a></td>
                                 <td><?php echo $row['area']; ?></td>
-                                <td><?php echo $row['price']; ?></td>
-                                <td><?php echo $row['time']; ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </table>
@@ -403,8 +399,8 @@ if (isset($_GET['cancel'])) {
                             <th>Title</th>
                             <th>Area</th>
                             <th>Seller</th>
-                            <th>Price</th>
-                            <th>Approximate Time</th>
+                            <th>CV</th>
+                            <th>Paper link</th>
                             <th>Order status</th>
                             <th>Cancel order</th>
                         </thead>
@@ -413,8 +409,8 @@ if (isset($_GET['cancel'])) {
                                 <td><a href="user_profile.php?proposal=<?php echo $row['work_id']; ?>"><?php echo $row['title']; ?></a></td>
                                 <td><?php echo $row['area']; ?></td>
                                 <td><?php echo $row['name']; ?></td>
-                                <td><?php echo $row['price']; ?></td>
-                                <td><?php echo $row['time']; ?></td>
+                                <td><a href="../user_image/<?php echo $row['cv']; ?>">Resume</a></td>
+                                <td><a href="<?php echo $row['Paper'];?>">Paper link</a></td>
                                 <?php
                                 if ($row['flag'] == 0) {
                                 ?>
