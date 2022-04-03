@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 29, 2021 at 10:41 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 03, 2022 at 08:41 PM
+-- Server version: 5.7.31
+-- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,7 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `article`
 --
 
-CREATE TABLE `article` (
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE IF NOT EXISTS `article` (
   `ArticleID` int(100) NOT NULL,
   `Article_Name` varchar(255) NOT NULL,
   `Article_Link` varchar(255) NOT NULL,
@@ -82,13 +83,15 @@ INSERT INTO `article` (`ArticleID`, `Article_Name`, `Article_Link`, `Scientist_I
 -- Table structure for table `author`
 --
 
-CREATE TABLE `author` (
-  `Author_ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `author`;
+CREATE TABLE IF NOT EXISTS `author` (
+  `Author_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Author_Name` varchar(100) NOT NULL,
   `Author_Email` varchar(255) NOT NULL,
   `Author_Image` varchar(100) NOT NULL,
-  `Description` varchar(10000) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Description` varchar(10000) NOT NULL,
+  PRIMARY KEY (`Author_ID`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=1016 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `author`
@@ -106,7 +109,9 @@ INSERT INTO `author` (`Author_ID`, `Author_Name`, `Author_Email`, `Author_Image`
 (1009, 'saad', 'saad@gmail.com', '', ''),
 (1011, 'Urbana Rishat', 'urishat@gmail.com', '', ''),
 (1012, 'sumu', 'sumu@gmail.com', '', ''),
-(1013, 'jkl', 'priyo@gmail.com', '', '');
+(1013, 'Priyo Islam', 'priyo2@gmail.com', '', ''),
+(1014, 'Radwa', 'rkaikaus@gmail.com', '', ''),
+(1015, 'risha urbana', 'risha@gmail.com', '', '');
 
 -- --------------------------------------------------------
 
@@ -114,7 +119,8 @@ INSERT INTO `author` (`Author_ID`, `Author_Name`, `Author_Email`, `Author_Image`
 -- Table structure for table `award`
 --
 
-CREATE TABLE `award` (
+DROP TABLE IF EXISTS `award`;
+CREATE TABLE IF NOT EXISTS `award` (
   `Scientist_ID` int(100) NOT NULL,
   `Year` varchar(100) NOT NULL,
   `Prize` varchar(100) NOT NULL,
@@ -172,15 +178,17 @@ INSERT INTO `award` (`Scientist_ID`, `Year`, `Prize`, `Catagory`) VALUES
 -- Table structure for table `blog`
 --
 
-CREATE TABLE `blog` (
-  `Blog_ID` int(100) NOT NULL,
+DROP TABLE IF EXISTS `blog`;
+CREATE TABLE IF NOT EXISTS `blog` (
+  `Blog_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Topic` varchar(100) NOT NULL,
   `Date` date NOT NULL,
   `Image` varchar(100) NOT NULL,
   `Title` varchar(100) NOT NULL,
   `Content` varchar(50000) NOT NULL,
-  `Author_ID` int(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Author_ID` int(100) NOT NULL,
+  PRIMARY KEY (`Blog_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
@@ -197,7 +205,35 @@ INSERT INTO `blog` (`Blog_ID`, `Topic`, `Date`, `Image`, `Title`, `Content`, `Au
 (107, 'Comperative analysis', '2020-06-09', 'distance_learning.jpg', 'Is CS Suitable for Distance Learning?', '<p>In this blog, I discuss how undergraduate computer science students perceive the discipline of computer science by analyzing their distance learning experience during the 2020 Spring semester &ndash; the Corona Semester. This perception is derived based on an analysis of students&#39; comparison of distance learning of computer science with a) other sciences and engineering and b) social sciences and humanities.</p> <p>Data was collected during the 2020 Spring semester at the <a href=\"https://www.cs.huji.ac.il/\">Rachel and Selim Benin School of Computer Science and Engineering</a> of the Hebrew University of Jerusalem (where I was on sabbatical) using two questionnaires. The purpose of both questionnaires was to give the school management feedback on their students&#39; experiences (including learning processes and habits, feelings, needs, and concerns) and, based on the lessons learned from the data analysis, to design the upcoming semesters, regardless of whether or not on-campus learning will be permitted. The feedback received in the first questionnaire, right after the onset of the semester, after the students had experienced distance learning for only three weeks, also enabled the school management to apply the lessons learned from the data analysis to the continuation of the semester. In the second questionnaire, the students were asked specifically to propose how they prefer teaching to be organized during the 2020-2021 academic year if the pandemic continues and on-campus learning is limited (e.g., in small groups) or is not possible at all.</p> <p>As it turns out, these questionnaires guided the students to reflect on and analyze their learning processes and behaviors before and during this semester, habits of mind they are not usually encouraged to apply during regular semesters. In fact, the analysis of the data gathered by these questionnaires enabled the school management to understand the students&#39; perspective, not only on distance learning of computer science specifically, but also in a broader sense, how students perceive the essence of computer science and computer science learning.</p> <p>Specifically, in this blog, I describe students&#39; perceptions of computer science by analyzing their comparison of the suitability of computer science for distance learning with the suitability of other domains, specifically (a) natural sciences and engineering and (b) social sciences and humanities for distance learning.</p> <p>Additional details about the questionnaires can be found in my previous blog on <a href=\"https://cacm.acm.org/blogs/blog-cacm/248439-determining-cs-student-preferences-during-the-corona-semester/fulltext\">Determining CS Student Preferences During the Corona Semester</a> posted on November 2, 2020.</p> <h4><strong>Data Collection</strong></h4> <p>Approximately 1,800 undergraduate students are enrolled in <a href=\"https://www.cs.huji.ac.il/academics/programs-for-bachelors-degree\">a variety of study tracks offered by the School</a> of Computer Science and Engineering. <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSdFJ9t--cn_o3fx691GNxtKQ9Tep_C8VzVxOY3-l-urKUUdkw/viewform\">The first questionnaire</a><u> </u>was distributed on April 21, 2020, during the third week of the semester and was answered by 493 students (27%); <a href=\"https://docs.google.com/forms/d/e/1FAIpQLScrodVC2d85ckhY9tQG5gRYDRgFZVmcplDbGVJsO0P89GKsJA/viewform\">the second questionnaire</a> was distributed on June 14, 2020, about three weeks before the end of the semester and was answered by 290 students (16%). Responders were distributed as follows (to avoid excessive data, averages for the responders from both questionnaires are presented): 41% of the responding students were freshmen (of which about 3% began their academic studies in the Corona semester), 28% were sophomores, 23% were juniors, and the rest, 8%, were seniors; 60% were men and 40% were women (compared with an overall 70%-30% gender ratio at the school). One-third of the students who answered the questionnaire had previous experience with distance learning. Both questionnaires were in Hebrew and were distributed by email.</p> <p>The second questionnaire included the following two questions: &quot;To what extent, in your opinion, is distance learning suitable for computer science, in comparison with natural sciences and other engineering domains?&quot; and &quot;To what extent, in your opinion, is distance learning suitable for computer science in comparison to humanities and social sciences?&quot; In both questions, the students were asked to rate their opinion on the following scale: Less suitable, Equally suitable, More suitable, and I don&#39;t know. We note that the computer science students study on the same campus of the Hebrew University of Jerusalem as the natural sciences (chemistry, physics, biology) students, while the humanities and social sciences study on a different campus of the university. Table 1 shows the distribution of students&#39; answers to these questions.</p> <p style=\"text-align:left\">&nbsp;</p> <p style=\"text-align:left\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">Table 1: Students&#39; comparison of the suitability of computer science for distance learning relative </span><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">to (a) natural sciences and engineering domains and (b) humanities and social sciences</span></p> <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" class=\"MsoTableGrid\" style=\"border-collapse:collapse; border:none; mso-border-alt:solid windowtext .5pt; mso-padding-alt:0in 5.4pt 0in 5.4pt; mso-yfti-tbllook:1184; width:526.25pt\"> <tbody> <tr> <td style=\"width:170.75pt\"> <p style=\"text-align:left\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p> <p style=\"text-align:center\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">Distance learning suits computer science</span></strong></p> </td> <td style=\"width:2.75in\"> <p style=\"text-align:center\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">Compared with: </span></strong></p> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\"><strong>Natural sciences and other engineering domains</strong> </span></p> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">(286 responses)</span></p> </td> <td style=\"width:157.5pt\"> <p style=\"text-align:center\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">Compared with: </span></strong></p> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\"><strong>Humanities and social sciences </strong></span></p> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">(282 responses)</span></p> </td> </tr> <tr> <td style=\"width:170.75pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">More</span></p> </td> <td style=\"width:2.75in\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">96 (</span><span dir=\"RTL\" lang=\"HE\" style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">33.6</span><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">%)</span></p> </td> <td style=\"width:157.5pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">106 (37.6%)</span></p> </td> </tr> <tr> <td style=\"width:170.75pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">Equally</span></p> </td> <td style=\"width:2.75in\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">10</span><span dir=\"RTL\" lang=\"HE\" style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">4</span><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\"> (36.4%)</span></p> </td> <td style=\"width:157.5pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">39 (13.8%)</span></p> </td> </tr> <tr> <td style=\"width:170.75pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">Less</span></p> </td> <td style=\"width:2.75in\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">46 (16.1%)</span></p> </td> <td style=\"width:157.5pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">76 (27%)</span></p> </td> </tr> <tr> <td style=\"width:170.75pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">I don&#39;t know </span></p> </td> <td style=\"width:2.75in\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">40 (14%)</span></p> </td> <td style=\"width:157.5pt\"> <p style=\"text-align:center\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif; font-size:12.0pt\">61 (21.6%)</span></p> </td> </tr> </tbody> </table> <p>&nbsp;</p> <p>As can be seen, students&#39; opinions are divided both with respect to natural sciences and other engineering domains and with respect to humanities and social sciences. However, their opinions are divided differently in the two cases. Specifically, with respect to:</p> <ul> <li style=\"text-align:left\">Natural sciences and other engineering domains: About one-third of the students (33.6%) believe that distance learning suits computer science more, but at the same time, about the same proportion &ndash; one-third (36.4%) &ndash; believe that distance learning suits computer science to the same degree that it suits natural sciences and other engineering domains.</li> <li style=\"text-align:left\">Humanities and social sciences: Although about one-third of the students (37.6%) believe that distance learning suits computer science more, at the same time, about one-fourth (27%) of them believe that distance learning suits computer science less than it suits humanities and social sciences.</li> </ul> <p>In addition to the above closed questions, the students were asked to explain their opinion in open questions. As described below, the data analysis of the answers to the open questions reflect students&#39; perception of computer science and how this perception shapes their opinion with respect to the suitability of computer science for the distance-learning mode.</p> <h4><strong>Data Analysis</strong></h4> <p><strong>A. Computer science is <em>less</em> suitable for distance learning</strong></p> <p>On the one hand, in both cases &ndash; natural sciences and other engineering domains, and humanities and social sciences &ndash; the students explained that distance learning is less suitable for computer science because computer science courses are more difficult. With respect to humanities and social sciences, one of the students explained: &quot;Computer science is more difficult than humanities and therefore is more challenging in distance learning.&quot; With respect to natural sciences and other engineering domains, the students explained this opinion by distinguishing between the mathematics-oriented course and the computer-oriented course. One of them explained: &quot;Although we are dealing with computers, half of the degree is mathematical and studying mathematics this way is much less successful, in my opinion.&quot; Another student wrote that &quot;it is harder to teach mathematics (formulas etc.) by remote teaching.&quot;</p> <p>Similar explanations emerged from the data analysis of the first questionnaire, in which students were asked to answer the following open question: &quot;In your opinion, does distance learning have any unique characteristics in the case of computer science?&quot; Their answers further support the above analysis of the students&#39; perceptions of the suitability of computer science for distance learning, by comparing distance learning of mathematical courses (&quot;theoretical&quot;) with that of programming courses. We illustrate this by presenting several quotes that reflect how students perceive these differences:</p> <ul> <li style=\"text-align:left\">Mathematical courses are much more difficult through distance learning than courses that are based more on speech or programming.</li> <li style=\"text-align:left\">Yes, it is for the better. Programming courses integrate beautifully into distance learning because it [distance learning] reflects the independent learning and the independent work aspects of programming. Conversely, mathematical courses are more complex to perform through distance learning.</li> <li style=\"text-align:left\">It depends on the course. In math and theory courses it is very very challenging and difficult; in programming courses, it can be an opportunity to use additional tools for learning.</li> </ul> <p><strong>B.&nbsp;&nbsp;&nbsp; Computer science is <em>more</em> suitable for distance learning</strong></p> <p>In each of the above cases &ndash; natural sciences and other engineering domains, and humanities and social sciences &ndash; students gave different explanations why distance learning is more suitable for computer science. One student wrote: &quot;I think that in computer science, the option of distance learning is ideal. If we compare [computer science] with other sciences, biology for example, it is clear that there are frameworks that require that students arrive [on campus], such as labs. In social sciences, learning through discussions is very important (but less important than in biology).&quot;</p> <p>In addition, students attributed the suitability of distance learning for computer science to the tremendous amounts of material available online, to the fact that the teaching staff have more technological skills, and to the fact that &quot;most of the computer science degree (unfortunately) consists of self-learning. Many hours of code programming and solving exercises. In class we learn very little, and we learn most of the material at home.&quot; In a similar spirit, another student wrote: &quot;The work of computer science exercises in many cases continues till the middle of the night and because [distance] learning takes place at home, we don&#39;t have to worry about getting home.&quot;</p> <p>As before, similar explanations emerged from the data analysis of the first questionnaire, in which students were asked to answer the following open question, as mentioned above: &quot;In your opinion, does distance learning have any unique characteristics in the case of computer science?&quot; Here are several illustrative quotes that further support students&#39; perceptions that distance learning is more suitable for computer science:</p> <ul> <li>Yes, in most of the computer science courses I attended so far, most of the learning was autonomous any way. In distance learning, it is easier to do that.</li> <li>Yes, in my opinion, it is a domain that can be relatively learned well from the distance since a lot of material is available on the Internet, and sometimes the ability to adjust my study time to when I am more concentrated helps me understand the material.</li> <li>The lecturers and the TAs have less problems with the technology.</li> <li>Yes, you can write code and try different things during the lecture and so the material is grasped better. Furthermore, the recordings are given in comfortable times and suit people with prior knowledge (you can skip parts that you know/advance faster).</li> </ul> <h4><strong>Summary </strong></h4> <p>As can be seen, on the one hand, students perceive computer science as a difficult topic for learning and therefore as less suitable for distance learning compared with other subjects, while on the other hand, since computer science requires less face-to-face interaction (either in terms of discussions or physical facilities) as well as many self-learning hours, it is more suitable for distance learning.</p> <p>Students are not, however, giving up on on-campus learning. As I showed in my previous blog, <a href=\"https://cacm.acm.org/blogs/blog-cacm/248439-determining-cs-student-preferences-during-the-corona-semester/fulltext\">Determining CS Student Preferences During the Corona Semester</a> (posted on November 2, 2020), the Corona Semester sharpened students&rsquo; understanding of what is worth coming to the campus: learning-based social interactions that take place either in formal on-campus settings (class rooms, etc.) or in informal on-campus settings (in the learning spaces).</p>', 1006),
 (108, 'Education', '2021-01-27', 'research_resources.jpg', 'First-Year Research Sources', 'As we know, computer science research dissemination is in upheaval. We know that from reading the CACM—David Roman\'s overview of the shifting business model[Roman2011], Moshe Vardi\'s excavation of that model\'s flaws in Editor\'s Letters [Vardi201205, Vardi201207], Vardi\'s report on the \"Publication Culture in Computing Research\" workshop along with Doug Terry\'s Viewpoint on shortcomings of the review process [Vardi2014, Terry2014], and other commentary. Guiding undergraduates through this morass is difficult, and convincing freshmen that computer science research can be done at even their level is daunting.  At the moment, I face this in the First-Year Seminar in Computer Science [Hill2019]. Such a seminar strives to teach high school graduates how to be college students. One of the assignments they undertake is a research paper. Having searched, at least in a cursory fashion, for a detailed LibGuide to computer science research sources for beginners, I see that most point to the ACM Digital Library and the IEEE Xplore—that\'s good. But those are not publications, but aggregators, begging the question where to find research papers at a certain level on a certain topic. With the assistance of my institution\'s librarians, I have put together this list.  Here I display a stripped-down version of the handout and its explanation. (Several links specific to our institution have been removed.) Because the publication scene is volatile, this must be updated regularly. Conference proceedings are omitted, although an instructor might want to recommend those of interest that can be easily obtained and read. Of the three sections shown:  The POPULAR section is for inspiration and background. Online library systems do not lend themselves to idle exploration, due to the digital storage that precludes browsing, picking-up, and running-across. For this reason, I try to provide respectable public websites for such exploration. The AUTHORITATIVE section is for research understanding. I have designated these sources as peer-reviewed for undergraduate research purposes, because they carry deeply-investigated and sometimes profound observation and analysis of current developments. I doubt that this would be appropriate in other scientific fields. The SCHOLARLY section is for serious reference. Research requires an original contribution, I tell the students, and their own opinion counts as an original contribution, as long as it is stated with some reference to some sanctioned professional work. In class, we search the scholarly databases with arbitrary example subjects to demonstrate that students can actually find research that suits their grasp of the subject, especially if they are able to formulate a narrow scope by combining interests. Good examples for such searches might be \"multi-player game addiction and sleep\" or \"biometric security voting machines\" (yes, a couple of papers found). Sources for Research in Computing (For COSC 1101 First-Year Seminar) Last update 26 January 2021; R. Hill  Your research paper should draw information from legitimate and authoritative publications.  These include academic books and reputable periodicals and newspapers of record and their websites.  Use the popular publications for background, and use at least one peer-reviewed source for research in depth.  POPULAR Books: To find an area that interests you, try browsing the library stacks in the computer science call numbers, QA 75 and QA 76.  Newspapers: You can use the ProQuest database to reach the most current issue, or past issues, of newspapers. Some carry special sections on technology, as follows. Go through the UW Library access to reach the full-text articles behind the paywall.  Wall Street Journal Tech     UWyo Library FAQ that helps you set up an account and locate the Wall Street Journal    A link on the WSJ Technology page offers sign-up for a weekly tech-focused digest.  New York Times Technology section     UWyo Library FAQ for the New York Times  The UW Libraries provides these aggregations as well:  EE and Computer Engineering and Science databases ProQuest Newsstreams, for searches across newspapers and other periodicals: U.S. Newstream International Newsstream You can also find news streams for more specific regions.    Magazines: Magazines listed below are available online from our library, and if the call number is given, Coe Library holds them in print form in the stacks on level 1. For online access, follow the link, and click on the yellow \"View full text\" button to view another webpage with links to various searchable databases with that magazine (choose any with the date you seek).  Good Prospects for interesting subjects:  WIRED magazine, with recent issues covering the latest trends: At call number TK5105.5.W57 and also in the online catalog Ars Technica: Digitally native (online only): At https://arstechnica.com/ Other respectable periodicals cover technology news; call numbers are given for those that appear in print in Coe Library.  The National Review (call number AP2.N3545) The Guardian (London) Magazines such as The New Yorker (call number AP2.N6763) and The Atlantic (call number AP2.A8); see special tech sections below. Reuters News Service, https://www.reuters.com/technology PBS and BBC for broadcast coverage—to use such a source, find a written version of the piece AUTHORITATIVE We will count the following special sections of magazines as peer-reviewed sources:  New Yorker Annals of Technology     https://www.newyorker.com/magazine/annals-of-technology  The Atlantic Magazine Technology Section     https://www.theatlantic.com/technology/  The Economist Technology Quarterly   https://www.economist.com/technology-quarterly/  Universities, research institutes, and other public interest groups often publish or host good research. See, for example, those listed below. Many others conduct research on specific computing subjects.  First Monday: This digitally native (onlne only) journal devoted to the Internet, comes from the University of Illinois at Chicago. https://firstmonday.org/ojs/index.php/fm/index  Oxford Internet Institute: https://www.oii.ox.ac.uk/  Brookings Intitution Technology and Innovation Division: https://www.brookings.edu/topic/technology-innovation/  Beware white papers: A great deal of contemporary research and commentary is published online by research institutes.  Consult those that are sponsored by universities, governments, and other public interest groups, rather than those that are hosted by businesses and commercial and industry groups. In particular, beware of \"white papers\" published by technology vendors, which are actually marketing. For a judgment on a source in this category, ask your instructor.  PROFESSIONAL The two main professional organizations in computer science are the IEEE Computer Society and the ACM (Association for Computing Machinery). Each organization publishes a general computing newsletter for members, IEEE Computer (www.computer.org/csdl/magazines/co) and the Communications of the ACM (cacm.acm.org). Consider a free subscripton to IEEE Edge (http://www.computer.org/computingedge), which collects and presents articles from its other publications.  Each organization maintains comprehensive online libraries, to search and browse via our own library proxy access, the IEEE Xplore database, and the ACM Digital Library. Most pieces from these professional sources are peer-reviewed; check with your instructor to make sure.  SCHOLARLY Computer science research is thriving, putting out too many publications in too many formats to explain easily. Much of the work appears in conference proceedings, which are difficult to track. Find sources that are in printed on permanent websites or in journals with well-defined access.  For a wide variety of references, use the ProQuest or Academic Search Premier (EBSCO) databases from the UW library. Search for your topic, selecting the \"Full Text\" and \"Peer-reviewed\" options in the filters on the left. All articles indexed by Web of Science are peer-reviewed.  No guarantee accompanies these suggestions. Results remain mixed, as most would expect. Students continue to struggle, or shine, or both, as they find their various ways into and through the college curriculum. Although this compendium may be incomplete today and obsolete next week, feel free to take the material and adapt it to your needs. And send more suggestions; let\'s all try to work out a good approach to delineating undergraduate research sources as computer science publication matures and solidifies.', 1002);
 INSERT INTO `blog` (`Blog_ID`, `Topic`, `Date`, `Image`, `Title`, `Content`, `Author_ID`) VALUES
-(109, 'Comperative Analysis', '2021-03-15', '1632506167_Intelligence-Augmentation-Vs-Artificial.jpg', 'AI or Intelligence Augmentation for Education?', '<p>On December 7, 1968, Douglas Engelbart presented a legendary <a href=\"https://www.dougengelbart.org/content/view/209/448/\">demonstration</a> that showed how newly emerging computing technologies could help people work together. More generally, Engelbart devoted his professional life to articulating his view of the role of computing in addressing societal problems. He emphasized the potential for technology to <a href=\"https://www.dougengelbart.org/content/view/194/168/\">augment</a> human intelligence. Since that time, many others have developed the concept of intelligence augmentation (IA).</p>\r\n<p>For example, the field of healthcare sees IA as a more ethical framing. One <a href=\"https://journalofethics.ama-assn.org/article/making-policy-augmented-intelligence-health-care/2019-02?Effort%2BCode=FBB007\">report</a> defines IA as &quot;...an alternative conceptualization that focuses on AI&#39;s assistive role, emphasizing a design approach and implementation that enhances human intelligence rather than replaces it.&quot; This report argues &quot;health care AI should be understood as a tool to augment professional clinical judgment.&quot;</p>\r\n<p>In education, applications of Artificial Intelligence are now rapidly expanding. Not only are innovators developing <a href=\"https://psycnet.apa.org/doi/10.1037/a0032447\">intelligent tutoring systems</a> that support learning how to solve tough Algebra problems. AI applications also include automatically grading essays or <a href=\"https://journals.sagepub.com/doi/full/10.1177/2332858416673968\">homework</a>, as well as <a href=\"https://eric.ed.gov/?id=ED594871\">early warning systems</a> that alert administrators to potential drop-outs. We also see AI products for online science labs that give teachers and students feedback. Other products listen to classroom discussions and highlight features of classroom talk that a teacher might seek to improve or observe the quality of teaching in videos of preschool children. A recent expert <a href=\"https://circls.org/reports/ai-report\">report</a> about AI and education all uncovered visions for AI that would support teachers to orchestrate classroom activities, extend the range of student learning outcomes that can be measured, support learners with disabilities, and more.</p>\r\n<p>In colloquial use, the term AI calls forth images of quasi-human agents that act independently, often replacing the work of humans, who become less important. AI is usually&nbsp; faster and based on more data, but is it smarter? In addition, there are difficult problems of privacy and security&mdash;society has an obligation to protect children&#39;s data. And there are even more difficult issues of bias, fairness, transparency, and accountability. Here&#39;s our worry: a focus on AI provides the illusion that we could obtain the good (super-human alternative intelligences) if only we find ways to tackle the bad (ethics and equity). We believe this is a mirage. People will always be intrinsic to learning, no matter how fast, smart, and data-savvy technological agents become. People are why agents exist. We think it&#39;s important to always have the human in the loop to understand if things are working and if not, to understand why and make creative plans for change.</p>\r\n<p>Today, students and teachers are overwhelmed by the challenges of teaching and learning in a pandemic. The problems we face in education are whole child problems. Why are parents clamoring to send children back to school? It&#39;s not just so they can get some work done! Learning is fundamentally social and cultural; enabling the next generation to construct knowledge, skills, and practices they&#39;ll need to thrive is work that requires people working together in a learning community. Schools also provide needed social and emotional support. We are simultaneously at a critical juncture where the need to address ethics and equity are profound. In addition to trust and safety considerations, prioritizing the impact, and understanding how it changes interactions and what those implications are for students and teachers is essential when evaluating AI or any technology.</p>\r\n<p>Thus, we recommend a focus on IA in education that would put educators&#39; professional judgement and learners&#39; voice at the center of innovative designs and features. An IA system might save an educator administrative time (for example, in grading papers) and support their attention to their students&#39; struggles and needs. An IA system might help educators notice when a student is participating less and suggest strategies for engagement, perhaps even based on what worked to engage the student in a related classroom situation. In this Zoom era, we&#39;ve also seen promising speech recognition technologies that can detect inequities in which students have voice in classroom discussions over large samples of online verbal discourse. In some forward-looking school districts, teachers have instructional coaches. In those situations, the coach and teacher could utilize an IA tool to examine patterns of speaking in their teaching and make plans to address inequities. Further, the IA tool might allow the coach and teacher to specify smart alerts to the teacher&mdash;for example, for expected patterns in future classroom discussions that would signal a good time to try a new and different instructional move. Later, the IA tool might make a &quot;highlights reel&quot; that the coach and teacher could review to decide whether to stay with that new instructional move, or to try another.</p>\r\n<p>The important difference between AI and IA may be <em>when </em>an educator&#39;s professional judgement and student voice are in the loop. The AI perspective typically offers opportunities for human judgement before technologies are adopted or when they are evaluated; the IA perspective places human judgement at the forefront throughout teaching and learning and should change the way technologies are designed<em>.</em> We worry that the AI perspective may encourage innovators to see ethics and equity as a barrier they have to jump over once, and then their product is able to make decisions for students autonomously. Alas, when things go wrong, educators may respond with backlash that takes out both the bad and the good. We see the IA perspective as acknowledging ethics and equity issues in teaching and learning as ongoing and challenging.</p>\r\n<p>By beginning with the presumption that human judgement will always need to be in the loop, we hope that IA for education will focus attention on how human and computational intelligence could come together for the benefit of learners. With IA, restraint is built into the design and technology isn&#39;t given power to fully make decisions without a diverse pool of humans participating. We hope IA for education will ground ethics and equity not in a high stakes disclosure/consent/adoption decision but rather in cycles of continuous improvement where the new powers of computational intelligence are balanced by the wisdom of educators and students.</p>', 1007);
+(109, 'Comperative Analysis', '2021-03-15', '1632506167_Intelligence-Augmentation-Vs-Artificial.jpg', 'AI or Intelligence Augmentation for Education?', '<p>On December 7, 1968, Douglas Engelbart presented a legendary <a href=\"https://www.dougengelbart.org/content/view/209/448/\">demonstration</a> that showed how newly emerging computing technologies could help people work together. More generally, Engelbart devoted his professional life to articulating his view of the role of computing in addressing societal problems. He emphasized the potential for technology to <a href=\"https://www.dougengelbart.org/content/view/194/168/\">augment</a> human intelligence. Since that time, many others have developed the concept of intelligence augmentation (IA).</p>\r\n<p>For example, the field of healthcare sees IA as a more ethical framing. One <a href=\"https://journalofethics.ama-assn.org/article/making-policy-augmented-intelligence-health-care/2019-02?Effort%2BCode=FBB007\">report</a> defines IA as &quot;...an alternative conceptualization that focuses on AI&#39;s assistive role, emphasizing a design approach and implementation that enhances human intelligence rather than replaces it.&quot; This report argues &quot;health care AI should be understood as a tool to augment professional clinical judgment.&quot;</p>\r\n<p>In education, applications of Artificial Intelligence are now rapidly expanding. Not only are innovators developing <a href=\"https://psycnet.apa.org/doi/10.1037/a0032447\">intelligent tutoring systems</a> that support learning how to solve tough Algebra problems. AI applications also include automatically grading essays or <a href=\"https://journals.sagepub.com/doi/full/10.1177/2332858416673968\">homework</a>, as well as <a href=\"https://eric.ed.gov/?id=ED594871\">early warning systems</a> that alert administrators to potential drop-outs. We also see AI products for online science labs that give teachers and students feedback. Other products listen to classroom discussions and highlight features of classroom talk that a teacher might seek to improve or observe the quality of teaching in videos of preschool children. A recent expert <a href=\"https://circls.org/reports/ai-report\">report</a> about AI and education all uncovered visions for AI that would support teachers to orchestrate classroom activities, extend the range of student learning outcomes that can be measured, support learners with disabilities, and more.</p>\r\n<p>In colloquial use, the term AI calls forth images of quasi-human agents that act independently, often replacing the work of humans, who become less important. AI is usually&nbsp; faster and based on more data, but is it smarter? In addition, there are difficult problems of privacy and security&mdash;society has an obligation to protect children&#39;s data. And there are even more difficult issues of bias, fairness, transparency, and accountability. Here&#39;s our worry: a focus on AI provides the illusion that we could obtain the good (super-human alternative intelligences) if only we find ways to tackle the bad (ethics and equity). We believe this is a mirage. People will always be intrinsic to learning, no matter how fast, smart, and data-savvy technological agents become. People are why agents exist. We think it&#39;s important to always have the human in the loop to understand if things are working and if not, to understand why and make creative plans for change.</p>\r\n<p>Today, students and teachers are overwhelmed by the challenges of teaching and learning in a pandemic. The problems we face in education are whole child problems. Why are parents clamoring to send children back to school? It&#39;s not just so they can get some work done! Learning is fundamentally social and cultural; enabling the next generation to construct knowledge, skills, and practices they&#39;ll need to thrive is work that requires people working together in a learning community. Schools also provide needed social and emotional support. We are simultaneously at a critical juncture where the need to address ethics and equity are profound. In addition to trust and safety considerations, prioritizing the impact, and understanding how it changes interactions and what those implications are for students and teachers is essential when evaluating AI or any technology.</p>\r\n<p>Thus, we recommend a focus on IA in education that would put educators&#39; professional judgement and learners&#39; voice at the center of innovative designs and features. An IA system might save an educator administrative time (for example, in grading papers) and support their attention to their students&#39; struggles and needs. An IA system might help educators notice when a student is participating less and suggest strategies for engagement, perhaps even based on what worked to engage the student in a related classroom situation. In this Zoom era, we&#39;ve also seen promising speech recognition technologies that can detect inequities in which students have voice in classroom discussions over large samples of online verbal discourse. In some forward-looking school districts, teachers have instructional coaches. In those situations, the coach and teacher could utilize an IA tool to examine patterns of speaking in their teaching and make plans to address inequities. Further, the IA tool might allow the coach and teacher to specify smart alerts to the teacher&mdash;for example, for expected patterns in future classroom discussions that would signal a good time to try a new and different instructional move. Later, the IA tool might make a &quot;highlights reel&quot; that the coach and teacher could review to decide whether to stay with that new instructional move, or to try another.</p>\r\n<p>The important difference between AI and IA may be <em>when </em>an educator&#39;s professional judgement and student voice are in the loop. The AI perspective typically offers opportunities for human judgement before technologies are adopted or when they are evaluated; the IA perspective places human judgement at the forefront throughout teaching and learning and should change the way technologies are designed<em>.</em> We worry that the AI perspective may encourage innovators to see ethics and equity as a barrier they have to jump over once, and then their product is able to make decisions for students autonomously. Alas, when things go wrong, educators may respond with backlash that takes out both the bad and the good. We see the IA perspective as acknowledging ethics and equity issues in teaching and learning as ongoing and challenging.</p>\r\n<p>By beginning with the presumption that human judgement will always need to be in the loop, we hope that IA for education will focus attention on how human and computational intelligence could come together for the benefit of learners. With IA, restraint is built into the design and technology isn&#39;t given power to fully make decisions without a diverse pool of humans participating. We hope IA for education will ground ethics and equity not in a high stakes disclosure/consent/adoption decision but rather in cycles of continuous improvement where the new powers of computational intelligence are balanced by the wisdom of educators and students.</p>', 1007),
+(112, 'Node js', '2022-03-31', '1649015739_blog1.jpg', 'How to learn node js?', 'Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!\r\n\r\nNode.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.\r\n\r\nA Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.', 1013);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `comment` mediumtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `name`, `email`, `comment`) VALUES
+(5, 'Sahal', 'me.sahal3000@gmail.com', 'Hey'),
+(6, 'Rabita', 'rabita@gmail.com', 'Nice one!!!'),
+(8, 'Afrin', 'afrinahmed01@gmail.com', 'You guys have done a tremendous job. Hope this will continue. Good luck and best wishes...'),
+(9, 'Sumaiya', 'sumbinhid@gmail.com', 'Great job.'),
+(10, 'Arman', 'sohelbd005@yahoo.com', 'Profile management should be improved.'),
+(11, 'Michael', 'mike034@gamil.com', 'Should be more professional.');
 
 -- --------------------------------------------------------
 
@@ -205,7 +241,8 @@ INSERT INTO `blog` (`Blog_ID`, `Topic`, `Date`, `Image`, `Title`, `Content`, `Au
 -- Table structure for table `experience`
 --
 
-CREATE TABLE `experience` (
+DROP TABLE IF EXISTS `experience`;
+CREATE TABLE IF NOT EXISTS `experience` (
   `Scientist_ID` int(100) NOT NULL,
   `experience` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -274,7 +311,8 @@ INSERT INTO `experience` (`Scientist_ID`, `experience`) VALUES
 -- Table structure for table `follow`
 --
 
-CREATE TABLE `follow` (
+DROP TABLE IF EXISTS `follow`;
+CREATE TABLE IF NOT EXISTS `follow` (
   `Scientist_ID` int(100) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -302,16 +340,80 @@ INSERT INTO `follow` (`Scientist_ID`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `post_work`
+--
+
+DROP TABLE IF EXISTS `post_work`;
+CREATE TABLE IF NOT EXISTS `post_work` (
+  `work_id` int(255) NOT NULL AUTO_INCREMENT,
+  `id` int(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `area` varchar(255) NOT NULL,
+  `overview` varchar(25500) NOT NULL,
+  `requirment` varchar(25500) NOT NULL,
+  `paper` varchar(255) NOT NULL,
+  PRIMARY KEY (`work_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11013 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `post_work`
+--
+
+INSERT INTO `post_work` (`work_id`, `id`, `title`, `area`, `overview`, `requirment`, `paper`) VALUES
+(11002, 2, 'Looking for experts in deep learning', 'Deep learning', 'I am looking for expert in deep learning who can help me in my project.', 'Basic knowledge about deep learning', 'altay2018.pdf'),
+(11003, 14, 'Machine Learning Project', 'Machine learning', '1) Detection of Pneumonia in Medical Images<br>2) Train Deep Reinforcement Learning (DRL) agents', 'An expert in Machine Learning', 'altay2018.pdf'),
+(11006, 15, 'Create a forecast model and make the endpoint to predict in flask or fast api', 'Machine Learning', 'Build a cloud solution from the provider of your choice using the TICKIT dataset,\r\nthis sample database is used to track website sales activity\r\nfictitious TICKIT, where users buy and sell tickets online for sporting events,\r\nshows and concerts. In particular, analysts can identify the movement of\r\ntickets over time, the success rates of vendors, and the events, venues, and\r\nbest selling seasons. Analysts can use this information to provide\r\nincentives to buyers and sellers who frequent the site, to attract new\r\nusers and to generate advertising and promotions.', 'Build a REST API with the following conditions: 1. Use Python frameworks (Flask, Django, Fast-API) 2. Build an endpoint where the trained model is used to make predictions on-line.', 'altay2018.pdf'),
+(11007, 15, 'Python project', 'Python', 'What will the innocuous code do?:\r\n    The program will track time for each employee and calculate the payment that he should recieve based on his hourly rate.\r\nWhat will your malicious code do?:\r\n    The program will run arp tables retreival commands based on the target machine OS and then scan for open ports\r\nWhat is the objective/desired outcome from the execution of the attack:\r\n    The objective is to obtain open ports that serves future attacks', 'Who is the target:     Small company teams, and workplace staff. How you propose to get your code into their system:     The program will be introduced as a time tracking program that automate payroll calculcations.', 'altay2018.pdf'),
+(11011, 24, 'Usability Feedback for R&D Artificial Intelligence platform', 'Artificial Intelligence', 'Hi. I am looking for machine learning developer. My developer has stopped the working because of the personal reason. I am looking for long term partner. Currently I have the API for detecting the text and screws of the watches. - I need to improve a few things of this api. 1, OCR 2, Image processing 3, Labeling and training', 'Required skills are : Python Machine learning Deep learning AIWe are an AI/ML company that builds ML models on a web platform for Research and Development. We need to get some UX feedback on our platform. It does have some heavy data concepts that are related to any of these industries or disciplines: 1 - EV Battery Development 2 - Electronic Design 3 - Computational Fluid Dynamics (CFD) design or simulation 4 - Machine Learning 5 - Data Analysis 6 - Material Design', 'altay2018.pdf'),
+(11012, 25, 'Chatbot design', 'Programming languages', 'I would like to do some research in chatbot...could you share your experience while designing a chatbot...i would like to know various design issues of chatbots..srth_ks@yahoo.com', 'I am looking for a mix of experience and value. Must be good at Node js.', '8-Node-Js-Challenges-in-Implementation.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `proposal`
+--
+
+DROP TABLE IF EXISTS `proposal`;
+CREATE TABLE IF NOT EXISTS `proposal` (
+  `proposal_id` int(100) NOT NULL AUTO_INCREMENT,
+  `work_id` int(255) NOT NULL,
+  `seller_id` int(255) NOT NULL,
+  `letter` varchar(10000) NOT NULL,
+  `Paper` varchar(25500) NOT NULL,
+  `cv` varchar(255) NOT NULL,
+  `flag` int(11) NOT NULL,
+  PRIMARY KEY (`proposal_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `proposal`
+--
+
+INSERT INTO `proposal` (`proposal_id`, `work_id`, `seller_id`, `letter`, `Paper`, `cv`, `flag`) VALUES
+(2, 11002, 15, '', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 1),
+(8, 11008, 15, 'Hello I am interested for this work.', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(6, 11001, 2, 'I can do your work..', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(7, 11001, 2, 'I can do your work..', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(9, 11007, 24, 'hello', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(10, 11003, 15, 'I have some idea about this research', 'https://www.aaai.org/Papers/Workshops/2007/WS-07-10/WS07-10-008.pdf', 'my_resume', 0),
+(11, 11012, 15, 'Web Scraping and Web Automation is focused, which are to be implemented using Node JS or Python, specifically, using the modules including Puppeteer, Selenium, Scrapy, BeautifulSoup, Crawler and Cheerio!\r\n\r\n\r\n\r\nThe six important concepts that are followed here are:\r\n\r\n1. Data Processing.\r\n2. Data Mining.\r\n3. Web Scraping.\r\n4. Web Automation.\r\n5. Price Tracking.\r\n6. Bots desigining.', 'https://www.npmjs.com/package/paper', 'my_resume.pdf', 0),
+(12, 11012, 2, 'I am not a random JS developer. I am a professional 6+ years experienced serverless solution architecture. I have invested a lot of time on myself to keep updated, learning best practices about serverless and NodeJS.\r\n\r\nServices I am offering,\r\nWrite AWS Lambda functions and integrate with AWS other services like AWS S3.', 'https://www.academia.edu/50816095/WSN_USING_COMBINED_SCHEME_OF_VIGOR_PROFICIENT_BUNCHING_AND_INFORMATION_RESCUE', 'my_resume.pdf', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `publication`
 --
 
-CREATE TABLE `publication` (
-  `Pub_ID` int(100) NOT NULL,
+DROP TABLE IF EXISTS `publication`;
+CREATE TABLE IF NOT EXISTS `publication` (
+  `Pub_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Pub_Name` varchar(1000) NOT NULL,
   `Pub_Link` varchar(1000) NOT NULL,
   `Citation_Count` int(11) NOT NULL,
-  `Sub_ID` int(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Sub_ID` int(100) NOT NULL,
+  PRIMARY KEY (`Pub_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3028 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `publication`
@@ -351,7 +453,8 @@ INSERT INTO `publication` (`Pub_ID`, `Pub_Name`, `Pub_Link`, `Citation_Count`, `
 -- Table structure for table `publish`
 --
 
-CREATE TABLE `publish` (
+DROP TABLE IF EXISTS `publish`;
+CREATE TABLE IF NOT EXISTS `publish` (
   `Scientist_ID` int(100) NOT NULL,
   `Pub_ID` int(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -414,10 +517,12 @@ INSERT INTO `publish` (`Scientist_ID`, `Pub_ID`) VALUES
 -- Table structure for table `research_area`
 --
 
-CREATE TABLE `research_area` (
-  `Sub_ID` int(100) NOT NULL,
-  `Sub_Name` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `research_area`;
+CREATE TABLE IF NOT EXISTS `research_area` (
+  `Sub_ID` int(100) NOT NULL AUTO_INCREMENT,
+  `Sub_Name` varchar(255) NOT NULL,
+  PRIMARY KEY (`Sub_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=525 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `research_area`
@@ -453,7 +558,8 @@ INSERT INTO `research_area` (`Sub_ID`, `Sub_Name`) VALUES
 -- Table structure for table `save`
 --
 
-CREATE TABLE `save` (
+DROP TABLE IF EXISTS `save`;
+CREATE TABLE IF NOT EXISTS `save` (
   `Blog_ID` int(100) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -479,7 +585,8 @@ INSERT INTO `save` (`Blog_ID`, `email`) VALUES
 (102, 'mkaikaus22@gmail.com'),
 (102, 'sumu@gmail.com'),
 (106, 'sumu@gmail.com'),
-(104, 'sumu@gmail.com');
+(104, 'sumu@gmail.com'),
+(102, 'priyo2@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -487,8 +594,9 @@ INSERT INTO `save` (`Blog_ID`, `email`) VALUES
 -- Table structure for table `scientist`
 --
 
-CREATE TABLE `scientist` (
-  `Scientist_ID` int(100) NOT NULL,
+DROP TABLE IF EXISTS `scientist`;
+CREATE TABLE IF NOT EXISTS `scientist` (
+  `Scientist_ID` int(100) NOT NULL AUTO_INCREMENT,
   `Sci_Name` varchar(100) NOT NULL,
   `Work_place` varchar(255) NOT NULL,
   `Sci_img` varchar(255) NOT NULL,
@@ -502,8 +610,9 @@ CREATE TABLE `scientist` (
   `Avg_Cite_Count` int(100) NOT NULL,
   `Youtube` varchar(255) NOT NULL,
   `research_gate` varchar(255) NOT NULL,
-  `wikipedia` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `wikipedia` varchar(255) NOT NULL,
+  PRIMARY KEY (`Scientist_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `scientist`
@@ -546,14 +655,16 @@ INSERT INTO `scientist` (`Scientist_ID`, `Sci_Name`, `Work_place`, `Sci_img`, `B
 -- Table structure for table `signup`
 --
 
-CREATE TABLE `signup` (
-  `id` int(255) NOT NULL,
+DROP TABLE IF EXISTS `signup`;
+CREATE TABLE IF NOT EXISTS `signup` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `phone` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `signup`
@@ -569,7 +680,11 @@ INSERT INTO `signup` (`id`, `name`, `email`, `address`, `password`, `phone`) VAL
 (13, 'Maleeha Kaikaus', 'mkaikaus333@gmail.com', 'Feni', '12345', '01636538666'),
 (14, 'Urbana Rishat', 'urishat@gmail.com', 'Rangpur', '54321', '01912345678'),
 (15, 'Maleeha Kaikaus', 'mkaikaus22@gmail.com', 'Feni', '54321', '01636538666'),
-(16, 'jkl', 'priyo@gmail.com', 'sad', '1234', '01731414399');
+(24, 'Waseca Tahsin', 'waseca2@gmail.com', 'Malibagh', '54321', '1636538777'),
+(17, 'Radwa', 'rkaikaus@gmail.com', 'Cumilla', '12345', '01612345678'),
+(18, 'risha urbana', 'risha@gmail.com', 'rangpur', '12345', '01636538666'),
+(21, 'Jannatul Mawa', 'mawa@gmail.com', 'Feni', '54321', '1636538676'),
+(25, 'Priyo Islam', 'priyo2@gmail.com', 'Gabtoli', '12345', '1612345678');
 
 -- --------------------------------------------------------
 
@@ -577,7 +692,8 @@ INSERT INTO `signup` (`id`, `name`, `email`, `address`, `password`, `phone`) VAL
 -- Table structure for table `videos`
 --
 
-CREATE TABLE `videos` (
+DROP TABLE IF EXISTS `videos`;
+CREATE TABLE IF NOT EXISTS `videos` (
   `Scientist_ID` int(100) NOT NULL,
   `Videos` varchar(255) NOT NULL,
   `video_link` varchar(1000) NOT NULL
@@ -635,7 +751,8 @@ INSERT INTO `videos` (`Scientist_ID`, `Videos`, `video_link`) VALUES
 -- Table structure for table `work`
 --
 
-CREATE TABLE `work` (
+DROP TABLE IF EXISTS `work`;
+CREATE TABLE IF NOT EXISTS `work` (
   `Scientist_ID` int(100) NOT NULL,
   `Sub_ID` int(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -671,86 +788,6 @@ INSERT INTO `work` (`Scientist_ID`, `Sub_ID`) VALUES
 (29, 524),
 (29, 523),
 (29, 520);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `author`
---
-ALTER TABLE `author`
-  ADD PRIMARY KEY (`Author_ID`) USING BTREE;
-
---
--- Indexes for table `blog`
---
-ALTER TABLE `blog`
-  ADD PRIMARY KEY (`Blog_ID`);
-
---
--- Indexes for table `publication`
---
-ALTER TABLE `publication`
-  ADD PRIMARY KEY (`Pub_ID`);
-
---
--- Indexes for table `research_area`
---
-ALTER TABLE `research_area`
-  ADD PRIMARY KEY (`Sub_ID`);
-
---
--- Indexes for table `scientist`
---
-ALTER TABLE `scientist`
-  ADD PRIMARY KEY (`Scientist_ID`);
-
---
--- Indexes for table `signup`
---
-ALTER TABLE `signup`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `author`
---
-ALTER TABLE `author`
-  MODIFY `Author_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1014;
-
---
--- AUTO_INCREMENT for table `blog`
---
-ALTER TABLE `blog`
-  MODIFY `Blog_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
-
---
--- AUTO_INCREMENT for table `publication`
---
-ALTER TABLE `publication`
-  MODIFY `Pub_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3028;
-
---
--- AUTO_INCREMENT for table `research_area`
---
-ALTER TABLE `research_area`
-  MODIFY `Sub_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=525;
-
---
--- AUTO_INCREMENT for table `scientist`
---
-ALTER TABLE `scientist`
-  MODIFY `Scientist_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- AUTO_INCREMENT for table `signup`
---
-ALTER TABLE `signup`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

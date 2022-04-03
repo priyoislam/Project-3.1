@@ -148,8 +148,6 @@ if (isset($_GET['check'])) {
 
                             <th>Name</th>
                             <th>Message</th>
-                            <th>Price</th>
-                            <th>Approximate Time</th>
                             <th>Confirm</th>
                             <th>Cancel order</th>
                         </thead>
@@ -157,8 +155,6 @@ if (isset($_GET['check'])) {
                             <tr class="text-center">
                                 <td><?php echo $row['name']; ?></td>
                                 <td><?php echo $row['letter']; ?></td>
-                                <td><?php echo $row['Price']; ?></td>
-                                <td><?php echo $row['date']; ?></td>
                                 <?php
                                 if ($row['flag'] == 0) {
                                 ?>

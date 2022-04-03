@@ -8,7 +8,7 @@ if ($connect) {
         $area = $_POST['area'];
         $overview = $_POST['overview'];
         $requirment = $_POST['requirment'];
-        $paper = time() . '_' . $_FILES['paper']['name'];
+        $paper = $_FILES['paper']['name'];
         $target = '../user_image/' . $paper;
         $input = "INSERT INTO post_work(id,title,area,overview,requirment,paper)	
                 VALUES($user_ID,'$title','$area','$overview','$requirment','$paper')";
