@@ -103,15 +103,18 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
 								<li class="nav-item">
                                     <a class="nav-link" href="feedback.php">Feedback</a>
                                 </li>
-                                <?php if (isset($_SESSION['is_login'])) { ?>
+								<li class="nav-item">
+                                    <a class="nav-link" href="invitations.php">Invitations</a>
+                                </li>
+								<?php if (isset($_SESSION['is_login'])) { ?>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="invitations.php">Contracts</a>
+                                    <a class="nav-link" href="invitations.php">Invitations</a>
                                 </li>
                                 <?php } ?>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.php">Contact Us</a>
+                                    <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                             </ul>
 
