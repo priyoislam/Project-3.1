@@ -3,9 +3,14 @@
     padding: 0px;
     box-sizing: border-box;
 }
+#navs .logo {
+    height: 150px;
+    width: 200px;
+    background-size: cover;
+}
 
 body {
-    font-size: 20px;s
+    font-size: 20px;
     overflow-x: hidden;
     color: wheat;
     font-family: 'Flamenco', cursive;
@@ -45,8 +50,8 @@ nav {
 }
 
 .right {
-    width: 75%;
-    float: right;
+    width: 60%;
+    /* float: right; */
     margin-left: auto;
 }
 
@@ -70,7 +75,7 @@ h4 {
     font-weight: bold;
 }
 
-.main-nav li {
+/* .main-nav li {
     display: inline-block;
     list-style: none;
     margin-left: 40px;
@@ -89,7 +94,7 @@ h4 {
 .main-nav li a:hover {
     border-bottom: 2px solid rgb(255, 99, 71);
     color: rgb(255, 99, 71);
-}
+} */
 
 .main {
     width: 1180px;
@@ -337,8 +342,8 @@ h3 {
     margin: 20px;
     text-align: left;
 } 
-#navs .navbar {
- width: 100%;  
+/* #navs .navbar {
+    /* width: 100%;  
     background-color: #142850;
     font-size: 30px;
     background-size: cover;
@@ -346,10 +351,14 @@ h3 {
 
 #navs .logo {
     height: 150px;
-    width: 700px;
+    width: 200px;
+    background-size: cover;
+    align-items: center;
+    margin-left: 300px;
+    
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1000px) {
     #navs .logbtn {
         width: 150px;
         margin-top: 70px;
@@ -381,26 +390,28 @@ h3 {
 
 #navs .nav-item li a {
      -webkit-tap-highlight-color: rgba(0,0,0,0); 
-    line-height: 1.42857143;
-    color: #3CF6FF; 
+    line-height: 1;
+    /* color: #3CF6FF; 
     box-sizing: border-box;
     position: absolute;
     top: 100%;
-    left: 0;
-     z-index: 1000; 
+    left: 30;
+    /* z-index: 1000; 
     float: left;
     font-size: 20px;
     text-align: left;
     list-style: none;
-     background-color: #fff;
- box-shadow: 0 6px 12px rgba(0,0,0,.175);   display: block;
+    /* background-color: #fff; */
+    /* box-shadow: 0 6px 12px rgba(0,0,0,.175);  
+    display: block;
     border-radius: 0;
     background-clip: padding-box;
     margin: 0;
     border: none;
     padding: 0;
     text-transform: none;
-    min-width: 220px;
+    min-width: 420px;
+  
 }
 
 #navs .btn {
@@ -416,7 +427,7 @@ h3 {
     width: 150px;
     margin-right: 5px;
     text-align: center;
-     margin-left: 2px;
+    /* margin-left: 2px;
 }
 
 #navs .searchbar .btn {
@@ -441,10 +452,82 @@ h3 {
     position: relative;
     background-color: #142850;
 }
-
+*/
 #navs .topright {
-    position: absolute;
+    position:absolute;
     top: 50px;
-    right: 70px;
+    right: 170px;
     font-size: 30px;
 } 
+.logo{
+    margin-left: 480px;
+    height: 150px;
+    margin-top: 0px;
+    width:200px;
+}
+.bttn{
+    float: right; 
+    margin-right: 0px;
+}
+.btn{
+    box-sizing: border-box;
+    height: 50px;
+    border-radius: 11%;
+    font-size: 15px;
+   display: inline-block;
+   padding: 12px 17px;
+}
+.nav-item{
+    display: inline-block;
+    color: bisque;
+}
+#navs .nav-item li a {
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+    line-height: 1.42857143;
+    /* color: #3CF6FF; */
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* z-index: 1000; */
+    float: left;
+    font-size: 20px;
+    text-align: left;
+    list-style: none;
+    /* background-color: #fff; */
+    /* box-shadow: 0 6px 12px rgba(0,0,0,.175);  */
+    display: block;
+    border-radius: 0;
+    background-clip: padding-box;
+    margin: 0;
+    border: none;
+    padding: 0;
+    text-transform: none;
+    min-width: 420px;
+}
+.row{
+    color:aliceblue;
+}
+.logbtn{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 20px;
+    color: aliceblue;
+    background-color: whitesmoke;
+    margin: 4px;
+    height: 55px;
+    border-radius: 10%;
+    padding-top: 0px;
+   
+}
+.hello{
+    display: inline-block;
+    color:wheat;
+    margin-top: 10px;
+    font-size: 30px;
+    margin-left: 410px;
+ padding-left: 10px;
+}
+.nav-link{
+    color: gray;
+}

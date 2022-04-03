@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 include 'feedback_config.php';
 
 error_reporting(0); // For not showing any error
@@ -36,29 +36,95 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
     <link href="https://fonts.googleapis.com/css2?family=Flamenco&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
-<?php include("navbar.php");?> 
 <body>
-
-
-
 <header>
-        <!-- <nav>
-            <div class="row clearfix">
-                <div class="left">
-                    <h4 class="change1">Online Library</h4>
+	
+
+<div class="container-fluid" id="navs">
+        <div class="row">
+            <div class="top-nav d-flex justify-content-center">
+                <div class="cs_img">
+                    <img class="logo" src="../image/logo">
                 </div>
-                <div class="right">
-				<ul class="main-nav animate__animated animate_slideInDown">
-                        <li><a href="../index.html">HOME</a></li>
-                        <li><a href="../template/about.html">ABOUT US</a></li>
-                        <li><a href="../template/services.html">SERVICES</a></li>
-                        <li><a href="book.php">BOOKS</a></li>
-                        <li><a href="feedback.php">FEEDBACK</a></li>
-                        <li><a href="../template/contact.html">CONTACT US</a></li>
-                    </ul>
+
+                <div class="topright d-flex down">
+                    <?php if (isset($_SESSION['is_login'])) { ?>
+                    <div class="logbtn">
+                        <a href="user_profile.php"><button type="button"
+                                class="btn btn-lg"><?php echo $_SESSION['name']; ?></button></a>
+                    </div>
+                    <div class="logbtn">
+                        <?php
+                            if (isset($_POST['logout'])) {
+                                session_destroy();
+                                header('location:home.php');
+                            }
+                            ?>
+                        <form method="post" action="" enctype="multipart/form-data">
+                            <button type="submit" class="btn btn-lg " name="logout">Log out</button>
+                        </form>
+                    </div>
+                    <?php } else { ?>
+                    <div class="logbtn">
+                        <a href="login.php"><button type="button " class="btn btn-lg ">Log In</button></a>
+                    </div>
+                    <div class="logbtn">
+                        <a href="signup.php"><button type="button " class="btn btn-lg ">Sign Up</button></a>
+                    </div>
+                    <?php } ?>
                 </div>
             </div>
-        </nav> -->
+        </div>
+        <div class="row">
+            <div class="low-nav d-flex  justify-content-center">
+                <div>
+                    <nav class="navbar  navbar-expand-lg  navbar-dark d-flex justify-content-center ">
+
+                        <!-- Toggler/collapsibe Button -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="navbar-nav  nav-tabs hello">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="home.php">Home </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.php">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="blog.php">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="tribute.php">Tributes</a>
+                                </li>
+								<li class="nav-item">
+                                    <a class="nav-link" href="feedback.php">Feedback</a>
+                                </li>
+                                <?php if (isset($_SESSION['is_login'])) { ?>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="invitations.php">Contracts</a>
+                                </li>
+                                <?php } ?>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.php">Contact Us</a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+      
+    </div>
+
 		<div class="wrapper">
 			<form action="" method="POST" class="form">
 				<div class="row">
@@ -113,6 +179,6 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
 	
 		</div>
     </header>
-    <?php include("footer.php");?>
+	<?php include("footer.php");?>   
 </body>
 </html>
