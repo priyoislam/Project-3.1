@@ -141,7 +141,7 @@ if (isset($_GET['cancel'])) {
     ?>
     <div class="container">
         <div class="text-center m-4">
-            <h3><?php echo $row['name']; ?></h3>
+            <h3> Welcome to CSWiki <?php echo $row['name']; ?> !</h3>
         </div>
         <?php
         $sql2 = "SELECT * FROM author where Author_email='$_SESSION[email]'";
@@ -260,7 +260,9 @@ if (isset($_GET['cancel'])) {
                 <?php
                 if (mysqli_num_rows($fres) > 0) {
                 ?>
+                <br>
                     <h1>Following:</h1>
+                    <br>
                 <?php } ?>
                 <div class="row">
                     <?php
@@ -302,7 +304,9 @@ if (isset($_GET['cancel'])) {
                 <?php
                 if (mysqli_num_rows($res) > 0) {
                 ?>
-                    <h1>Saved blogs:</h1>
+                    <br>
+                    <h1>Saved Blogs:</h1>
+                    <br>
                 <?php } ?>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <?php
@@ -346,13 +350,16 @@ if (isset($_GET['cancel'])) {
             }
             ?>
         </div>
-        <h4 class="text-center">Post a Task</h4>
+        <br>
+                    <h1>Shared Work:</h1>
+                    <br>
         <div class="card text-center mb-5" style="width: 18rem;">
             <div class="card-body">
-                <h6 class="card-title">Get offers from sellers for your project</h6>
+                <h6 class="card-title">Add Details about your Research</h6>
                 <form method="post" action="" enctype="multipart/form-data">
-                    <a href="upload_offer.php" type="submit" class="btn btn-success" name="upload">Post a request</a>
+                    <a href="upload_offer.php" type="submit" class="btn btn-info" name="upload"><i class="fas fa-plus-circle"></i></a>
                 </form>
+                
             </div>
         </div>
         <div class="product container ">

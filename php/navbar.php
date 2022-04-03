@@ -101,7 +101,7 @@
                                     <a class="nav-link" href="feedback.php">Feedback</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="invitations.php">Contracts</a>
+                                    <a class="nav-link" href="invitations.php">Invitations</a>
                                 </li>
                                 <?php } ?>
 

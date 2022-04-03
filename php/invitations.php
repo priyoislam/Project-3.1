@@ -34,7 +34,8 @@ if (isset($_GET['proposal']) && $_SESSION['is_login']) {
 
 <body>
     <?php include("navbar.php"); ?>
-    <h1 class="text-center m-3">Find Work</h1>
+    <h1 class="text-center m-3">Ongoing Research</h1>
+    <br>
     <div class="product container mt-2 mb-2">
     <div class="row">
     <?php
