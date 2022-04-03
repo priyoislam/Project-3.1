@@ -2,14 +2,16 @@
                     /* width: 100%;  */
                     background-color: #142850;
                     font-size: 30px;
+                    background-size: cover;
                 }
                 
                 #navs .logo {
                     height: 150px;
                     width: 200px;
+                    background-size: cover;
                 }
                 
-                @media screen and (max-width: 992px) {
+                @media screen and (max-width: 1000px) {
                     #navs .logbtn {
                         width: 150px;
                         margin-top: 70px;
@@ -61,7 +63,7 @@
                     border: none;
                     padding: 0;
                     text-transform: none;
-                    min-width: 220px;
+                    min-width: 420px;
                 }
                 
                 #navs .btn {

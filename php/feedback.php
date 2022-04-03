@@ -36,8 +36,8 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
     <link href="https://fonts.googleapis.com/css2?family=Flamenco&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+<?php include("navbar.php");?> 
 <body>
-<?php include("navbar.php");?>
 
 
 
